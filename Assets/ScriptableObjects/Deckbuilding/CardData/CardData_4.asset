@@ -17,4 +17,21 @@ MonoBehaviour:
   Color: {r: 1, g: 0.55638766, b: 0, a: 1}
   Rarity: 0
   ManaCost: 2
-  Description: Description
+  Description: Apply Stun.
+  TargetsAll: 0
+  GetsDestroyed: 0
+  AppliesDamage: 0
+  DamageAmount: 3
+  AppliesHeal: 0
+  HealAmount: 3
+  AppliesBlock: 0
+  BlockAmount: 3
+  AppliesSappling: 0
+  SapplingAmount: 1
+  AppliesStun: 1
+  AppliesExposed: 0
+  ExposedAmount: 1
+  AppliesProtected: 0
+  ProtectedAmount: 1
+  AppliesAbsorb: 0
+  AbsorbAmount: 2

@@ -163,12 +163,12 @@ public class Hand : MonoBehaviour
 
     private void ActivateCardEffect(Card card)
     {
-            _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
-            AddCardToDiscardPile(card.Data);
-            Destroy(_selectedCard.Value.gameObject);
-            _selectedCard.Value = null;
-            AddCardToHand();
-            _eventCardEffectActivated.RaiseEvent(card);
+        _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
+        AddCardToDiscardPile(card.Data);
+        Destroy(_selectedCard.Value.gameObject);
+        _selectedCard.Value = null;
+        AddCardToHand();
+        _eventCardEffectActivated.RaiseEvent(card);
     }
 
     private void ReturnCardToHand(Card card)

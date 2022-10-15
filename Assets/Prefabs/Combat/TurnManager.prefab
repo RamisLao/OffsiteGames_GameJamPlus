@@ -47,6 +47,7 @@ MonoBehaviour:
   _settingsCombat: {fileID: 11400000, guid: 9c9008f60b2d7854294ad9039179a5aa, type: 2}
   _eventPlayerTurnEnded: {fileID: 11400000, guid: 9c615fa23d2507b4a80fe4af2b11fb42, type: 2}
   _eventEnemyTurnEnded: {fileID: 11400000, guid: 52ed8178edf87914b8f7750ea22417dd, type: 2}
+  _eventCombatStarted: {fileID: 11400000, guid: 517b5de42ed729f44a8cc2e423aeab0e, type: 2}
   _eventRemoveLeftOverBlock: {fileID: 0}
   _eventDrawCards: {fileID: 11400000, guid: 2be9b5097bbd9754fadc83225d7507cf, type: 2}
   _eventGainMana: {fileID: 11400000, guid: de0e3e5d296cb5a4b8ef12b6ece5e288, type: 2}

@@ -22,8 +22,6 @@ public class CardEffectResolver : MonoBehaviour
         if (cardData.AppliesProtected) ApplyProtected(cardData, enemy);
         if (cardData.AppliesDamage) ApplyDamage(cardData, enemy);
         if (cardData.AppliesHeal) ApplyHeal(cardData, enemy);
-        Debug.Log(cardData);
-        Debug.Log(enemy);
     }
 
     private void AddBlockPoints(CardData cardData, EnemyAI enemy)

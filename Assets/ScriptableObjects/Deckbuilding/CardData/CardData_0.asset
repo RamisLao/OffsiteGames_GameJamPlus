@@ -17,4 +17,21 @@ MonoBehaviour:
   Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
   Rarity: 0
   ManaCost: 1
-  Description: Description
+  Description: Damage 3. Targets All.
+  TargetsAll: 1
+  GetsDestroyed: 0
+  AppliesDamage: 1
+  DamageAmount: 3
+  AppliesHeal: 0
+  HealAmount: 3
+  AppliesBlock: 0
+  BlockAmount: 3
+  AppliesSappling: 0
+  SapplingAmount: 1
+  AppliesStun: 0
+  AppliesExposed: 0
+  ExposedAmount: 1
+  AppliesProtected: 0
+  ProtectedAmount: 1
+  AppliesAbsorb: 0
+  AbsorbAmount: 2

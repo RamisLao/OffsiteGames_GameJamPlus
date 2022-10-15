@@ -15,3 +15,23 @@ MonoBehaviour:
   Name: Card 7
   Image: {fileID: 0}
   Color: {r: 0, g: 0.022339344, b: 1, a: 1}
+  Rarity: 0
+  ManaCost: 3
+  Description: Applies 3 Block.
+  TargetsAll: 0
+  GetsDestroyed: 0
+  AppliesDamage: 0
+  DamageAmount: 3
+  AppliesHeal: 0
+  HealAmount: 3
+  AppliesBlock: 1
+  BlockAmount: 3
+  AppliesSappling: 0
+  SapplingAmount: 1
+  AppliesStun: 0
+  AppliesExposed: 0
+  ExposedAmount: 1
+  AppliesProtected: 0
+  ProtectedAmount: 1
+  AppliesAbsorb: 0
+  AbsorbAmount: 2

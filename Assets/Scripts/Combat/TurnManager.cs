@@ -19,6 +19,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _eventEnemyTurnEnded;
 
     [Title("Broadcasting on")]
+    [SerializeField] private VoidEventChannelSO _eventCombatStarted;
     [SerializeField] private VoidEventChannelSO _eventRemoveLeftOverBlock;
     [SerializeField] private VoidEventChannelSO _eventDrawCards;
     [SerializeField] private VoidEventChannelSO _eventGainMana;
@@ -36,6 +37,7 @@ public class TurnManager : MonoBehaviour
 
     private void Start()
     {
+        _eventCombatStarted.RaiseEvent();
         _currentTurn = ETurn.Enemy;
         NextTurn();
     }
