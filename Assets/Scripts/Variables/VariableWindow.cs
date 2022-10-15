@@ -9,7 +9,7 @@ public class VariableWindow : EditorWindow
 {
     private string _uppercase;
     private string _type;
-    private string _path = "Assets/Scripts/Helpers/Custom/Variables/VariableTypes/";
+    private string _path = "Assets/Scripts/Variables/Types/";
 
     [MenuItem("Custom/Variable/Create New")]
     public static void ShowWindow()

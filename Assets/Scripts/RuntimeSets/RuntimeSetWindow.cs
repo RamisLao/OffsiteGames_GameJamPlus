@@ -9,7 +9,7 @@ public class RuntimeSetWindow : EditorWindow
 {
     private string _type;
     private string _uppercase;
-    private string _path = "Assets/Scripts/Helpers/Custom/RuntimeSets/RuntimeSetTypes/";
+    private string _path = "Assets/Scripts/RuntimeSets/Types/";
 
     [MenuItem("Custom/RuntimeSet/Create New")]
     public static void ShowWindow()
