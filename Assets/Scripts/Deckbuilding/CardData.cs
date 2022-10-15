@@ -27,6 +27,7 @@ public class CardData : ScriptableObject
     [Multiline(10)]
     public string Description = "Description";
     public bool TargetsAll = false;
+    public bool AppliesToSelf = false;
     public bool GetsDestroyed = false;
 
     public bool AppliesDamage = false;
