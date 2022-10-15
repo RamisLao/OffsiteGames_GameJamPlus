@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13062b85c946b314eb57300f418788d9, type: 3}
-  m_Name: CardData_0
+  m_Script: {fileID: 11500000, guid: d586786858e5d0243a5da2ca09e050d7, type: 3}
+  m_Name: RS_EnemyAI_CurrentEnemiesInBattle
   m_EditorClassIdentifier: 
-  Name: Card 0
-  Image: {fileID: 0}
-  Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
-  Rarity: 0
-  ManaCost: 1
-  Description: Description
+  _copyFrom: {fileID: 0}
+  _description: 
+  _canContainDuplicates: 0
+  _items: []
+  OnChanged:
+    m_PersistentCalls:
+      m_Calls: []

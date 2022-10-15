@@ -16,18 +16,22 @@ public class TurnManager : MonoBehaviour
 
     [Title("Listening on")]
     [SerializeField] private VoidEventChannelSO _eventPlayerTurnEnded;
+    [SerializeField] private VoidEventChannelSO _eventEnemyTurnEnded;
 
     [Title("Broadcasting on")]
     [SerializeField] private VoidEventChannelSO _eventRemoveLeftOverBlock;
     [SerializeField] private VoidEventChannelSO _eventDrawCards;
     [SerializeField] private VoidEventChannelSO _eventGainMana;
     [SerializeField] private VoidEventChannelSO _eventDiscardHand;
+    [SerializeField] private VoidEventChannelSO _eventPrepareEnemyTurn;
+    [SerializeField] private VoidEventChannelSO _eventStartEnemyTurn;
 
     private ETurn _currentTurn;
 
     private void Awake()
     {
         _eventPlayerTurnEnded.OnEventRaised += PlayerTurnEnd;
+        _eventEnemyTurnEnded.OnEventRaised += EnemyTurnEnd;
     }
 
     private void Start()
@@ -42,6 +46,7 @@ public class TurnManager : MonoBehaviour
         {
             case ETurn.Player:
                 _currentTurn = ETurn.Enemy;
+                StartCoroutine(EnemyTurnPreparationCoroutine());
                 break;
             case ETurn.Enemy:
                 _currentTurn = ETurn.Player;
@@ -74,20 +79,30 @@ public class TurnManager : MonoBehaviour
     {
         _eventDiscardHand.RaiseEvent();
         yield return null;
+        NextTurn();
     }
 
     private IEnumerator EnemyTurnPreparationCoroutine()
     {
+        _eventPrepareEnemyTurn.RaiseEvent();
         yield return null;
+        StartCoroutine(EnemyTurnStartCoroutine());
     }
 
     private IEnumerator EnemyTurnStartCoroutine()
     {
+        _eventStartEnemyTurn.RaiseEvent();
         yield return null;
+    }
+
+    private void EnemyTurnEnd()
+    {
+        StartCoroutine(EnemyTurnEndCoroutine());
     }
 
     private IEnumerator EnemyTurnEndCoroutine()
     {
         yield return null;
+        NextTurn();
     }
 }

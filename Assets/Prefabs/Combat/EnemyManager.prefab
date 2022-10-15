@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5550129003976654425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5550129003976654423}
+  - component: {fileID: 5550129003976654422}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5550129003976654423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550129003976654425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.099286795, y: 1.7374425, z: 0.08064556}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5550129003976654422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550129003976654425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee7fcee1bb3c304487eb120ee5110c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentEnemiesInCombat: {fileID: 11400000, guid: 4e4e65be840128d4aa0317769370b9df, type: 2}
+  _eventPrepareEnemyTurn: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
+  _eventStartEnemyTurn: {fileID: 11400000, guid: 9aad5b883f6ef8d4d9a7ed5dd488cb09, type: 2}
+  _eventEndEnemyTurn: {fileID: 11400000, guid: 52ed8178edf87914b8f7750ea22417dd, type: 2}

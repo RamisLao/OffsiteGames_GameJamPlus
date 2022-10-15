@@ -123,7 +123,6 @@ public class Hand : MonoBehaviour
     {
         if (_currentMana.Value < card.Data.ManaCost) return;
 
-        _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
         _selectedCard = card;
         _currentCards.Remove(card);
     }
@@ -132,6 +131,7 @@ public class Hand : MonoBehaviour
     {
         if (_selectedCard == card)
         {
+            _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
             AddCardToDiscardPile(card.Data);
             Destroy(_selectedCard.gameObject);
             _selectedCard = null;
