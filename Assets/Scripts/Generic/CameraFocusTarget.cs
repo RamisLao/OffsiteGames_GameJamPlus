@@ -10,7 +10,9 @@ public class CameraFocusTarget : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     [SerializeField] private CinemachineTargetGroup _targetGroup;
     [SerializeField] private VariableTransform _cameraTarget;
+    [SerializeField] private VariableFloat _cameraDistance;
     [SerializeField] private Transform _player;
+    [SerializeField] private Transform _focusDistance;
     private bool _canFocusPlayer = true;
 
     [Title("Focus Settings")]
@@ -37,8 +39,14 @@ public class CameraFocusTarget : MonoBehaviour
         else
         {
             _virtualCamera.Follow = _targetGroup.transform;
+            AdjustFocusDistance();
             _targetGroup.AddMember(_cameraTarget.Value, _weight, _radius);
         }
+    }
+
+    private void AdjustFocusDistance()
+    {
+        _focusDistance.localPosition = new Vector3(0f, -_cameraDistance.Value, 0f);
     }
 
 }
