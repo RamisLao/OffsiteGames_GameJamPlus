@@ -420,6 +420,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &812281869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 812281871}
+  - component: {fileID: 812281870}
+  m_Layer: 0
+  m_Name: TurnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &812281870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812281869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8a245a59d3cbd41806db85a0eb9b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settingsCombat: {fileID: 11400000, guid: 9c9008f60b2d7854294ad9039179a5aa, type: 2}
+  _eventPlayerTurnEnded: {fileID: 11400000, guid: 9c615fa23d2507b4a80fe4af2b11fb42, type: 2}
+  _eventRemoveLeftOverBlock: {fileID: 0}
+  _eventDrawCards: {fileID: 11400000, guid: 2be9b5097bbd9754fadc83225d7507cf, type: 2}
+  _eventGainMana: {fileID: 11400000, guid: de0e3e5d296cb5a4b8ef12b6ece5e288, type: 2}
+  _eventDiscardHand: {fileID: 11400000, guid: 2594ee040a46e86448b9f6806aabe8ec, type: 2}
+--- !u!4 &812281871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812281869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 950.40753, y: 93.24402, z: 4.108639}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6039335398152827465
 PrefabInstance:
   m_ObjectHideFlags: 0

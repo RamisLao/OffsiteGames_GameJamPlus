@@ -13,10 +13,16 @@ public class Hand : MonoBehaviour
 
     [Title("Variables")]
     [SerializeField] private RuntimeSetCardData _playerDeck;
+    [SerializeField] private VariableInt _currentMana;
 
     [Title("Listening on")]
+    [SerializeField] private VoidEventChannelSO _eventDrawCards;
+    [SerializeField] private VoidEventChannelSO _eventDiscardCards;
     [SerializeField] private CardEventChannelSO _eventCardSelected;
     [SerializeField] private CardEventChannelSO _eventCardDeselected;
+
+    [Title("Broadcasting on")]
+    [SerializeField] private IntEventChannelSO _eventSubtractMana;
 
     private List<Card> _currentCards;
     private Pile _drawPile;
@@ -28,9 +34,10 @@ public class Hand : MonoBehaviour
         _currentCards = new();
         _eventCardSelected.OnEventRaised += MaybeSelectCard;
         _eventCardDeselected.OnEventRaised += MaybeReleaseCard;
+        _eventDrawCards.OnEventRaised += InitializeHand;
+        _eventDiscardCards.OnEventRaised += DiscardHand;
 
         InitializePiles();
-        InitializeHand();
     }
 
     private void Update()
@@ -62,17 +69,23 @@ public class Hand : MonoBehaviour
         }
     }
 
+    private void DiscardHand()
+    {
+        foreach (Card c in _currentCards)
+        {
+            AddCardToDiscardPile(c.Data);
+            Destroy(c.gameObject);
+        }
+
+        _currentCards.Clear();
+    }
+
     private void AddCardToHand()
     {
         CardData cd = GetCardFromDrawPile();
         Card iCard = Instantiate(_cardPrefab, transform);
         iCard.Data = cd;
         _currentCards.Add(iCard);
-
-        Debug.Log("Draw Pile");
-        _drawPile.Print();
-        Debug.Log("Discard Pile");
-        _discardPile.Print();
     }
 
     private CardData GetCardFromDrawPile()
@@ -106,13 +119,11 @@ public class Hand : MonoBehaviour
         _drawPile.Shuffle();
     }
 
-    private CardData PeekNextCardInDrawPile()
-    {
-        return _drawPile.PeekNextCard();
-    }
-
     private void MaybeSelectCard(Card card)
     {
+        if (_currentMana.Value < card.Data.ManaCost) return;
+
+        _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
         _selectedCard = card;
         _currentCards.Remove(card);
     }

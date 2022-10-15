@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ae67197609e98479b51baa9a4eec4a, type: 3}
-  m_Name: EventChannel_CardSelected
+  m_Script: {fileID: 11500000, guid: a59f2c7dee1190a4db2ffed5d465c0de, type: 3}
+  m_Name: Event_int_SubtractMana
   m_EditorClassIdentifier: 
