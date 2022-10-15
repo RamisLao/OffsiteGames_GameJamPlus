@@ -6,8 +6,10 @@ public class EnemyAIBasic : EnemyAI
 {
     [SerializeField] private RuntimeSetEnemyAI _currentEnemiesInBattle;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         AddMyselfToBattle();
     }
 

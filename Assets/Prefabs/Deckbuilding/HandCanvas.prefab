@@ -510,11 +510,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingsDeckBuilding: {fileID: 11400000, guid: cc9f5887361932c498f0fda4134603e7, type: 2}
+  _releaseLimits: {fileID: 0}
   _cardPrefab: {fileID: 8371517353830852294, guid: cdbd4689fe73e164693e2dc248e66c36, type: 3}
   _playerDeck: {fileID: 11400000, guid: b4e01120b3666474b83d6c6a13ea9004, type: 2}
+  _selectedCard: {fileID: 0}
   _currentMana: {fileID: 0}
   _eventDrawCards: {fileID: 0}
   _eventDiscardCards: {fileID: 0}
+  _eventCardPointerDown: {fileID: 0}
+  _eventCardPointerUp: {fileID: 0}
   _eventCardSelected: {fileID: 11400000, guid: aa095f96b175af94ca3c57fdbbdf041b, type: 2}
   _eventCardDeselected: {fileID: 11400000, guid: 27247fb6d6a7aca4abf87e388f572cb2, type: 2}
   _eventSubtractMana: {fileID: 0}
@@ -558,6 +562,7 @@ GameObject:
   - component: {fileID: 2416309101890543709}
   - component: {fileID: 6039335398152827468}
   - component: {fileID: 75749725}
+  - component: {fileID: 4800894809664679670}
   m_Layer: 5
   m_Name: PlayerHand
   m_TagString: Untagged
@@ -636,13 +641,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingsDeckBuilding: {fileID: 11400000, guid: cc9f5887361932c498f0fda4134603e7, type: 2}
+  _releaseLimits: {fileID: 4800894809664679670}
   _cardPrefab: {fileID: 8371517353830852294, guid: cdbd4689fe73e164693e2dc248e66c36, type: 3}
   _playerDeck: {fileID: 11400000, guid: b4e01120b3666474b83d6c6a13ea9004, type: 2}
+  _selectedCard: {fileID: 11400000, guid: f32bf72b9df026e4b860eccea69c71ab, type: 2}
   _currentMana: {fileID: 11400000, guid: cce85405c96557e4e968dc2e92e7cb3b, type: 2}
   _eventDrawCards: {fileID: 11400000, guid: 2be9b5097bbd9754fadc83225d7507cf, type: 2}
   _eventDiscardCards: {fileID: 11400000, guid: 2594ee040a46e86448b9f6806aabe8ec, type: 2}
-  _eventCardSelected: {fileID: 11400000, guid: aa095f96b175af94ca3c57fdbbdf041b, type: 2}
-  _eventCardDeselected: {fileID: 11400000, guid: 27247fb6d6a7aca4abf87e388f572cb2, type: 2}
+  _eventCardPointerDown: {fileID: 11400000, guid: aa095f96b175af94ca3c57fdbbdf041b, type: 2}
+  _eventCardPointerUp: {fileID: 11400000, guid: 27247fb6d6a7aca4abf87e388f572cb2, type: 2}
+  _eventCardSelected: {fileID: 11400000, guid: 621e9c1180c0c1f4dba391af4d8f3e73, type: 2}
+  _eventCardDeselected: {fileID: 11400000, guid: 5e5138c9616f46e468b288e9cc7a5848, type: 2}
   _eventSubtractMana: {fileID: 11400000, guid: 2b96cd00edb49d4449569921d486618d, type: 2}
 --- !u!114 &6039335398152827468
 MonoBehaviour:
@@ -687,6 +696,19 @@ MonoBehaviour:
   _eventInitMana: {fileID: 11400000, guid: de0e3e5d296cb5a4b8ef12b6ece5e288, type: 2}
   _eventSubtractMana: {fileID: 11400000, guid: 2b96cd00edb49d4449569921d486618d, type: 2}
   _eventManaChanged: {fileID: 11400000, guid: d5934eef34841ca44a14421aafca0d92, type: 2}
+--- !u!114 &4800894809664679670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023257416023268625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca4c982675460043bd079c47c4dca63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransformLimits: {fileID: 3879493825529623978}
 --- !u!1 &7263199888239446987
 GameObject:
   m_ObjectHideFlags: 0

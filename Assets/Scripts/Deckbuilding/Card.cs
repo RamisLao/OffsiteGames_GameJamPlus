@@ -20,8 +20,8 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] private TMPro.TextMeshProUGUI _descriptionText;
 
     [Title("Broadcasting on")]
-    [SerializeField] private CardEventChannelSO _eventCardSelected;
-    [SerializeField] private CardEventChannelSO _eventCardDeselected;
+    [SerializeField] private CardEventChannelSO _eventCardPointerDown;
+    [SerializeField] private CardEventChannelSO _eventCardPointerUp;
 
     private Image _image;
 
@@ -43,13 +43,14 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         _descriptionText.text = _data.Description;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        _eventCardDeselected.RaiseEvent(this);
-    }
-
     public void OnPointerDown(PointerEventData eventData)
     {
-        _eventCardSelected.RaiseEvent(this);
+        _eventCardPointerDown.RaiseEvent(this);
     }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        _eventCardPointerUp.RaiseEvent(this);
+    }
+
 }

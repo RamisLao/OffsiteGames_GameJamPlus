@@ -47,4 +47,6 @@ MonoBehaviour:
   _currentEnemiesInCombat: {fileID: 11400000, guid: 4e4e65be840128d4aa0317769370b9df, type: 2}
   _eventPrepareEnemyTurn: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
   _eventStartEnemyTurn: {fileID: 11400000, guid: 9aad5b883f6ef8d4d9a7ed5dd488cb09, type: 2}
+  _eventCardSelected: {fileID: 11400000, guid: 621e9c1180c0c1f4dba391af4d8f3e73, type: 2}
+  _eventCardDeselected: {fileID: 11400000, guid: 5e5138c9616f46e468b288e9cc7a5848, type: 2}
   _eventEndEnemyTurn: {fileID: 11400000, guid: 52ed8178edf87914b8f7750ea22417dd, type: 2}

@@ -8,32 +8,39 @@ public class Hand : MonoBehaviour
     [Title("Settings")]
     [SerializeField] private SettingsDeckBuilding _settingsDeckBuilding;
 
+    [Title("References")]
+    [SerializeField] private CardReleaseLimits _releaseLimits;
+
     [Title("Prefabs")]
     [SerializeField] private Card _cardPrefab;
 
     [Title("Variables")]
     [SerializeField] private RuntimeSetCardData _playerDeck;
+    [SerializeField] private VariableCard _selectedCard;
     [SerializeField] private VariableInt _currentMana;
 
     [Title("Listening on")]
     [SerializeField] private VoidEventChannelSO _eventDrawCards;
     [SerializeField] private VoidEventChannelSO _eventDiscardCards;
-    [SerializeField] private CardEventChannelSO _eventCardSelected;
-    [SerializeField] private CardEventChannelSO _eventCardDeselected;
+    [SerializeField] private CardEventChannelSO _eventCardPointerDown;
+    [SerializeField] private CardEventChannelSO _eventCardPointerUp;
 
     [Title("Broadcasting on")]
     [SerializeField] private IntEventChannelSO _eventSubtractMana;
+    [SerializeField] private CardEventChannelSO _eventCardSelected;
+    [SerializeField] private CardEventChannelSO _eventCardDeselected;
 
+    private Vector2 _selectedCardFormerPosition;
     private List<Card> _currentCards;
     private Pile _drawPile;
     private Pile _discardPile;
-    private Card _selectedCard;
 
     private void Awake()
     {
+        _selectedCard.Value = null;
         _currentCards = new();
-        _eventCardSelected.OnEventRaised += MaybeSelectCard;
-        _eventCardDeselected.OnEventRaised += MaybeReleaseCard;
+        _eventCardPointerDown.OnEventRaised += MaybeSelectCard;
+        _eventCardPointerUp.OnEventRaised += MaybeReleaseCard;
         _eventDrawCards.OnEventRaised += InitializeHand;
         _eventDiscardCards.OnEventRaised += DiscardHand;
 
@@ -42,10 +49,10 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
-        if (_selectedCard != null)
+        if (!_selectedCard.IsEmpty)
         {
             Vector2 mousePos = Input.mousePosition;
-            _selectedCard.transform.position = mousePos;
+            _selectedCard.Value.transform.position = mousePos;
         }
     }
 
@@ -123,19 +130,32 @@ public class Hand : MonoBehaviour
     {
         if (_currentMana.Value < card.Data.ManaCost) return;
 
-        _selectedCard = card;
+        _selectedCardFormerPosition = card.transform.position;
+        _selectedCard.Value = card;
         _currentCards.Remove(card);
+        _eventCardSelected.RaiseEvent(card);
     }
 
     private void MaybeReleaseCard(Card card)
     {
-        if (_selectedCard == card)
+        if (_selectedCard.Value == card)
         {
-            _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
-            AddCardToDiscardPile(card.Data);
-            Destroy(_selectedCard.gameObject);
-            _selectedCard = null;
-            AddCardToHand();
+            if (!_releaseLimits.IsMouseInsideLimits())
+            {
+                _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
+                AddCardToDiscardPile(card.Data);
+                Destroy(_selectedCard.Value.gameObject);
+                _selectedCard.Value = null;
+                AddCardToHand();
+            }
+            else
+            {
+                _selectedCard.Value.transform.position = _selectedCardFormerPosition;
+                _selectedCardFormerPosition = Vector2.zero;
+                _selectedCard.Value = null;
+            }
+
+            _eventCardDeselected.RaiseEvent(card);
         }
     }
 }

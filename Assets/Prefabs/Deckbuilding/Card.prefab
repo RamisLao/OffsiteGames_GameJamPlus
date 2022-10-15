@@ -503,8 +503,8 @@ MonoBehaviour:
   _manaCostText: {fileID: 4880044897510130536}
   _nameText: {fileID: 5185220739665981531}
   _descriptionText: {fileID: 8649351139812604915}
-  _eventCardSelected: {fileID: 11400000, guid: aa095f96b175af94ca3c57fdbbdf041b, type: 2}
-  _eventCardDeselected: {fileID: 11400000, guid: 27247fb6d6a7aca4abf87e388f572cb2, type: 2}
+  _eventCardPointerDown: {fileID: 11400000, guid: aa095f96b175af94ca3c57fdbbdf041b, type: 2}
+  _eventCardPointerUp: {fileID: 11400000, guid: 27247fb6d6a7aca4abf87e388f572cb2, type: 2}
 --- !u!114 &8033327844799942182
 MonoBehaviour:
   m_ObjectHideFlags: 0
