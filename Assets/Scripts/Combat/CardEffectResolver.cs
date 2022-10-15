@@ -13,65 +13,65 @@ public class CardEffectResolver : MonoBehaviour
         _eventApplyCardEffect.OnEventRaised += ApplyEffect;
     }
 
-    private void ApplyEffect(CardData cardData, EnemyAI enemy)
+    private void ApplyEffect(CardData cardData, Agent agent)
     {
-        if (cardData.AppliesBlock) AddBlockPoints(cardData, enemy);
-        if (cardData.AppliesSappling) AddSapplings(cardData, enemy);
-        if (cardData.AppliesStun) ApplyStun(cardData, enemy);
-        if (cardData.AppliesExposed) ApplyExposed(cardData, enemy);
-        if (cardData.AppliesProtected) ApplyProtected(cardData, enemy);
-        if (cardData.AppliesDamage) ApplyDamage(cardData, enemy);
-        if (cardData.AppliesHeal) ApplyHeal(cardData, enemy);
+        if (cardData.AppliesBlock) AddBlockPoints(cardData, agent);
+        if (cardData.AppliesSappling) AddSapplings(cardData, agent);
+        if (cardData.AppliesStun) ApplyStun(cardData, agent);
+        if (cardData.AppliesExposed) ApplyExposed(cardData, agent);
+        if (cardData.AppliesProtected) ApplyProtected(cardData, agent);
+        if (cardData.AppliesDamage) ApplyDamage(cardData, agent);
+        if (cardData.AppliesHeal) ApplyHeal(cardData, agent);
     }
 
-    private void AddBlockPoints(CardData cardData, EnemyAI enemy)
+    private void AddBlockPoints(CardData cardData, Agent agent)
     {
-        if (enemy.TryGetComponent(out Health health))
+        if (agent.TryGetComponent(out Health health))
         {
             health.AddBlockPoints(cardData.BlockAmount);
         }
     }
 
-    private void AddSapplings(CardData cardData, EnemyAI enemy)
+    private void AddSapplings(CardData cardData, Agent agent)
     {
-        if (enemy.TryGetComponent(out Health health))
+        if (agent.TryGetComponent(out Health health))
         {
             health.AddSapplings(cardData.SapplingAmount);
         }
     }
 
-    private void ApplyStun(CardData cardData, EnemyAI enemy)
+    private void ApplyStun(CardData cardData, Agent agent)
     {
-        enemy.ApplyStun();
+        agent.ApplyStun();
     }
 
-    private void ApplyExposed(CardData cardData, EnemyAI enemy)
+    private void ApplyExposed(CardData cardData, Agent agent)
     {
-        if (enemy.TryGetComponent(out Health health))
+        if (agent.TryGetComponent(out Health health))
         {
             health.AddExposedPoints(cardData.ExposedAmount);
         }
     }
 
-    private void ApplyProtected(CardData cardData, EnemyAI enemy)
+    private void ApplyProtected(CardData cardData, Agent agent)
     {
-        if (enemy.TryGetComponent(out Health health))
+        if (agent.TryGetComponent(out Health health))
         {
             health.AddProtectedPoints(cardData.ProtectedAmount);
         }
     }
 
-    private void ApplyDamage(CardData cardData, EnemyAI enemy)
+    private void ApplyDamage(CardData cardData, Agent agent)
     {
-        if (enemy.TryGetComponent(out Health health))
+        if (agent.TryGetComponent(out Health health))
         {
             health.SubtractHealth(cardData.DamageAmount);
         }
     }
 
-    private void ApplyHeal(CardData cardData, EnemyAI enemy)
+    private void ApplyHeal(CardData cardData, Agent agent)
     {
-        if (enemy.TryGetComponent(out Health health))
+        if (agent.TryGetComponent(out Health health))
         {
             health.AddHealth(cardData.HealAmount);
         }

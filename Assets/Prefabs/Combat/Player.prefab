@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7198484146098427389}
   - component: {fileID: 590645472971126463}
   - component: {fileID: 718814041}
+  - component: {fileID: 4326721576830340572}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -49,6 +50,17 @@ MonoBehaviour:
   _isLocal: 0
   _currentHealthLocal: 0
   _currentHealthShared: {fileID: 11400000, guid: deb9ea790c6aa9449b68422b4ff38dcc, type: 2}
+  _currentBlockPoints: 0
+  _currentAmountOfSaplings: 0
+  _currentExposedPoints: 0
+  _currentProtectedPoints: 0
+  _healthBar: {fileID: 0}
+  _healthText: {fileID: 0}
+  _blockText: {fileID: 0}
+  _sapplingText: {fileID: 0}
+  _exposedText: {fileID: 0}
+  _protectedText: {fileID: 0}
+  _eventHealthIsZero: {fileID: 0}
   _eventInitHealth: {fileID: 0}
   _eventSubtractHealth: {fileID: 0}
   _eventHealthReachedZero: {fileID: 0}
@@ -64,3 +76,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d68fe2b6f9b7a24b9989365d88a130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4326721576830340572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198484146098427379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f657214b852eb446942fc841a790230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raiseEvent: 2
+  _variable: {fileID: 11400000, guid: e3882ffcd0db9704e972adfa9a40451c, type: 2}
+  _t: {fileID: 0}

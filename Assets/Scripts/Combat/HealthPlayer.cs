@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class HealthPlayer : Health
 {
+    [Title("Variables")]
+    [SerializeField] private VariableInt _variablePlayerBlock;
+    [SerializeField] private VariableInt _variablePlayerSapplings;
+    [SerializeField] private VariableInt _variablePlayerExposed;
+    [SerializeField] private VariableInt _variablePlayerProtected;
+
     [Title("Listening on")]
     [SerializeField] private VoidEventChannelSO _eventInitHealth;
     [SerializeField] private IntEventChannelSO _eventSubtractHealth;
@@ -21,5 +27,29 @@ public class HealthPlayer : Health
     protected override void HealthReachedZero()
     {
         _eventHealthReachedZero.RaiseEvent();
+    }
+
+    protected override void UpdateHealthBar()
+    {
+    }
+
+    protected override void UpdateBlockText()
+    {
+        _variablePlayerBlock.Value = _currentBlockPoints;
+    }
+
+    protected override void UpdateSapplingText()
+    {
+        _variablePlayerSapplings.Value = _currentAmountOfSaplings;
+    }
+
+    protected override void UpdateExposedText()
+    {
+        _variablePlayerExposed.Value = _currentExposedPoints;
+    }
+
+    protected override void UpdateProtectedText()
+    {
+        _variablePlayerProtected.Value = _currentProtectedPoints;
     }
 }

@@ -19,7 +19,7 @@ public class Variable<T> : ScriptableObject
         }
     }
 
-    public UnityEvent<T> OnChanged;
+    public UnityAction<T> OnChanged;
 
     private void Awake()
     {
