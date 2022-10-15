@@ -18,6 +18,7 @@ public class Hand : MonoBehaviour
     [SerializeField] private RuntimeSetCardData _playerDeck;
     [SerializeField] private VariableCard _selectedCard;
     [SerializeField] private VariableInt _currentMana;
+    [SerializeField] private VariableEnemyAI _currentEnemyOnHover;
 
     [Title("Listening on")]
     [SerializeField] private VoidEventChannelSO _eventDrawCards;
@@ -29,6 +30,7 @@ public class Hand : MonoBehaviour
     [SerializeField] private IntEventChannelSO _eventSubtractMana;
     [SerializeField] private CardEventChannelSO _eventCardSelected;
     [SerializeField] private CardEventChannelSO _eventCardDeselected;
+    [SerializeField] private CardEventChannelSO _eventCardEffectActivated;
 
     private Vector2 _selectedCardFormerPosition;
     private List<Card> _currentCards;
@@ -142,20 +144,38 @@ public class Hand : MonoBehaviour
         {
             if (!_releaseLimits.IsMouseInsideLimits())
             {
-                _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
-                AddCardToDiscardPile(card.Data);
-                Destroy(_selectedCard.Value.gameObject);
-                _selectedCard.Value = null;
-                AddCardToHand();
+                if (!_selectedCard.Value.Data.TargetsAll &&
+                    _currentEnemyOnHover.IsEmpty)
+                {
+                    ReturnCardToHand(card);
+                    return;
+                }
+
+                ActivateCardEffect(card);
             }
             else
             {
-                _selectedCard.Value.transform.position = _selectedCardFormerPosition;
-                _selectedCardFormerPosition = Vector2.zero;
-                _selectedCard.Value = null;
+                ReturnCardToHand(card);
             }
 
-            _eventCardDeselected.RaiseEvent(card);
         }
+    }
+
+    private void ActivateCardEffect(Card card)
+    {
+            _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
+            AddCardToDiscardPile(card.Data);
+            Destroy(_selectedCard.Value.gameObject);
+            _selectedCard.Value = null;
+            AddCardToHand();
+            _eventCardEffectActivated.RaiseEvent(card);
+    }
+
+    private void ReturnCardToHand(Card card)
+    {
+        _selectedCard.Value.transform.position = _selectedCardFormerPosition;
+        _selectedCardFormerPosition = Vector2.zero;
+        _selectedCard.Value = null;
+        _eventCardDeselected.RaiseEvent(card);
     }
 }

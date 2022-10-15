@@ -515,13 +515,15 @@ MonoBehaviour:
   _playerDeck: {fileID: 11400000, guid: b4e01120b3666474b83d6c6a13ea9004, type: 2}
   _selectedCard: {fileID: 0}
   _currentMana: {fileID: 0}
+  _currentEnemyOnHover: {fileID: 0}
   _eventDrawCards: {fileID: 0}
   _eventDiscardCards: {fileID: 0}
   _eventCardPointerDown: {fileID: 0}
   _eventCardPointerUp: {fileID: 0}
+  _eventSubtractMana: {fileID: 0}
   _eventCardSelected: {fileID: 11400000, guid: aa095f96b175af94ca3c57fdbbdf041b, type: 2}
   _eventCardDeselected: {fileID: 11400000, guid: 27247fb6d6a7aca4abf87e388f572cb2, type: 2}
-  _eventSubtractMana: {fileID: 0}
+  _eventCardEffectActivated: {fileID: 0}
 --- !u!114 &2931778696461091016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,13 +648,15 @@ MonoBehaviour:
   _playerDeck: {fileID: 11400000, guid: b4e01120b3666474b83d6c6a13ea9004, type: 2}
   _selectedCard: {fileID: 11400000, guid: f32bf72b9df026e4b860eccea69c71ab, type: 2}
   _currentMana: {fileID: 11400000, guid: cce85405c96557e4e968dc2e92e7cb3b, type: 2}
+  _currentEnemyOnHover: {fileID: 11400000, guid: 12af3337d3bde934cb9726fb6e115297, type: 2}
   _eventDrawCards: {fileID: 11400000, guid: 2be9b5097bbd9754fadc83225d7507cf, type: 2}
   _eventDiscardCards: {fileID: 11400000, guid: 2594ee040a46e86448b9f6806aabe8ec, type: 2}
   _eventCardPointerDown: {fileID: 11400000, guid: aa095f96b175af94ca3c57fdbbdf041b, type: 2}
   _eventCardPointerUp: {fileID: 11400000, guid: 27247fb6d6a7aca4abf87e388f572cb2, type: 2}
+  _eventSubtractMana: {fileID: 11400000, guid: 2b96cd00edb49d4449569921d486618d, type: 2}
   _eventCardSelected: {fileID: 11400000, guid: 621e9c1180c0c1f4dba391af4d8f3e73, type: 2}
   _eventCardDeselected: {fileID: 11400000, guid: 5e5138c9616f46e468b288e9cc7a5848, type: 2}
-  _eventSubtractMana: {fileID: 11400000, guid: 2b96cd00edb49d4449569921d486618d, type: 2}
+  _eventCardEffectActivated: {fileID: 11400000, guid: f1fa7a3d2dfbccc4fa96dd048dacc3be, type: 2}
 --- !u!114 &6039335398152827468
 MonoBehaviour:
   m_ObjectHideFlags: 0
