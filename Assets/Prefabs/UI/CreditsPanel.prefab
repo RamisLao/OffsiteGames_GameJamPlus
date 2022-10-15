@@ -158,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 203.45
+      value: 801.937
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -264,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 203.45
+      value: 801.937
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -334,7 +334,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829604592390279994, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_text
-      value: Name - Role
+      value: Ramis Lao - Programmer
       objectReference: {fileID: 0}
     - target: {fileID: 2465201936994478343, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_Name
@@ -370,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 203.45
+      value: 801.937
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -542,7 +542,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829604592390279994, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_text
-      value: Name - Role
+      value: Angel Ornelas - Programmer
       objectReference: {fileID: 0}
     - target: {fileID: 2465201936994478343, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_Name
@@ -578,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 203.45
+      value: 801.937
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -648,7 +648,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829604592390279994, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_text
-      value: Name - Role
+      value: "Santiago Ba\xF1uelos - Designer"
       objectReference: {fileID: 0}
     - target: {fileID: 2465201936994478343, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_Name
@@ -684,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 203.45
+      value: 801.937
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -790,7 +790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 203.45
+      value: 801.937
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -860,7 +860,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829604592390279994, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_text
-      value: Name - Role
+      value: Jimena Fernandez - Artist
       objectReference: {fileID: 0}
     - target: {fileID: 2465201936994478343, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_Name
@@ -896,7 +896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 203.45
+      value: 801.937
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1002,7 +1002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 203.45
+      value: 801.937
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1072,7 +1072,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829604592390279994, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_text
-      value: Name - Role
+      value: David Klassen - Designer
       objectReference: {fileID: 0}
     - target: {fileID: 2465201936994478343, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_Name
@@ -1108,7 +1108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 203.45
+      value: 801.937
       objectReference: {fileID: 0}
     - target: {fileID: 8649501825695103815, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_SizeDelta.y
