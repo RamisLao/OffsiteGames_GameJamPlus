@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -1485,11 +1485,10 @@ TextureImporter:
       TilesDry_38: 1057372798
       TilesDry_51: 1742215252
       TilesDry_12: 262524105
-      TilesDry_46: -1988029185
+      TilesDry_49: -1632905568
       TilesDry_47: 1608015972
       TilesDry_26: 1363103851
       TilesDry_54: 1671591692
-      TilesDry_49: -1632905568
       TilesDry_8: 755250447
       TilesDry_16: 1965400276
       TilesDry_34: -979611726
@@ -1497,16 +1496,17 @@ TextureImporter:
       TilesDry_20: -418817191
       TilesDry_63: 1944032748
       TilesDry_13: 1908228944
-      TilesDry_28: -1507841470
       TilesDry_52: 1699360982
-      TilesDry_43: 1493960806
-      TilesDry_50: 924986695
       TilesDry_58: -1879206571
+      TilesDry_28: -1507841470
+      TilesDry_50: 924986695
+      TilesDry_62: 1639250124
+      TilesDry_43: 1493960806
       TilesDry_23: 277969369
+      TilesDry_46: -1988029185
       TilesDry_3: -677238857
       TilesDry_6: -1752805018
       TilesDry_53: 148731815
-      TilesDry_62: 1639250124
       TilesDry_35: 849290076
       TilesDry_42: -1975243015
       TilesDry_45: -1975867574
