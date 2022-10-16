@@ -270,8 +270,8 @@ MonoBehaviour:
   _focusDistance: {fileID: 2489337153923047112}
   _weight: 1
   _radius: 5
-  _eventOnCombatActivated: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
-  _eventOnCombatDeactivated: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
+  _eventTriggerPlayerMovementOn: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
+  _eventTriggerPlayerMovementOff: {fileID: 11400000, guid: b4edaf439b146b6458ed14c48df91464, type: 2}
 --- !u!114 &6102191462705624856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6254,8 +6254,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2dd33a4313599704aad1f660540cd1bf, type: 3}
   - {fileID: 8300000, guid: 7a2dd93dc9ca31b4285092b809b392c0, type: 3}
   _delaySteps: 0.5
-  _eventOnCombatActivated: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
-  _eventOnCombatDeactivated: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
+  _eventTriggerPlayerMovementOn: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
+  _eventTriggerPlayerMovementOff: {fileID: 11400000, guid: b4edaf439b146b6458ed14c48df91464, type: 2}
   _inputDirection: {fileID: 11400000, guid: d53b41f78cc7cd942bb7d8ab50dd9306, type: 2}
 --- !u!82 &6056976481802967186
 AudioSource:

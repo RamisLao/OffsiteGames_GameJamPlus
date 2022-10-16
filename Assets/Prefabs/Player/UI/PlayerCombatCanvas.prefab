@@ -139,7 +139,7 @@ MonoBehaviour:
   _currentPlayerDeck: {fileID: 11400000, guid: 5a8354324aa81e84f9737ca548730326, type: 2}
   _panel: {fileID: 4141806690607247630}
   _eventOpenCardSelectionPanel: {fileID: 11400000, guid: 023323e6b0a8bbf4090c17044b5e20d3, type: 2}
-  _eventTriggerPlayerMovementOff: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
+  _eventTriggerPlayerMovementOn: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
 --- !u!1001 &1853027943150885851
 PrefabInstance:
   m_ObjectHideFlags: 0
