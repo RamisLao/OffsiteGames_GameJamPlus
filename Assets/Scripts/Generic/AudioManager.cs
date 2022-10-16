@@ -40,8 +40,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        _eventOnCombatActivated.OnEventRaised += BattleMusic;
-        _eventOnCombatDeactivated.OnEventRaised += OverworldMusic;
+        if (_eventOnCombatActivated != null) _eventOnCombatActivated.OnEventRaised += BattleMusic;
+        if (_eventOnCombatDeactivated != null) _eventOnCombatDeactivated.OnEventRaised += OverworldMusic;
     }
 
     public void OverworldMusic()
