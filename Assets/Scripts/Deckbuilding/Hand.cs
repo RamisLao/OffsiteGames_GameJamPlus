@@ -15,7 +15,8 @@ public class Hand : MonoBehaviour
     [SerializeField] private Card _cardPrefab;
 
     [Title("Variables")]
-    [SerializeField] private RuntimeSetCardData _playerDeck;
+    [SerializeField] private RuntimeSetCardData _playerStartingDeck;
+    [SerializeField] private RuntimeSetCardData _playerInGameDeck;
     [SerializeField] private VariableCard _selectedCard;
     [SerializeField] private VariableInt _currentMana;
     [SerializeField] private VariableEnemyAI _currentEnemyOnHover;
@@ -50,6 +51,9 @@ public class Hand : MonoBehaviour
         _eventDrawCards.OnEventRaised += InitializeHand;
         _eventDiscardCards.OnEventRaised += DiscardHand;
 
+        _playerInGameDeck.Clear();
+        foreach (CardData cd in _playerStartingDeck.Items) _playerInGameDeck.Add(cd);
+
         InitializePiles();
     }
 
@@ -67,8 +71,8 @@ public class Hand : MonoBehaviour
         _drawPile = new();
         _discardPile = new();
 
-        _playerDeck.Shuffle();
-        foreach (CardData c in _playerDeck.Items)
+        _playerStartingDeck.Shuffle();
+        foreach (CardData c in _playerStartingDeck.Items)
         {
             AddCardToDrawPile(c);
         }
