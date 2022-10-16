@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5550129003976654423}
   - component: {fileID: 5550129003976654422}
-  - component: {fileID: 5588625858052339907}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -53,19 +52,6 @@ MonoBehaviour:
   _eventCardSelected: {fileID: 11400000, guid: 621e9c1180c0c1f4dba391af4d8f3e73, type: 2}
   _eventCardDeselected: {fileID: 11400000, guid: 5e5138c9616f46e468b288e9cc7a5848, type: 2}
   _eventCardEffectHasBeenActivated: {fileID: 11400000, guid: f1fa7a3d2dfbccc4fa96dd048dacc3be, type: 2}
-  _eventEnemyIsDead: {fileID: 11400000, guid: 9c5f4c2292537df4aa54e4719a7de2ab, type: 2}
+  _eventEnemyIsDead: {fileID: 11400000, guid: ba32ac21ac8639d4fb9af0d76b1c74b4, type: 2}
   _eventEndEnemyTurn: {fileID: 11400000, guid: 52ed8178edf87914b8f7750ea22417dd, type: 2}
-  _eventApplyCardEffect: {fileID: 11400000, guid: 0658fe44e9cd6b04c9b0947426892619, type: 2}
---- !u!114 &5588625858052339907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5550129003976654425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b128e915de26c745bd9ea5752d0e412, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _eventApplyCardEffect: {fileID: 11400000, guid: 0658fe44e9cd6b04c9b0947426892619, type: 2}

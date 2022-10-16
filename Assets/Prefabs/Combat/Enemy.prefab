@@ -51,6 +51,9 @@ MonoBehaviour:
   _currentEnemiesInBattle: {fileID: 11400000, guid: 4e4e65be840128d4aa0317769370b9df, type: 2}
   _currentEnemyOnHover: {fileID: 11400000, guid: 12af3337d3bde934cb9726fb6e115297, type: 2}
   _stunImage: {fileID: 5572378169963226632}
+  _enemyDeck: {fileID: 11400000, guid: bad254376fd53fa4ea747438c8b68713, type: 2}
+  _variablePlayer: {fileID: 11400000, guid: 740d9c7c024de92419f972471ea65be6, type: 2}
+  _eventApplyCardEffect: {fileID: 11400000, guid: 0658fe44e9cd6b04c9b0947426892619, type: 2}
 --- !u!212 &1963460005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -139,7 +142,7 @@ MonoBehaviour:
   _currentAmountOfSaplings: 0
   _currentExposedPoints: 0
   _currentProtectedPoints: 0
-  _eventHealthIsZero: {fileID: 11400000, guid: 9c5f4c2292537df4aa54e4719a7de2ab, type: 2}
+  _eventHealthIsZero: {fileID: 11400000, guid: ba32ac21ac8639d4fb9af0d76b1c74b4, type: 2}
   _healthBar: {fileID: 5479171874188006426}
   _healthText: {fileID: 7660149547702365488}
   _blockText: {fileID: 6564950945930993967}

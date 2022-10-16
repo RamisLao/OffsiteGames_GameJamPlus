@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7d93ee9cd8b0cf4aa6e2d38bd4ef249, type: 3}
-  m_Name: V_Agent_PlayerCombat
+  m_Script: {fileID: 11500000, guid: 935c74ad2db88ba4e99ea03fde9d7751, type: 3}
+  m_Name: VariableInt_TutorialRoom
   m_EditorClassIdentifier: 
-  _value: {fileID: 0}
+  _value: 0
   OnChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
     [SerializeField] [ReadOnly] protected int _currentProtectedPoints = 0;
 
     [Title("Broadcasting on")]
-    [SerializeField] private EnemyAIEventChannelSO _eventHealthIsZero;
+    [SerializeField] protected AgentEventChannelSO _eventHealthIsZero;
 
     public virtual void InitHealth()
     {

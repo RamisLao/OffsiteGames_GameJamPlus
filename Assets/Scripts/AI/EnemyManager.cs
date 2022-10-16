@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private CardEventChannelSO _eventCardSelected;
     [SerializeField] private CardEventChannelSO _eventCardDeselected;
     [SerializeField] private CardEventChannelSO _eventCardEffectHasBeenActivated;
-    [SerializeField] private EnemyAIEventChannelSO _eventEnemyIsDead;
+    [SerializeField] private AgentEventChannelSO _eventEnemyIsDead;
 
     [Title("Broadcasting on")]
     [SerializeField] private VoidEventChannelSO _eventEndEnemyTurn;
@@ -116,8 +116,9 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    private void EnemyHasDied(EnemyAI enemy)
+    private void EnemyHasDied(Agent agent)
     {
-        enemy.Kill();
+        EnemyAI ai = (EnemyAI)agent;
+        ai.Kill();
     }
 }

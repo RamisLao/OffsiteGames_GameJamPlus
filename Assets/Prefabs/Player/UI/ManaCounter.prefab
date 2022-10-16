@@ -148,5 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19aca957df9a4dc4fb84d23a6f82624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentMana: {fileID: 11400000, guid: cce85405c96557e4e968dc2e92e7cb3b, type: 2}
-  _eventManaChanged: {fileID: 11400000, guid: d5934eef34841ca44a14421aafca0d92, type: 2}
+  _variable: {fileID: 11400000, guid: cce85405c96557e4e968dc2e92e7cb3b, type: 2}
+  _prefix: 'M: '
+  _suffix: 
