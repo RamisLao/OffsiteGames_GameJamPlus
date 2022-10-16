@@ -643,12 +643,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _palmTree: {fileID: 819244256}
-  _isDead: 0
   _focusDistance: 15
   _cameraTarget: {fileID: 11400000, guid: e2c5e71abf9976640963287b566b10db, type: 2}
   _cameraDistance: {fileID: 11400000, guid: d2fec1f14e399d845b45a2b85783286f, type: 2}
-  _eventOnCombat: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
   _room: {fileID: 11400000, guid: bca05efa98d21b7468f4538d518fca3c, type: 2}
+  _enemiesToAddToCombat: []
+  _eventOnCombatActivated: {fileID: 0}
+  _eventAddEnemyToCombat: {fileID: 0}
 --- !u!61 &265336646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1269,12 +1270,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _palmTree: {fileID: 1331795596}
-  _isDead: 0
   _focusDistance: 10
   _cameraTarget: {fileID: 11400000, guid: e2c5e71abf9976640963287b566b10db, type: 2}
   _cameraDistance: {fileID: 11400000, guid: d2fec1f14e399d845b45a2b85783286f, type: 2}
-  _eventOnCombat: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
   _room: {fileID: 11400000, guid: 5676ca0d2c79b4c46a8e5b0c8064b6e4, type: 2}
+  _enemiesToAddToCombat: []
+  _eventOnCombatActivated: {fileID: 0}
+  _eventAddEnemyToCombat: {fileID: 0}
 --- !u!61 &504972829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2539,12 +2541,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _palmTree: {fileID: 96015884}
-  _isDead: 0
   _focusDistance: 10
   _cameraTarget: {fileID: 11400000, guid: e2c5e71abf9976640963287b566b10db, type: 2}
   _cameraDistance: {fileID: 11400000, guid: d2fec1f14e399d845b45a2b85783286f, type: 2}
-  _eventOnCombat: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
   _room: {fileID: 11400000, guid: 5676ca0d2c79b4c46a8e5b0c8064b6e4, type: 2}
+  _enemiesToAddToCombat: []
+  _eventOnCombatActivated: {fileID: 0}
+  _eventAddEnemyToCombat: {fileID: 0}
 --- !u!61 &1221559000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3105,12 +3108,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _palmTree: {fileID: 1851010481}
-  _isDead: 0
   _focusDistance: 10
   _cameraTarget: {fileID: 11400000, guid: e2c5e71abf9976640963287b566b10db, type: 2}
   _cameraDistance: {fileID: 11400000, guid: d2fec1f14e399d845b45a2b85783286f, type: 2}
-  _eventOnCombat: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
   _room: {fileID: 11400000, guid: bca05efa98d21b7468f4538d518fca3c, type: 2}
+  _enemiesToAddToCombat: []
+  _eventOnCombatActivated: {fileID: 0}
+  _eventAddEnemyToCombat: {fileID: 0}
 --- !u!61 &1688910173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3286,12 +3290,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _palmTree: {fileID: 1448311010}
-  _isDead: 0
   _focusDistance: 10
   _cameraTarget: {fileID: 11400000, guid: e2c5e71abf9976640963287b566b10db, type: 2}
   _cameraDistance: {fileID: 11400000, guid: d2fec1f14e399d845b45a2b85783286f, type: 2}
-  _eventOnCombat: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
   _room: {fileID: 11400000, guid: bca05efa98d21b7468f4538d518fca3c, type: 2}
+  _enemiesToAddToCombat: []
+  _eventOnCombatActivated: {fileID: 0}
+  _eventAddEnemyToCombat: {fileID: 0}
 --- !u!61 &1728211740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3669,12 +3674,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _palmTree: {fileID: 1116411923}
-  _isDead: 0
   _focusDistance: 10
   _cameraTarget: {fileID: 11400000, guid: e2c5e71abf9976640963287b566b10db, type: 2}
   _cameraDistance: {fileID: 11400000, guid: d2fec1f14e399d845b45a2b85783286f, type: 2}
-  _eventOnCombat: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
   _room: {fileID: 11400000, guid: 5676ca0d2c79b4c46a8e5b0c8064b6e4, type: 2}
+  _enemiesToAddToCombat: []
+  _eventOnCombatActivated: {fileID: 0}
+  _eventAddEnemyToCombat: {fileID: 0}
 --- !u!61 &1950770635
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4154,6 +4160,7 @@ GameObject:
   - component: {fileID: 1630288444043794120}
   - component: {fileID: 1630288444043794124}
   - component: {fileID: 1630288444043794123}
+  - component: {fileID: 1630288444043794125}
   - component: {fileID: 1630288444043794122}
   - component: {fileID: 1630288444043794121}
   m_Layer: 0
@@ -4274,7 +4281,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
-  _eventOnCombat: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
+  _footSteps: []
+  _eventOnCombatActivated: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
+  _eventOnCombatDeactivated: {fileID: 11400000, guid: 165671aeb86208040b37e754c1d09691, type: 2}
+  _inputDirection: {fileID: 11400000, guid: d53b41f78cc7cd942bb7d8ab50dd9306, type: 2}
 --- !u!114 &1630288444043794122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4342,6 +4352,102 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!82 &1630288444043794125
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258823630154446707}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1838563778506467258
 GameObject:
   m_ObjectHideFlags: 0
@@ -4643,8 +4749,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2563928842204158721}
   - component: {fileID: 2563928842204158720}
+  - component: {fileID: 2563928842204158727}
   - component: {fileID: 2563928842204158725}
   - component: {fileID: 2563928842204158724}
+  - component: {fileID: 2563928842204158726}
   m_Layer: 0
   m_Name: CM vcam
   m_TagString: Untagged
@@ -4672,7 +4780,8 @@ MonoBehaviour:
   _focusDistance: {fileID: 305879443}
   _weight: 1
   _radius: 5
-  _eventOnCombat: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
+  _eventOnCombatActivated: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
+  _eventOnCombatDeactivated: {fileID: 11400000, guid: 165671aeb86208040b37e754c1d09691, type: 2}
 --- !u!114 &2563928842204158725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4695,6 +4804,37 @@ MonoBehaviour:
   - target: {fileID: 305879443}
     weight: 1
     radius: 1
+--- !u!114 &2563928842204158726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2563928842204158723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420dc41d53082384895758bc0ba039cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraOffset: {fileID: 2563928842204158727}
+  _directionToMove: {fileID: 11400000, guid: d53b41f78cc7cd942bb7d8ab50dd9306, type: 2}
+  _scaleModifier: 4
+  _speed: 4
+--- !u!114 &2563928842204158727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2563928842204158723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d70cc20219cd84593f67d248eafe36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_ApplyAfter: 1
+  m_PreserveComposition: 0
 --- !u!1 &2563928842554528552
 GameObject:
   m_ObjectHideFlags: 3
@@ -4744,9 +4884,9 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 15
   m_LookaheadIgnoreY: 0
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5

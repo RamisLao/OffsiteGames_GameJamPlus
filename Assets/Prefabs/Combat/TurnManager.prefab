@@ -45,16 +45,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingsCombat: {fileID: 11400000, guid: 9c9008f60b2d7854294ad9039179a5aa, type: 2}
-  _eventOnCombatActivated: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
-  _eventPlayerTurnEnded: {fileID: 11400000, guid: 9c615fa23d2507b4a80fe4af2b11fb42, type: 2}
-  _eventEnemyTurnEnded: {fileID: 11400000, guid: 52ed8178edf87914b8f7750ea22417dd, type: 2}
+  _eventOnCombatActivated: {fileID: 11400000, guid: ee2507bbd657ef14fb1a9f4bb6ecb192, type: 2}
+  _eventPlayerButtonTurnEndPressed: {fileID: 11400000, guid: 9c615fa23d2507b4a80fe4af2b11fb42, type: 2}
+  _eventEnemiesHavePerformedActions: {fileID: 11400000, guid: 52ed8178edf87914b8f7750ea22417dd, type: 2}
   _eventAllEnemiesDead: {fileID: 11400000, guid: a6a11f5c380fc2e4e95b61a34300fe09, type: 2}
-  _eventCombatStarted: {fileID: 11400000, guid: 517b5de42ed729f44a8cc2e423aeab0e, type: 2}
-  _eventRemoveLeftOverBlock: {fileID: 0}
+  _eventActivateCombatCanvas: {fileID: 11400000, guid: e48dd6b116fd52540ba4bfd59a97000b, type: 2}
+  _eventSetupEnemyManager: {fileID: 11400000, guid: 6217b19653fb65646ac174334b0ae43a, type: 2}
   _eventInitPlayerHealth: {fileID: 11400000, guid: 229f1a945237d4f47b2a352945eedd3f, type: 2}
   _eventDrawCards: {fileID: 11400000, guid: 2be9b5097bbd9754fadc83225d7507cf, type: 2}
   _eventGainMana: {fileID: 11400000, guid: de0e3e5d296cb5a4b8ef12b6ece5e288, type: 2}
   _eventDiscardHand: {fileID: 11400000, guid: 2594ee040a46e86448b9f6806aabe8ec, type: 2}
-  _eventPrepareEnemyTurn: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
-  _eventStartEnemyTurn: {fileID: 11400000, guid: 9aad5b883f6ef8d4d9a7ed5dd488cb09, type: 2}
+  _eventPlayerTurnPreparation: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
+  _eventPlayerTurnCleanup: {fileID: 11400000, guid: fa27ead3d03d00045817d0c0b8f60f3e, type: 2}
+  _eventEnemyTurnPreparation: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
+  _eventEnemyTurnRun: {fileID: 11400000, guid: 9aad5b883f6ef8d4d9a7ed5dd488cb09, type: 2}
+  _eventDeactivateCombatCanvas: {fileID: 11400000, guid: 62fcc18cc76b1524e93d2757d86841c0, type: 2}
   _eventOnCombatDeactivated: {fileID: 11400000, guid: 165671aeb86208040b37e754c1d09691, type: 2}
