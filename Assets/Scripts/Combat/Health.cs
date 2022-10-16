@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [Title("Variables")]
-    [SerializeField] private VariableInt _maxHealth;
+    [SerializeField] protected VariableInt _maxHealth;
 
     [Title("Debugging")]
     [SerializeField] private bool _isLocal = true;
@@ -23,59 +23,37 @@ public class Health : MonoBehaviour
         }
     }
 
-    [SerializeField] [ReadOnly] private int _currentBlockPoints = 0;
-    [SerializeField] [ReadOnly] private int _currentAmountOfSaplings = 0;
-    [SerializeField] [ReadOnly] private int _currentExposedPoints = 0;
-    [SerializeField] [ReadOnly] private int _currentProtectedPoints = 0;
-
-    [Title("References")]
-    [SerializeField] private Slider _healthBar;
-    [SerializeField] private TMPro.TextMeshProUGUI _healthText;
-    [SerializeField] private TMPro.TextMeshProUGUI _blockText;
-    [SerializeField] private TMPro.TextMeshProUGUI _sapplingText;
-    [SerializeField] private TMPro.TextMeshProUGUI _exposedText;
-    [SerializeField] private TMPro.TextMeshProUGUI _protectedText;
+    [SerializeField] [ReadOnly] protected int _currentBlockPoints = 0;
+    [SerializeField] [ReadOnly] protected int _currentAmountOfSaplings = 0;
+    [SerializeField] [ReadOnly] protected int _currentExposedPoints = 0;
+    [SerializeField] [ReadOnly] protected int _currentProtectedPoints = 0;
 
     [Title("Broadcasting on")]
-    [SerializeField] private EnemyAIEventChannelSO _eventEnemyIsDead;
+    [SerializeField] protected AgentEventChannelSO _eventHealthIsZero;
 
-    public void InitHealth()
+    public virtual void InitHealth()
     {
         CurrentHealth = _maxHealth.Value;
-        _healthBar.wholeNumbers = true;
-        _healthBar.minValue = 0;
-        _healthBar.maxValue = _maxHealth.Value;
-        UpdateHealthBar();
-        UpdateBlockText();
-        UpdateSapplingText();
-        UpdateExposedText();
-        UpdateProtectedText();
     }
 
-    private void UpdateHealthBar()
+    protected virtual void UpdateHealthBar()
     {
-        _healthBar.value = CurrentHealth;
-        _healthText.text = $"{CurrentHealth}/{_maxHealth.Value}";
     }
 
-    private void UpdateBlockText()
+    protected virtual void UpdateBlockText()
     {
-        _blockText.text = $"B: {_currentBlockPoints}";
-    }
-    
-    private void UpdateSapplingText()
-    {
-        _sapplingText.text = $"S: {_currentAmountOfSaplings}";
     }
 
-    private void UpdateExposedText()
+    protected virtual void UpdateSapplingText()
     {
-        _exposedText.text = $"E: {_currentExposedPoints}";
     }
 
-    private void UpdateProtectedText()
+    protected virtual void UpdateExposedText()
     {
-        _protectedText.text = $"P: {_currentProtectedPoints}";
+    }
+
+    protected virtual void UpdateProtectedText()
+    {
     }
 
     public void SubtractHealth(int toSubtract)
@@ -156,6 +134,6 @@ public class Health : MonoBehaviour
 
     protected virtual void HealthReachedZero()
     {
-        _eventEnemyIsDead.RaiseEvent(GetComponent<EnemyAI>());
+        _eventHealthIsZero.RaiseEvent(GetComponent<EnemyAI>());
     }
 }

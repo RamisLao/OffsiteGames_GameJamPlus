@@ -15,7 +15,7 @@ public class Variable<T> : ScriptableObject
         set
         {
             _value = value;
-            OnChanged.Invoke(_value);
+            if (OnChanged != null) OnChanged.Invoke(_value);
         }
     }
 

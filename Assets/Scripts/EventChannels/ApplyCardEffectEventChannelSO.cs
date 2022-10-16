@@ -6,11 +6,11 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "Events/Apply Card Effect Event Channel")]
 public class ApplyCardEffectEventChannelSO : ScriptableObject
 {
-	public UnityAction<CardData, EnemyAI> OnEventRaised;
+	public UnityAction<CardData, Agent> OnEventRaised;
 
-	public void RaiseEvent(CardData cardData, EnemyAI enemy)
+	public void RaiseEvent(CardData cardData, Agent agent)
 	{
 		if (OnEventRaised != null)
-			OnEventRaised.Invoke(cardData, enemy);
+			OnEventRaised.Invoke(cardData, agent);
 	}
 }

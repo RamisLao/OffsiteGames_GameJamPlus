@@ -19,6 +19,7 @@ public class Hand : MonoBehaviour
     [SerializeField] private VariableCard _selectedCard;
     [SerializeField] private VariableInt _currentMana;
     [SerializeField] private VariableEnemyAI _currentEnemyOnHover;
+    [SerializeField] private VariablePlayerCombat _player;
 
     [Title("Listening on")]
     [SerializeField] private VoidEventChannelSO _eventDrawCards;
@@ -30,7 +31,8 @@ public class Hand : MonoBehaviour
     [SerializeField] private IntEventChannelSO _eventSubtractMana;
     [SerializeField] private CardEventChannelSO _eventCardSelected;
     [SerializeField] private CardEventChannelSO _eventCardDeselected;
-    [SerializeField] private CardEventChannelSO _eventCardEffectActivated;
+    [SerializeField] private CardEventChannelSO _eventCardEffectActivatedForEnemies;
+    [SerializeField] private ApplyCardEffectEventChannelSO _eventApplyCardEffect;
 
     private Vector2 _selectedCardFormerPosition;
     private List<Card> _currentCards;
@@ -39,7 +41,6 @@ public class Hand : MonoBehaviour
 
     private void Awake()
     {
-        _selectedCard.Value = null;
         _currentCards = new();
         _eventCardPointerDown.OnEventRaised += MaybeSelectCard;
         _eventCardPointerUp.OnEventRaised += MaybeReleaseCard;
@@ -144,14 +145,16 @@ public class Hand : MonoBehaviour
         {
             if (!_releaseLimits.IsMouseInsideLimits())
             {
-                if (!_selectedCard.Value.Data.TargetsAll &&
-                    _currentEnemyOnHover.IsEmpty)
+                if (_selectedCard.Value.Data.AppliesToSelf ||
+                    _selectedCard.Value.Data.TargetsAll ||
+                    !_currentEnemyOnHover.IsEmpty)
+                {
+                    ActivateCardEffect(card);
+                }
+                else
                 {
                     ReturnCardToHand(card);
-                    return;
                 }
-
-                ActivateCardEffect(card);
             }
             else
             {
@@ -168,7 +171,11 @@ public class Hand : MonoBehaviour
         Destroy(_selectedCard.Value.gameObject);
         _selectedCard.Value = null;
         AddCardToHand();
-        _eventCardEffectActivated.RaiseEvent(card);
+
+        if (card.Data.AppliesToSelf)
+            _eventApplyCardEffect.RaiseEvent(card.Data, _player.Value);
+        else 
+            _eventCardEffectActivatedForEnemies.RaiseEvent(card);
     }
 
     private void ReturnCardToHand(Card card)

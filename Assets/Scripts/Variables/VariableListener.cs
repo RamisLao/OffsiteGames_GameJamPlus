@@ -16,7 +16,7 @@ public class VariableListener<T> : MonoBehaviour
 
     private void OnDisable()
     {
-        _variable.OnChanged.RemoveListener(OnVariableChanged);
+        _variable.OnChanged.AddListener(OnVariableChanged);
     }
 
     protected virtual void OnVariableChanged(T value)

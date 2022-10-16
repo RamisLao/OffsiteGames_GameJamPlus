@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyAI : MonoBehaviour
+public abstract class EnemyAI : Agent
 {
     [Title("Variables")]
     [SerializeField] private RuntimeSetEnemyAI _currentEnemiesInBattle;
@@ -18,8 +18,6 @@ public abstract class EnemyAI : MonoBehaviour
     {
         set { _onHoverIsActive = value; }
     }
-
-    private bool _isStunned = false;
 
     protected virtual void Awake()   
     {
@@ -45,9 +43,9 @@ public abstract class EnemyAI : MonoBehaviour
 
     public void MaybePerformActions()
     {
-        if (_isStunned)
+        if (IsStunned)
         {
-            _isStunned = false;
+            IsStunned = false;
             UpdateStunImage();
             return;
         }
@@ -55,15 +53,16 @@ public abstract class EnemyAI : MonoBehaviour
         PerformActions();
     }
 
-    public void ApplyStun()
+    public override void ApplyStun()
     {
-        _isStunned = true;
+        base.ApplyStun();
+
         UpdateStunImage();
     }
 
     private void UpdateStunImage()
     {
-        if (_isStunned) _stunImage.SetActive(true);
+        if (IsStunned) _stunImage.SetActive(true);
         else _stunImage.SetActive(false);
     }
 
