@@ -63,6 +63,19 @@ public class PlayerMovement : MonoBehaviour
     private void TakeControlOfPlayer(Vector3 newPos)
     {
         EnableMovement();
+        StartCoroutine(MovePlayerTowardsEndDestination(newPos));
+    }
+
+    private IEnumerator MovePlayerTowardsEndDestination(Vector3 newPos)
+    {
+        Vector2 newPos2 = new Vector2(newPos.x, newPos.y);
+        while (Vector2.Distance(_rbody.position, newPos2) > 0.25f)
+        {
+            Vector2 direction = (newPos2 - _rbody.position).normalized;
+            _playerInput = direction;
+            _inputDirection.Value = _playerInput;
+            yield return null;
+        }
     }
 
     /// <summary>
