@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
 {
     [Title("Enemy Settings")]
     [SerializeField] private PalmTreeGroves _palmTree;
-    public bool _isDead;
 
     [Title("Camera Settings")]
     [SerializeField] private float _focusDistance;
@@ -20,14 +19,7 @@ public class Enemy : MonoBehaviour
     [Title("Broadcasting on")]
     [SerializeField] private VoidEventChannelSO _eventOnCombatActivated;
     [SerializeField] private EnemyAIEventChannelSO _eventAddEnemyToCombat;
-
-    private void Update()
-    {
-        if (_isDead)
-        {
-            Dead();
-        }
-    }
+    private bool _isDead;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,18 +33,21 @@ public class Enemy : MonoBehaviour
     {
         _cameraTarget.Value = transform;
         _cameraDistance.Value = _focusDistance;
-        _eventOnCombatActivated.RaiseEvent();
         _eventAddEnemyToCombat.RaiseEvent(GetComponent<EnemyAI>());
+        StartCoroutine(CallOnCombatActivated());
     }
 
-    private void Dead()
+    private IEnumerator CallOnCombatActivated()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _eventOnCombatActivated.RaiseEvent();
+    }
+
+    public void ActivateOnDeadEffects()
     {
         _palmTree.CleanPalm();
-        _eventOnCombatActivated.RaiseEvent();
 
         if (_room != null)
             _room.Value += 1;
-
-        Destroy(gameObject);
     }
 }

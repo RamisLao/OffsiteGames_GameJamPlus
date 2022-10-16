@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _settingsCombat: {fileID: 11400000, guid: 9c9008f60b2d7854294ad9039179a5aa, type: 2}
   _eventOnCombatActivated: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
-  _eventOnCombatDeactivated: {fileID: 11400000, guid: 165671aeb86208040b37e754c1d09691, type: 2}
   _eventPlayerTurnEnded: {fileID: 11400000, guid: 9c615fa23d2507b4a80fe4af2b11fb42, type: 2}
   _eventEnemyTurnEnded: {fileID: 11400000, guid: 52ed8178edf87914b8f7750ea22417dd, type: 2}
+  _eventAllEnemiesDead: {fileID: 11400000, guid: a6a11f5c380fc2e4e95b61a34300fe09, type: 2}
   _eventCombatStarted: {fileID: 11400000, guid: 517b5de42ed729f44a8cc2e423aeab0e, type: 2}
   _eventRemoveLeftOverBlock: {fileID: 0}
   _eventInitPlayerHealth: {fileID: 11400000, guid: 229f1a945237d4f47b2a352945eedd3f, type: 2}
@@ -57,3 +57,4 @@ MonoBehaviour:
   _eventDiscardHand: {fileID: 11400000, guid: 2594ee040a46e86448b9f6806aabe8ec, type: 2}
   _eventPrepareEnemyTurn: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
   _eventStartEnemyTurn: {fileID: 11400000, guid: 9aad5b883f6ef8d4d9a7ed5dd488cb09, type: 2}
+  _eventOnCombatDeactivated: {fileID: 11400000, guid: 165671aeb86208040b37e754c1d09691, type: 2}
