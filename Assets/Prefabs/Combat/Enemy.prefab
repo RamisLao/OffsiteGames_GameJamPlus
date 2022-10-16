@@ -139,7 +139,7 @@ MonoBehaviour:
   _currentAmountOfSaplings: 0
   _currentExposedPoints: 0
   _currentProtectedPoints: 0
-  _eventHealthIsZero: {fileID: 11400000, guid: 9c5f4c2292537df4aa54e4719a7de2ab, type: 2}
+  _eventHealthIsZero: {fileID: 11400000, guid: ba32ac21ac8639d4fb9af0d76b1c74b4, type: 2}
   _healthBar: {fileID: 5479171874188006426}
   _healthText: {fileID: 7660149547702365488}
   _blockText: {fileID: 6564950945930993967}

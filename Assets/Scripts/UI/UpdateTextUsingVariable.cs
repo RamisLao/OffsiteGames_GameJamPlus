@@ -6,17 +6,19 @@ using UnityEngine;
 public class UpdateTextUsingVariable : MonoBehaviour
 {
     [SerializeField] private VariableInt _variable;
+    [SerializeField] protected string _prefix;
+    [SerializeField] protected string _suffix;
 
-    private TMPro.TextMeshProUGUI _text;
+    protected TMPro.TextMeshProUGUI _text;
 
     private void Awake()
     {
         _text = GetComponent<TMPro.TextMeshProUGUI>();
-        _variable.OnChanged += UpdateText;
+        _variable.OnChanged.AddListener(UpdateText);
     }
 
-    private void UpdateText(int value)
+    protected virtual void UpdateText(int value)
     {
-        _text.text = $"{value}";
+        _text.text = $"{_prefix}{value}{_suffix}";
     }
 }

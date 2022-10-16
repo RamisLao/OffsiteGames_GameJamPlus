@@ -19,7 +19,7 @@ public class Hand : MonoBehaviour
     [SerializeField] private VariableCard _selectedCard;
     [SerializeField] private VariableInt _currentMana;
     [SerializeField] private VariableEnemyAI _currentEnemyOnHover;
-    [SerializeField] private VariableAgent _player;
+    [SerializeField] private VariablePlayerCombat _player;
 
     [Title("Listening on")]
     [SerializeField] private VoidEventChannelSO _eventDrawCards;
@@ -41,7 +41,6 @@ public class Hand : MonoBehaviour
 
     private void Awake()
     {
-        _selectedCard.Value = null;
         _currentCards = new();
         _eventCardPointerDown.OnEventRaised += MaybeSelectCard;
         _eventCardPointerUp.OnEventRaised += MaybeReleaseCard;
@@ -146,14 +145,16 @@ public class Hand : MonoBehaviour
         {
             if (!_releaseLimits.IsMouseInsideLimits())
             {
-                if (!_selectedCard.Value.Data.TargetsAll &&
-                    _currentEnemyOnHover.IsEmpty)
+                if (_selectedCard.Value.Data.AppliesToSelf ||
+                    _selectedCard.Value.Data.TargetsAll ||
+                    !_currentEnemyOnHover.IsEmpty)
+                {
+                    ActivateCardEffect(card);
+                }
+                else
                 {
                     ReturnCardToHand(card);
-                    return;
                 }
-
-                ActivateCardEffect(card);
             }
             else
             {

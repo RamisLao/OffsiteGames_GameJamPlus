@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7198484146098427389}
   - component: {fileID: 590645472971126463}
   - component: {fileID: 718814041}
-  - component: {fileID: 4326721576830340572}
+  - component: {fileID: 7284802721376054597}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -54,16 +54,12 @@ MonoBehaviour:
   _currentAmountOfSaplings: 0
   _currentExposedPoints: 0
   _currentProtectedPoints: 0
-  _healthBar: {fileID: 0}
-  _healthText: {fileID: 0}
-  _blockText: {fileID: 0}
-  _sapplingText: {fileID: 0}
-  _exposedText: {fileID: 0}
-  _protectedText: {fileID: 0}
-  _eventHealthIsZero: {fileID: 0}
-  _eventInitHealth: {fileID: 0}
-  _eventSubtractHealth: {fileID: 0}
-  _eventHealthReachedZero: {fileID: 0}
+  _eventHealthIsZero: {fileID: 11400000, guid: 93d7bdcabe02438488af76d5481f1ca7, type: 2}
+  _variablePlayerBlock: {fileID: 11400000, guid: 5baf3281002049d41b15fdbd40024d07, type: 2}
+  _variablePlayerSapplings: {fileID: 11400000, guid: 6af4109260da4b149907efb905fb14e4, type: 2}
+  _variablePlayerExposed: {fileID: 11400000, guid: 77b99f15ced590d4884ff9c21922a52b, type: 2}
+  _variablePlayerProtected: {fileID: 11400000, guid: 43ebd61d90447a1489e87bb9078ccc72, type: 2}
+  _eventInitHealth: {fileID: 11400000, guid: 229f1a945237d4f47b2a352945eedd3f, type: 2}
 --- !u!114 &718814041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d68fe2b6f9b7a24b9989365d88a130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4326721576830340572
+--- !u!114 &7284802721376054597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,9 +81,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7198484146098427379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f657214b852eb446942fc841a790230, type: 3}
+  m_Script: {fileID: 11500000, guid: 96fcda9fb2c248d49ae0505cdc16ee90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _raiseEvent: 2
-  _variable: {fileID: 11400000, guid: e3882ffcd0db9704e972adfa9a40451c, type: 2}
-  _t: {fileID: 0}
+  _variable: {fileID: 11400000, guid: 740d9c7c024de92419f972471ea65be6, type: 2}
+  _t: {fileID: 718814041}
