@@ -29,7 +29,6 @@ public class EnemyAIBasic : EnemyAI
     [SerializeField] private TMPro.TextMeshProUGUI _damageText;
 
     protected CardData _actionToPerform;
-    public UnityEvent OnAttack;
 
     public override void SelectActionsToPerform()
     {

@@ -27,7 +27,9 @@ public abstract class EnemyAI : Agent
         set { _onHoverIsActive = value; }
     }
 
-    public UnityEvent OnDeath;
+    [FoldoutGroup("Events")] public UnityEvent OnStunned;
+    [FoldoutGroup("Events")] public UnityEvent OnDeath;
+    [FoldoutGroup("Events")] public UnityEvent OnAttack;
 
     protected virtual void Awake()   
     {
@@ -75,6 +77,7 @@ public abstract class EnemyAI : Agent
     {
         base.ApplyStun();
 
+        OnStunned.Invoke();
         UpdateStunImage();
     }
 

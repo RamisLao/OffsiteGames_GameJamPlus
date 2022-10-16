@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -30,6 +31,13 @@ public class Health : MonoBehaviour
 
     [Title("Broadcasting on")]
     [SerializeField] protected AgentEventChannelSO _eventHealthIsZero;
+
+    [FoldoutGroup("Events")] public UnityEvent OnHealed;
+    [FoldoutGroup("Events")] public UnityEvent OnAddBlock;
+    [FoldoutGroup("Events")] public UnityEvent OnAddSappling;
+    [FoldoutGroup("Events")] public UnityEvent OnSapplingDamage;
+    [FoldoutGroup("Events")] public UnityEvent OnAddExposed;
+    [FoldoutGroup("Events")] public UnityEvent OnAddProtected;
 
     public virtual void InitHealth()
     {

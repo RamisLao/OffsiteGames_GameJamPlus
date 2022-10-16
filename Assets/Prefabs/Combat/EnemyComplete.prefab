@@ -35,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6442084781209597103}
+  - {fileID: 4175753153528764160}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124,6 +125,9 @@ MonoBehaviour:
   _stunImage: {fileID: 3333394369282351536}
   _canvas: {fileID: 8231366434835020628}
   _eventOnAddEnemyToCombat: {fileID: 11400000, guid: 97e0c2f7a2a85cb4d9d02f34abe9fae6, type: 2}
+  OnStunned:
+    m_PersistentCalls:
+      m_Calls: []
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -137,6 +141,21 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Die
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 830397414}
+        m_TargetAssemblyTypeName: AnimatorController, Assembly-CSharp
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Attack
           m_BoolArgument: 0
         m_CallState: 2
   _eventApplyCardEffect: {fileID: 11400000, guid: 0658fe44e9cd6b04c9b0947426892619, type: 2}
@@ -153,21 +172,6 @@ MonoBehaviour:
   _sapplingText: {fileID: 415033931607374604}
   _blockText: {fileID: 1364580588051099168}
   _damageText: {fileID: 2482491722407558863}
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 830397414}
-        m_TargetAssemblyTypeName: AnimatorController, Assembly-CSharp
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Attack
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &7397961133106942562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +193,36 @@ MonoBehaviour:
   _currentExposedPoints: 0
   _currentProtectedPoints: 0
   _eventHealthIsZero: {fileID: 11400000, guid: ba32ac21ac8639d4fb9af0d76b1c74b4, type: 2}
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAddBlock:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAddSappling:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSapplingDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EffectParticleSystem, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAddExposed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAddProtected:
+    m_PersistentCalls:
+      m_Calls: []
   _healthBar: {fileID: 3395262380213113762}
   _healthText: {fileID: 673808775374383752}
   _blockImage: {fileID: 8755186402631530921}
@@ -231,6 +265,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c139aa8b57f79374b9a3c3575b1caf48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8643973451089564753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4175753153528764160}
+  m_Layer: 0
+  m_Name: Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4175753153528764160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8643973451089564753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8347857193192033889}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4894804084028733475
 PrefabInstance:
   m_ObjectHideFlags: 0
