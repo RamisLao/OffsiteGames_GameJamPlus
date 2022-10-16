@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardData_Drain
   m_EditorClassIdentifier: 
   Name: Drain
-  Image: {fileID: 0}
+  Image: {fileID: 1356044282, guid: 42a9bffed9e5e2742a2435a0f229e07c, type: 3}
   Color: {r: 0, g: 1, b: 0.95960426, a: 1}
   Rarity: 1
   ManaCost: 1

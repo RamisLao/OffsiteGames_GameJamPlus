@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13062b85c946b314eb57300f418788d9, type: 3}
   m_Name: CardData_SwampFog
   m_EditorClassIdentifier: 
-  Name: SwampFog
-  Image: {fileID: 0}
+  Name: Swamp Fog
+  Image: {fileID: -1890178657, guid: 08a1ae9b236155e42beb46f43be52871, type: 3}
   Color: {r: 0, g: 1, b: 0.95960426, a: 1}
   Rarity: 1
   ManaCost: 2

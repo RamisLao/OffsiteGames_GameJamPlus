@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13062b85c946b314eb57300f418788d9, type: 3}
-  m_Name: CardData_Consecrate
+  m_Name: CardData_Bonk
   m_EditorClassIdentifier: 
-  Name: Consecrate
-  Image: {fileID: 0}
+  Name: Bonk
+  Image: {fileID: 1600380776, guid: 08a1ae9b236155e42beb46f43be52871, type: 3}
   Color: {r: 0, g: 1, b: 0.95960426, a: 1}
-  Rarity: 1
+  Rarity: 2
   ManaCost: 3
-  Description: Deal 4 damage, apply 2 Exposed.
+  Description: Stun, Destroy.
   TargetsAll: 0
   AppliesToSelf: 0
-  GetsDestroyed: 0
-  AppliesDamage: 1
-  DamageAmount: 4
+  GetsDestroyed: 1
+  AppliesDamage: 0
+  DamageAmount: 3
   AppliesHeal: 0
   HealAmount: 3
   AppliesBlock: 0
   BlockAmount: 3
   AppliesSappling: 0
   SapplingAmount: 2
-  AppliesStun: 0
-  AppliesExposed: 1
-  ExposedAmount: 2
+  AppliesStun: 1
+  AppliesExposed: 0
+  ExposedAmount: 1
   AppliesProtected: 0
   ProtectedAmount: 1
   AppliesAbsorb: 0
