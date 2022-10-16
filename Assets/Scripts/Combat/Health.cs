@@ -33,6 +33,8 @@ public class Health : MonoBehaviour
     [SerializeField] protected AgentEventChannelSO _eventHealthIsZero;
 
     [FoldoutGroup("Events")] public UnityEvent OnHealed;
+    [FoldoutGroup("Events")] public UnityEvent OnDamaged;
+    [FoldoutGroup("Events")] public UnityEvent OnBlockedDamaged;
     [FoldoutGroup("Events")] public UnityEvent OnAddBlock;
     [FoldoutGroup("Events")] public UnityEvent OnAddSappling;
     [FoldoutGroup("Events")] public UnityEvent OnSapplingDamage;
@@ -84,6 +86,9 @@ public class Health : MonoBehaviour
         int remainingAmountToSubtract = Mathf.Max(toSubtract - _currentBlockPoints, 0);
         _currentBlockPoints = Mathf.Max(_currentBlockPoints - toSubtract, 0);
         UpdateBlockText();
+
+        if (remainingAmountToSubtract > 0) OnDamaged.Invoke();
+        else OnBlockedDamaged.Invoke();
 
         CurrentHealth = Mathf.Clamp(CurrentHealth - remainingAmountToSubtract, 0, _maxHealth.Value);
         UpdateHealthBar();

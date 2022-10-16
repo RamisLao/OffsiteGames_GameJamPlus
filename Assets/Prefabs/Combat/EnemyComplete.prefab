@@ -36,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 6442084781209597103}
   - {fileID: 4175753153528764160}
+  - {fileID: 4553082065511675403}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -140,6 +141,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StatusUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -168,6 +181,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Attack
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: SlashEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   _eventApplyCardEffect: {fileID: 11400000, guid: 0658fe44e9cd6b04c9b0947426892619, type: 2}
@@ -207,13 +232,67 @@ MonoBehaviour:
   _eventHealthIsZero: {fileID: 11400000, guid: ba32ac21ac8639d4fb9af0d76b1c74b4, type: 2}
   OnHealed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: HealingEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: EnemyDamaged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnBlockedDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: BlockedDamageEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAddBlock:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7594049035378399171}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StatusUpdate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -238,12 +317,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StatusUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnSapplingDamage:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5930899112828590754}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: EnemyDamaged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -268,12 +371,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StatusUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAddProtected:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4019386228217368972}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5730447214924333330}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StatusUpdate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1273,3 +1400,76 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4219044998802461548, guid: cc947a78b34712149a1a7e4c9d115e31, type: 3}
   m_PrefabInstance: {fileID: 7549095392807324110}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8673575553280305551
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8347857193192033889}
+    m_Modifications:
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142030163810777173, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+--- !u!4 &4553082065511675403 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5148026696142593924, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+  m_PrefabInstance: {fileID: 8673575553280305551}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5730447214924333330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4023993083228711069, guid: acd89d043467c98428ba77688ede9a85, type: 3}
+  m_PrefabInstance: {fileID: 8673575553280305551}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ead1ff48301d648ad289b8be7e013e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
