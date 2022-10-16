@@ -104,7 +104,7 @@ MonoBehaviour:
   _eventDiscardCards: {fileID: 11400000, guid: 2594ee040a46e86448b9f6806aabe8ec, type: 2}
   _eventCardPointerDown: {fileID: 11400000, guid: aa095f96b175af94ca3c57fdbbdf041b, type: 2}
   _eventCardPointerUp: {fileID: 11400000, guid: 27247fb6d6a7aca4abf87e388f572cb2, type: 2}
-  _eventSubtractMana: {fileID: 11400000, guid: 2b96cd00edb49d4449569921d486618d, type: 2}
+  _eventSubtractMana: {fileID: 11400000, guid: 467372e177193e1408522d647f0d40bd, type: 2}
   _eventCardSelected: {fileID: 11400000, guid: 621e9c1180c0c1f4dba391af4d8f3e73, type: 2}
   _eventCardDeselected: {fileID: 11400000, guid: 5e5138c9616f46e468b288e9cc7a5848, type: 2}
   _eventCardEffectActivatedForEnemies: {fileID: 11400000, guid: f1fa7a3d2dfbccc4fa96dd048dacc3be, type: 2}
@@ -151,7 +151,7 @@ MonoBehaviour:
   _maxMana: {fileID: 11400000, guid: cbddb1803d0054e46a72eaca50aad041, type: 2}
   _currentMana: {fileID: 11400000, guid: cce85405c96557e4e968dc2e92e7cb3b, type: 2}
   _eventInitMana: {fileID: 11400000, guid: de0e3e5d296cb5a4b8ef12b6ece5e288, type: 2}
-  _eventSubtractMana: {fileID: 11400000, guid: 2b96cd00edb49d4449569921d486618d, type: 2}
+  _eventSubtractMana: {fileID: 11400000, guid: 467372e177193e1408522d647f0d40bd, type: 2}
   _eventManaChanged: {fileID: 11400000, guid: d5934eef34841ca44a14421aafca0d92, type: 2}
 --- !u!114 &173880497506342821
 MonoBehaviour:

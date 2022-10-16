@@ -60,6 +60,8 @@ MonoBehaviour:
   _variablePlayerExposed: {fileID: 11400000, guid: 77b99f15ced590d4884ff9c21922a52b, type: 2}
   _variablePlayerProtected: {fileID: 11400000, guid: 43ebd61d90447a1489e87bb9078ccc72, type: 2}
   _eventInitHealth: {fileID: 11400000, guid: 229f1a945237d4f47b2a352945eedd3f, type: 2}
+  _eventPlayerTurnPreparation: {fileID: 11400000, guid: b03e4daddffb0ba4bae8c13c0b19f7f2, type: 2}
+  _eventPlayerTurnCleanup: {fileID: 11400000, guid: fa27ead3d03d00045817d0c0b8f60f3e, type: 2}
 --- !u!114 &718814041
 MonoBehaviour:
   m_ObjectHideFlags: 0

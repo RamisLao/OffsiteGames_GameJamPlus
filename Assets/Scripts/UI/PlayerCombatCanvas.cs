@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class PlayerCombatCanvas : MonoBehaviour
 {
     [Title("Listening on")]
-    [SerializeField] private VoidEventChannelSO _eventOnCombatActivated;
-    [SerializeField] private VoidEventChannelSO _eventOnCombatDeactivated;
+    [SerializeField] private VoidEventChannelSO _eventActivateCombatCanvas;
+    [SerializeField] private VoidEventChannelSO _eventDeactivateCombatCanvas;
 
     [Title("References")]
     [SerializeField] private GameObject _buttonEndTurn;
@@ -17,18 +17,18 @@ public class PlayerCombatCanvas : MonoBehaviour
 
     private void Awake()
     {
-        _eventOnCombatActivated.OnEventRaised += OnCombatActivated;
-        _eventOnCombatDeactivated.OnEventRaised += OnCombatDeactivated;
+        _eventActivateCombatCanvas.OnEventRaised += ActivateCombatCanvas;
+        _eventDeactivateCombatCanvas.OnEventRaised += DeactivateCombatCanvas;
     }
 
-    private void OnCombatActivated()
+    private void ActivateCombatCanvas()
     {
         _buttonEndTurn.SetActive(true);
         _playerStats.SetActive(true);
         _handImage.enabled = true;
     }
 
-    private void OnCombatDeactivated()
+    private void DeactivateCombatCanvas()
     {
         _buttonEndTurn.SetActive(false);
         _playerStats.SetActive(false);

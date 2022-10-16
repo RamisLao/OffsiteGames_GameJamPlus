@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a59f2c7dee1190a4db2ffed5d465c0de, type: 3}
-  m_Name: Event_int_SubtractMana
+  m_Script: {fileID: 11500000, guid: 74571a792bbca7146a0dc6cdc5074391, type: 3}
+  m_Name: Event_Void_ActivateCombatCanvas
   m_EditorClassIdentifier: 

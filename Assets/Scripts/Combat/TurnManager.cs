@@ -16,36 +16,53 @@ public class TurnManager : MonoBehaviour
 
     [Title("Listening on")]
     [SerializeField] private VoidEventChannelSO _eventOnCombatActivated;
-    [SerializeField] private VoidEventChannelSO _eventPlayerTurnEnded;
-    [SerializeField] private VoidEventChannelSO _eventEnemyTurnEnded;
+    [SerializeField] private VoidEventChannelSO _eventPlayerButtonTurnEndPressed;
+    [SerializeField] private VoidEventChannelSO _eventEnemiesHavePerformedActions;
     [SerializeField] private VoidEventChannelSO _eventAllEnemiesDead;
 
     [Title("Broadcasting on")]
-    [SerializeField] private VoidEventChannelSO _eventCombatStarted;
-    [SerializeField] private VoidEventChannelSO _eventRemoveLeftOverBlock;
+    // Setup
+    [SerializeField] private VoidEventChannelSO _eventActivateCombatCanvas;
+    [SerializeField] private VoidEventChannelSO _eventSetupEnemyManager;
     [SerializeField] private VoidEventChannelSO _eventInitPlayerHealth;
+
+    // Player
     [SerializeField] private VoidEventChannelSO _eventDrawCards;
     [SerializeField] private VoidEventChannelSO _eventGainMana;
     [SerializeField] private VoidEventChannelSO _eventDiscardHand;
-    [SerializeField] private VoidEventChannelSO _eventPrepareEnemyTurn;
-    [SerializeField] private VoidEventChannelSO _eventStartEnemyTurn;
+    [SerializeField] private VoidEventChannelSO _eventPlayerTurnPreparation;
+    [SerializeField] private VoidEventChannelSO _eventPlayerTurnCleanup;
+    
+    // Enemy
+    [SerializeField] private VoidEventChannelSO _eventEnemyTurnPreparation;
+    [SerializeField] private VoidEventChannelSO _eventEnemyTurnRun;
+
+    // Deactivate
+    [SerializeField] private VoidEventChannelSO _eventDeactivateCombatCanvas;
     [SerializeField] private VoidEventChannelSO _eventOnCombatDeactivated;
 
     private ETurn _currentTurn;
+    private EnemyTrigger _currentEnemyTrigger;
 
     private void Awake()
     {
-        _eventPlayerTurnEnded.OnEventRaised += PlayerTurnEnd;
-        _eventEnemyTurnEnded.OnEventRaised += EnemyTurnEnd;
-        _eventOnCombatActivated.OnEventRaised += StartCombat;
+        _eventOnCombatActivated.OnEventRaised += ActivateCombat;
+        _eventPlayerButtonTurnEndPressed.OnEventRaised += PlayerTurnEnd;
+        _eventEnemiesHavePerformedActions.OnEventRaised += EnemyTurnEnd;
         _eventAllEnemiesDead.OnEventRaised += EndCombat;
     }
 
-    [Button("Start")]
+    private void ActivateCombat()
+    {
+        _eventActivateCombatCanvas.RaiseEvent();
+        _eventInitPlayerHealth.RaiseEvent();
+        _eventSetupEnemyManager.RaiseEvent();
+
+        StartCombat();
+    }
+
     private void StartCombat()
     {
-        _eventCombatStarted.RaiseEvent();
-        _eventInitPlayerHealth.RaiseEvent();
         _currentTurn = ETurn.Enemy;
         NextTurn();
     }
@@ -67,7 +84,7 @@ public class TurnManager : MonoBehaviour
 
     private IEnumerator PlayerTurnPreparationCoroutine()
     {
-        if (_eventRemoveLeftOverBlock != null) _eventRemoveLeftOverBlock.RaiseEvent();
+        if (_eventPlayerTurnPreparation != null) _eventPlayerTurnPreparation.RaiseEvent();
         if (_eventDrawCards != null) _eventDrawCards.RaiseEvent();
         if (_eventGainMana != null) _eventGainMana.RaiseEvent();
         yield return null;
@@ -88,20 +105,21 @@ public class TurnManager : MonoBehaviour
     private IEnumerator PlayerTurnEndCoroutine()
     {
         _eventDiscardHand.RaiseEvent();
+        _eventPlayerTurnCleanup.RaiseEvent();
         yield return null;
         NextTurn();
     }
 
     private IEnumerator EnemyTurnPreparationCoroutine()
     {
-        _eventPrepareEnemyTurn.RaiseEvent();
+        _eventEnemyTurnPreparation.RaiseEvent();
         yield return null;
         StartCoroutine(EnemyTurnStartCoroutine());
     }
 
     private IEnumerator EnemyTurnStartCoroutine()
     {
-        _eventStartEnemyTurn.RaiseEvent();
+        _eventEnemyTurnRun.RaiseEvent();
         yield return null;
     }
 

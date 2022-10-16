@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyTrigger : MonoBehaviour
 {
     [Title("Enemy Settings")]
     [SerializeField] private PalmTreeGroves _palmTree;
@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
 
     [Title("Variables")]
     [SerializeField] private VariableInt _room;
+
+    [Title("References")]
+    [SerializeField] private List<EnemyAI> _enemiesToAddToCombat;
 
     [Title("Broadcasting on")]
     [SerializeField] private VoidEventChannelSO _eventOnCombatActivated;
@@ -33,7 +36,9 @@ public class Enemy : MonoBehaviour
     {
         _cameraTarget.Value = transform;
         _cameraDistance.Value = _focusDistance;
-        _eventAddEnemyToCombat.RaiseEvent(GetComponent<EnemyAI>());
+        foreach(EnemyAI ai in _enemiesToAddToCombat)
+            _eventAddEnemyToCombat.RaiseEvent(ai);
+
         StartCoroutine(CallOnCombatActivated());
     }
 

@@ -13,19 +13,42 @@ public class HealthPlayer : Health
 
     [Title("Listening on")]
     [SerializeField] private VoidEventChannelSO _eventInitHealth;
+    [SerializeField] private VoidEventChannelSO _eventPlayerTurnPreparation;
+    [SerializeField] private VoidEventChannelSO _eventPlayerTurnCleanup;
 
     private void Awake()
     {
         if (_eventInitHealth != null) _eventInitHealth.OnEventRaised += InitHealth;
+        _eventPlayerTurnPreparation.OnEventRaised += PlayerTurnPreparation;
+        _eventPlayerTurnCleanup.OnEventRaised += PlayerTurnCleanup;
         base.InitHealth();
     }
 
     public override void InitHealth()
     {
+        _currentBlockPoints = 0;
+        _currentAmountOfSaplings = 0;
+        _currentExposedPoints = 0;
+        _currentProtectedPoints = 0;
+        _variablePlayerBlock.Value = 0;
+        _variablePlayerSapplings.Value = 0;
+        _variablePlayerExposed.Value = 0;
+        _variablePlayerProtected.Value = 0;
         _variablePlayerBlock.OnChanged.Invoke(_currentBlockPoints);
         _variablePlayerSapplings.OnChanged.Invoke(_currentAmountOfSaplings);
         _variablePlayerExposed.OnChanged.Invoke(_currentExposedPoints);
         _variablePlayerProtected.OnChanged.Invoke(_currentProtectedPoints);
+    }
+
+    private void PlayerTurnPreparation()
+    {
+        ApplySapplingDamage();
+    }
+
+    private void PlayerTurnCleanup()
+    {
+        MaybeSubtractExposedPoint();
+        MaybeSubtractProtectedPoints();
     }
 
     protected override void HealthReachedZero()

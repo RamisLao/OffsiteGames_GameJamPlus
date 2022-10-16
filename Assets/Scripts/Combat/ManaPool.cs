@@ -12,9 +12,6 @@ public class ManaPool : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _eventInitMana;
     [SerializeField] private IntEventChannelSO _eventSubtractMana;
 
-    [Title("Broadcasting on")]
-    [SerializeField] private VoidEventChannelSO _eventManaChanged;
-
     private void Awake()
     {
         _eventInitMana.OnEventRaised += InitMana;
@@ -24,7 +21,6 @@ public class ManaPool : MonoBehaviour
     private void InitMana()
     {
         _currentMana.Value = _maxMana.Value;
-        _eventManaChanged.RaiseEvent();
     }
 
     private void MaybeSubtractMana(int toSubtract)
@@ -32,6 +28,5 @@ public class ManaPool : MonoBehaviour
         if (_currentMana.Value < toSubtract) return;
 
         _currentMana.Value -= toSubtract;
-        _eventManaChanged.RaiseEvent();
     }
 }

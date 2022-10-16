@@ -10,16 +10,18 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private VariableEnemyAI _currentEnemyOnHover;
 
     [Title("Listening on")]
-    [SerializeField] private VoidEventChannelSO _eventCombatStarted;
+    [SerializeField] private VoidEventChannelSO _eventSetupEnemyManager;
+
     [SerializeField] private VoidEventChannelSO _eventPrepareEnemyTurn;
     [SerializeField] private VoidEventChannelSO _eventStartEnemyTurn;
+    [SerializeField] private AgentEventChannelSO _eventEnemyIsDead;
+
     [SerializeField] private CardEventChannelSO _eventCardSelected;
     [SerializeField] private CardEventChannelSO _eventCardDeselected;
     [SerializeField] private CardEventChannelSO _eventCardEffectHasBeenActivated;
-    [SerializeField] private AgentEventChannelSO _eventEnemyIsDead;
 
     [Title("Broadcasting on")]
-    [SerializeField] private VoidEventChannelSO _eventEndEnemyTurn;
+    [SerializeField] private VoidEventChannelSO _eventEnemiesHavePerformedActions;
     [SerializeField] private VoidEventChannelSO _eventAllEnemiesDead;
     [SerializeField] private ApplyCardEffectEventChannelSO _eventApplyCardEffect;
 
@@ -29,7 +31,7 @@ public class EnemyManager : MonoBehaviour
     private void Awake()
     {
         _actionsToBePerformed = new();
-        _eventCombatStarted.OnEventRaised += SetupCombat;
+        _eventSetupEnemyManager.OnEventRaised += SetupEnemyManager;
         _eventPrepareEnemyTurn.OnEventRaised += PrepareEnemyTurn;
         _eventStartEnemyTurn.OnEventRaised += RunEnemyTurn;
         _eventCardSelected.OnEventRaised += CardHasBeenSelected;
@@ -50,7 +52,7 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    private void SetupCombat()
+    private void SetupEnemyManager()
     {
         _combatIsActive = true;
         foreach (EnemyAI ai in _currentEnemiesInCombat.Items)
@@ -87,7 +89,7 @@ public class EnemyManager : MonoBehaviour
 
     private void EndEnemyTurn()
     {
-        _eventEndEnemyTurn.RaiseEvent();
+        _eventEnemiesHavePerformedActions.RaiseEvent();
 
         foreach (EnemyAI ai in _currentEnemiesInCombat.Items)
         {
@@ -134,7 +136,6 @@ public class EnemyManager : MonoBehaviour
     private void EnemyHasDied(Agent agent)
     {
         EnemyAI ai = (EnemyAI)agent;
-        ai.GetComponent<Enemy>().ActivateOnDeadEffects();
         ai.Kill();
     }
 }
