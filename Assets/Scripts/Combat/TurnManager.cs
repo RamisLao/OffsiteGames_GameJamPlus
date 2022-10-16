@@ -32,7 +32,8 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _eventDiscardHand;
     [SerializeField] private VoidEventChannelSO _eventPlayerTurnPreparation;
     [SerializeField] private VoidEventChannelSO _eventPlayerTurnCleanup;
-    [SerializeField] private VoidEventChannelSO _eventTriggerPlayerMovement;
+    [SerializeField] private VoidEventChannelSO _eventTriggerPlayerMovementOn;
+    [SerializeField] private VoidEventChannelSO _eventTriggerPlayerMovementOff;
     
     // Enemy
     [SerializeField] private VoidEventChannelSO _eventEnemyTurnPreparation;
@@ -59,7 +60,8 @@ public class TurnManager : MonoBehaviour
         _eventActivateCombatCanvas.RaiseEvent();
         _eventInitPlayerHealth.RaiseEvent();
         _eventSetupEnemyManager.RaiseEvent();
-        _eventTriggerPlayerMovement.RaiseEvent();
+        _eventTriggerPlayerMovementOn.RaiseEvent();
+        Debug.Log("Here?");
 
         StartCombat();
     }
@@ -143,7 +145,7 @@ public class TurnManager : MonoBehaviour
         _eventDeactivateCombatCanvas.RaiseEvent();
         _eventOnCombatDeactivated.RaiseEvent();
         _currentEnemyTrigger.CleanAssociatedPalmTreeGrove();
+        _eventTriggerPlayerMovementOff.RaiseEvent();
         _currentEnemyTrigger = null;
-        _eventTriggerPlayerMovement.RaiseEvent();
     }
 }

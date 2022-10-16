@@ -268,7 +268,7 @@ MonoBehaviour:
   _focusDistance: {fileID: 2489337153923047112}
   _weight: 1
   _radius: 5
-  _eventOnCombatActivated: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
+  _eventOnCombatActivated: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
   _eventOnCombatDeactivated: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
 --- !u!1 &80784698916197491
 GameObject:
@@ -6207,7 +6207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 15
   _footSteps: []
-  _eventOnCombatActivated: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
+  _eventOnCombatActivated: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
   _eventOnCombatDeactivated: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
   _inputDirection: {fileID: 11400000, guid: d53b41f78cc7cd942bb7d8ab50dd9306, type: 2}
 --- !u!82 &6056976481802967186

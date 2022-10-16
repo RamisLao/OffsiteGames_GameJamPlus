@@ -12,7 +12,7 @@ public class CombatTrigger : MonoBehaviour
 
     [Title("References")]
     [SerializeField] private List<EnemyAI> _enemiesToAddToCombat;
-    [SerializeField] private PalmTreeGroves _associatedPalmTreeGrove;
+    [SerializeField] private List<PalmTreeGroves> _associatedPalmTreeGroves;
 
     [Title("Broadcasting on")]
     [SerializeField] private CombatTriggerEventChannelSO _eventOnCombatActivated;
@@ -45,6 +45,7 @@ public class CombatTrigger : MonoBehaviour
 
     public void CleanAssociatedPalmTreeGrove()
     {
-        _associatedPalmTreeGrove.CleanPalm();
+        foreach (PalmTreeGroves p in _associatedPalmTreeGroves)
+            p.CleanPalm();
     }
 }

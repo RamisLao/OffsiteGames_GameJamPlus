@@ -105,7 +105,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2
 --- !u!114 &153858621151203232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +330,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1912683607308848268, guid: fe9a24a7b544c2542afc92ecd49a5c29, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446855157052032708, guid: fe9a24a7b544c2542afc92ecd49a5c29, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3591170213871338359, guid: fe9a24a7b544c2542afc92ecd49a5c29, type: 3}
