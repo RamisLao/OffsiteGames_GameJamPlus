@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74571a792bbca7146a0dc6cdc5074391, type: 3}
-  m_Name: Event_Void_TriggerPlayerMovementOff
+  m_Script: {fileID: 11500000, guid: 20204c3c102e5444383af3f3f4c6bbdf, type: 3}
+  m_Name: Event_Vector3_PlayerMovementOff
   m_EditorClassIdentifier: 

@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
     private float time;
 
     [Title("Listening on")]
-    public VoidEventChannelSO _eventOnCombatActivated;
-    public VoidEventChannelSO _eventOnCombatDeactivated;
+    [SerializeField] private VoidEventChannelSO _eventTriggerPlayerMovementOn;
+    [SerializeField] private Vector3EventChannelSO _eventTriggerPlayerMovementOff;
     public VariableVector2 _inputDirection;
 
     private void Start()
@@ -34,8 +34,8 @@ public class PlayerMovement : MonoBehaviour
         _rbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
-        _eventOnCombatActivated.OnEventRaised += EnableMovement;
-        _eventOnCombatDeactivated.OnEventRaised += EnableMovement;
+        _eventTriggerPlayerMovementOn.OnEventRaised += EnableMovement;
+        _eventTriggerPlayerMovementOff.OnEventRaised += TakeControlOfPlayer;
 
         _doMove = new DoMove();
         _doDead = new DoDead();
@@ -58,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
 
         _playerInput = value.Get<Vector2>();
         _inputDirection.Value = value.Get<Vector2>();
+    }
+
+    private void TakeControlOfPlayer(Vector3 newPos)
+    {
+        EnableMovement();
     }
 
     /// <summary>

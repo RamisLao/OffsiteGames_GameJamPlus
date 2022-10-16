@@ -20,13 +20,18 @@ public class CameraFocusTarget : MonoBehaviour
     [SerializeField] private float _radius;
 
     [Title("Listening on")]
-    public VoidEventChannelSO _eventOnCombatActivated;
-    public VoidEventChannelSO _eventOnCombatDeactivated;
+    [SerializeField] private VoidEventChannelSO _eventTriggerPlayerMovementOn;
+    [SerializeField] private Vector3EventChannelSO _eventTriggerPlayerMovementOff;
 
     private void Start()
     {
-        _eventOnCombatActivated.OnEventRaised += ChangeFocus;
-        _eventOnCombatDeactivated.OnEventRaised += ChangeFocus;
+        _eventTriggerPlayerMovementOn.OnEventRaised += ChangeFocus;
+        _eventTriggerPlayerMovementOff.OnEventRaised += ChangeFocus;
+    }
+
+    private void ChangeFocus(Vector3 _)
+    {
+        ChangeFocus();
     }
 
     private void ChangeFocus()
