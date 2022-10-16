@@ -9,9 +9,13 @@ public class HealthEnemy : Health
     [Title("References")]
     [SerializeField] private Slider _healthBar;
     [SerializeField] private TMPro.TextMeshProUGUI _healthText;
+    [SerializeField] private Image _blockImage;
     [SerializeField] private TMPro.TextMeshProUGUI _blockText;
+    [SerializeField] private Image _sapplingImage;
     [SerializeField] private TMPro.TextMeshProUGUI _sapplingText;
+    [SerializeField] private Image _exposedImage;
     [SerializeField] private TMPro.TextMeshProUGUI _exposedText;
+    [SerializeField] private Image _protectedImage;
     [SerializeField] private TMPro.TextMeshProUGUI _protectedText;
 
     public override void InitHealth()
@@ -36,21 +40,29 @@ public class HealthEnemy : Health
 
     protected override void UpdateBlockText()
     {
-        _blockText.text = $"B: {_currentBlockPoints}";
+        _blockText.text = $"{_currentBlockPoints}";
+        if (_currentBlockPoints == 0) _blockImage.gameObject.SetActive(false);
+        else _blockImage.gameObject.SetActive(true);
     }
 
     protected override void UpdateSapplingText()
     {
-        _sapplingText.text = $"S: {_currentAmountOfSaplings}";
+        _sapplingText.text = $"{_currentAmountOfSaplings}";
+        if (_currentAmountOfSaplings == 0) _sapplingImage.gameObject.SetActive(false);
+        else _sapplingImage.gameObject.SetActive(true);
     }
 
     protected override void UpdateExposedText()
     {
-        _exposedText.text = $"E: {_currentExposedPoints}";
+        _exposedText.text = $"{_currentExposedPoints}";
+        if (_currentExposedPoints == 0) _exposedImage.gameObject.SetActive(false);
+        else _exposedImage.gameObject.SetActive(true);
     }
 
     protected override void UpdateProtectedText()
     {
-        _protectedText.text = $"P: {_currentProtectedPoints}";
+        _protectedText.text = $"{_currentProtectedPoints}";
+        if (_currentProtectedPoints == 0) _protectedImage.gameObject.SetActive(false);
+        else _protectedImage.gameObject.SetActive(true);
     }
 }

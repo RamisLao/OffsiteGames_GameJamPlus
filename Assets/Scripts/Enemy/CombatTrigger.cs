@@ -19,10 +19,18 @@ public class CombatTrigger : MonoBehaviour
     [SerializeField] private EnemyAIEventChannelSO _eventAddEnemyToCombat;
     private bool _isDead;
 
+    private Collider2D _collider;
+
+    private void Awake()
+    {
+        _collider = GetComponent<Collider2D>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            _collider.enabled = false;
             Invoke(nameof(CallEventOnCombat), .15f);
         }
     }
