@@ -14,9 +14,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private VariableTransform _cameraTarget;
     [SerializeField] private VariableFloat _cameraDistance;
 
-    [Title("Listening on")]
-    [SerializeField] private VoidEventChannelSO _eventOnCombat;
+    [Title("Variables")]
     [SerializeField] private VariableInt _room;
+
+    [Title("Broadcasting on")]
+    [SerializeField] private VoidEventChannelSO _eventOnCombatActivated;
+    [SerializeField] private EnemyAIEventChannelSO _eventAddEnemyToCombat;
 
     private void Update()
     {
@@ -38,13 +41,14 @@ public class Enemy : MonoBehaviour
     {
         _cameraTarget.Value = transform;
         _cameraDistance.Value = _focusDistance;
-        _eventOnCombat.RaiseEvent();
+        _eventOnCombatActivated.RaiseEvent();
+        _eventAddEnemyToCombat.RaiseEvent(GetComponent<EnemyAI>());
     }
 
     private void Dead()
     {
         _palmTree.CleanPalm();
-        _eventOnCombat.RaiseEvent();
+        _eventOnCombatActivated.RaiseEvent();
 
         if (_room != null)
             _room.Value += 1;

@@ -11,6 +11,10 @@ public abstract class EnemyAI : Agent
 
     [Title("References")]
     [SerializeField] private GameObject _stunImage;
+    [SerializeField] private GameObject _canvas;
+
+    [Title("Listening on")]
+    [SerializeField] private EnemyAIEventChannelSO _eventOnAddEnemyToCombat;
 
     private SpriteRenderer _renderer;
     private bool _onHoverIsActive = false;
@@ -21,9 +25,9 @@ public abstract class EnemyAI : Agent
 
     protected virtual void Awake()   
     {
+        _eventOnAddEnemyToCombat.OnEventRaised += OnCombatActivated;
         _renderer = GetComponent<SpriteRenderer>();
         UpdateStunImage();
-        AddMyselfToBattle();
     }
 
     private void OnDisable()
@@ -31,9 +35,20 @@ public abstract class EnemyAI : Agent
         RemoveMyselfFromBattle();
     }
 
-    private void AddMyselfToBattle()
+    [Button("AddEnemy")]
+    private void AddEnemy()
     {
         _currentEnemiesInBattle.Add(this);
+        _canvas.SetActive(true);
+    }
+
+    private void OnCombatActivated(EnemyAI enemy)
+    {
+        if (enemy == this)
+        {
+            _currentEnemiesInBattle.Add(this);
+            _canvas.SetActive(true);
+        }
     }
 
     private void RemoveMyselfFromBattle()

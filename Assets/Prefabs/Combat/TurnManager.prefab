@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingsCombat: {fileID: 11400000, guid: 9c9008f60b2d7854294ad9039179a5aa, type: 2}
+  _eventOnCombatActivated: {fileID: 11400000, guid: 0981b08de74eca741aad5c39631f9d97, type: 2}
+  _eventOnCombatDeactivated: {fileID: 11400000, guid: 165671aeb86208040b37e754c1d09691, type: 2}
   _eventPlayerTurnEnded: {fileID: 11400000, guid: 9c615fa23d2507b4a80fe4af2b11fb42, type: 2}
   _eventEnemyTurnEnded: {fileID: 11400000, guid: 52ed8178edf87914b8f7750ea22417dd, type: 2}
   _eventCombatStarted: {fileID: 11400000, guid: 517b5de42ed729f44a8cc2e423aeab0e, type: 2}

@@ -17,6 +17,11 @@ public class UpdateTextUsingVariable : MonoBehaviour
         _variable.OnChanged.AddListener(UpdateText);
     }
 
+    private void Start()
+    {
+        UpdateText(_variable.Value);
+    }
+
     protected virtual void UpdateText(int value)
     {
         _text.text = $"{_prefix}{value}{_suffix}";

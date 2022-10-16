@@ -15,6 +15,8 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private SettingsCombat _settingsCombat;
 
     [Title("Listening on")]
+    [SerializeField] private VoidEventChannelSO _eventOnCombatActivated;
+    [SerializeField] private VoidEventChannelSO _eventOnCombatDeactivated;
     [SerializeField] private VoidEventChannelSO _eventPlayerTurnEnded;
     [SerializeField] private VoidEventChannelSO _eventEnemyTurnEnded;
 
@@ -34,9 +36,12 @@ public class TurnManager : MonoBehaviour
     {
         _eventPlayerTurnEnded.OnEventRaised += PlayerTurnEnd;
         _eventEnemyTurnEnded.OnEventRaised += EnemyTurnEnd;
+        _eventOnCombatActivated.OnEventRaised += StartCombat;
+        _eventOnCombatDeactivated.OnEventRaised += EndCombat;
     }
 
-    private void Start()
+    [Button("Start")]
+    private void StartCombat()
     {
         _eventCombatStarted.RaiseEvent();
         _eventInitPlayerHealth.RaiseEvent();
@@ -108,5 +113,10 @@ public class TurnManager : MonoBehaviour
     {
         yield return null;
         NextTurn();
+    }
+
+    private void EndCombat()
+    {
+
     }
 }

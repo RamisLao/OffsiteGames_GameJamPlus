@@ -17,12 +17,11 @@ public class HealthPlayer : Health
     private void Awake()
     {
         if (_eventInitHealth != null) _eventInitHealth.OnEventRaised += InitHealth;
+        base.InitHealth();
     }
 
     public override void InitHealth()
     {
-        base.InitHealth();
-
         _variablePlayerBlock.OnChanged.Invoke(_currentBlockPoints);
         _variablePlayerSapplings.OnChanged.Invoke(_currentAmountOfSaplings);
         _variablePlayerExposed.OnChanged.Invoke(_currentExposedPoints);

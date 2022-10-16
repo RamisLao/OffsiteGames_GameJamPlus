@@ -21,7 +21,7 @@ public class UpdateSliderUsingVariableRange : MonoBehaviour
         _slider.wholeNumbers = true;
         _slider.minValue = 0;
         _slider.maxValue = _maxValue.Value;
-        _slider.value = _currentValue.Value;
+        ValueChanged(_currentValue.Value);
     }
 
     private void ValueChanged(int value)

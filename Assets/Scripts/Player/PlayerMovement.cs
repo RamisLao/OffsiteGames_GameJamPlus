@@ -19,13 +19,15 @@ public class PlayerMovement : MonoBehaviour
     private DoDead _doDead;
 
     [Title("Listening on")]
-    public VoidEventChannelSO _eventOnCombat;
+    public VoidEventChannelSO _eventOnCombatActivated;
+    public VoidEventChannelSO _eventOnCombatDeactivated;
 
     private void Start()
     {
         _rbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _eventOnCombat.OnEventRaised += EnableMovement;
+        _eventOnCombatActivated.OnEventRaised += EnableMovement;
+        _eventOnCombatDeactivated.OnEventRaised += EnableMovement;
 
         _doMove = new DoMove();
         _doDead = new DoDead();

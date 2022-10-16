@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class EnemyAIBasic : EnemyAI
 {
-    [SerializeField] private RuntimeSetCardData _enemyDeck;
-    [SerializeField] private VariablePlayerCombat _variablePlayer;
-
+    [Space]
     [Title("Broadcasting on")]
     [SerializeField] private ApplyCardEffectEventChannelSO _eventApplyCardEffect;
     [SerializeField] private ApplyAbsorbEffectEventChannelSO _eventApplyAbsorbEffect;
+
+    [Title("Combat")]
+    [SerializeField] private RuntimeSetCardData _enemyDeck;
+    [SerializeField] private VariablePlayerCombat _variablePlayer;
+
 
     public override void PerformActions()
     {
