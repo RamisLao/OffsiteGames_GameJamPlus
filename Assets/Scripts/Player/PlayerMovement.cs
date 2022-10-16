@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerInput = value.Get<Vector2>();
 
-        if(_playerInput.magnitude > 0)
+        if(_playerInput.magnitude > 0 && _canMove)
         {
             _doMove.Execute(_animator);
         }
