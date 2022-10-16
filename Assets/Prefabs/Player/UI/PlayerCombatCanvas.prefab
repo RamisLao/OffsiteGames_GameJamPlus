@@ -371,6 +371,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1721191436031709957}
     m_Modifications:
+    - target: {fileID: 4771666027802489579, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771666027802489579, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5467790479861561769, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -459,6 +467,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerStats
       objectReference: {fileID: 0}
+    - target: {fileID: 5467790479861561774, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
 --- !u!224 &2446791457160247001 stripped
@@ -471,6 +483,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5467790479861561774, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
   m_PrefabInstance: {fileID: 7644228857231708016}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4112575345167029038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2446791457160247006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55136ad18179e6640ab433ab385e9a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8685881984817490666
 PrefabInstance:
   m_ObjectHideFlags: 0
