@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74571a792bbca7146a0dc6cdc5074391, type: 3}
-  m_Name: Event_Void_OnCombatActivated
+  m_Script: {fileID: 11500000, guid: fe3ec19b852230b4786747d749a63f05, type: 3}
+  m_Name: Event_CombatTrigger_OnCombatActivated
   m_EditorClassIdentifier: 
