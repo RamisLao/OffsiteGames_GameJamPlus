@@ -14,16 +14,16 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         set { _data = value; }
     }
 
-    [Title("Text")]
-    [SerializeField] private TMPro.TextMeshProUGUI _manaCostText;
-    [SerializeField] private TMPro.TextMeshProUGUI _nameText;
-    [SerializeField] private TMPro.TextMeshProUGUI _descriptionText;
-
     [Title("Broadcasting on")]
     [SerializeField] private CardEventChannelSO _eventCardPointerDown;
     [SerializeField] private CardEventChannelSO _eventCardPointerUp;
 
     private Image _image;
+    private bool _isSelectable = true;
+    public bool IsSelectable
+    {
+        set { _isSelectable = value; }
+    }
 
     private void Awake()
     {
@@ -38,19 +38,19 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void SetupCard()
     {
         _image.sprite = _data.Image;
-        //_image.color = _data.Color;
-        //_manaCostText.text = $"{_data.ManaCost}";
-        //_nameText.text = _data.Name;
-        //_descriptionText.text = _data.Description;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (!_isSelectable) return;
+
         _eventCardPointerDown.RaiseEvent(this);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (!_isSelectable) return;
+
         _eventCardPointerUp.RaiseEvent(this);
     }
 
