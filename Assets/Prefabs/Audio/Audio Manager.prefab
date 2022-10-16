@@ -58,6 +58,7 @@ MonoBehaviour:
   _healingFoley: {fileID: 8300000, guid: df5b975328e053b44b458388a7a3c015, type: 3}
   _drainedFoley: {fileID: 8300000, guid: fe2b800c60a035644b5af467f00dbf58, type: 3}
   _transformationFoley: {fileID: 8300000, guid: 265c2f891085e854ab86385971898b3a, type: 3}
+  _enemyDamaged: {fileID: 8300000, guid: 555465c29f67b084bbd5459a6e23ff47, type: 3}
   _gameOver: {fileID: 8300000, guid: a9b28ed9c99965e47856b65ae501c19b, type: 3}
   _battleVictory: {fileID: 8300000, guid: 6d3985278cffaee4abb0d9a53755e910, type: 3}
   _gameVictory: {fileID: 8300000, guid: 7d41be0d80dfbb840b76add4ff0a15f8, type: 3}

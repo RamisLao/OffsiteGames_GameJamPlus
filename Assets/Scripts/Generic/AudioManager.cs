@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip _healingFoley;
     public AudioClip _drainedFoley;
     public AudioClip _transformationFoley;
-    //public AudioClip _enemyDamaged;
+    public AudioClip _enemyDamaged;
 
     [Title("GameStates Clips")]
     public AudioClip _gameOver;
@@ -44,63 +44,71 @@ public class AudioManager : MonoBehaviour
         _eventOnCombatDeactivated.OnEventRaised += OverworldMusic;
     }
 
-    private void OverworldMusic()
+    public void OverworldMusic()
     {
         _masterAudioSource.clip = _overworldClip;
         _masterAudioSource.Play();
     }
-    private void BattleMusic()
+    public void BattleMusic()
     {
         _masterAudioSource.clip = _battleClip;
         _masterAudioSource.Play();
     }
-    private void GameOverMusic()
+    public void GameOverMusic()
     {
         _masterAudioSource.clip = _gameOver;
         _masterAudioSource.loop = false;
         _masterAudioSource.Play();
     }
-    private void GameVictoryMusic()
+    public void GameVictoryMusic()
     {
         _masterAudioSource.clip = _gameVictory;
         _masterAudioSource.loop = false;
         _masterAudioSource.Play();
     }
-    private void BattleVictoryMusic()
+    public void BattleVictoryMusic()
     {
         _effectsAudioSource.clip = _battleVictory;
         _effectsAudioSource.Play();
     }
-    private void DrawCardEffect()
+    public void DrawCardEffect()
     {
         _effectsAudioSource.PlayOneShot(_drawCard);
     }
-    private void DiscardCardEffect()
+    public void DiscardCardEffect()
     {
         _effectsAudioSource.PlayOneShot(_discardCard);
     }
-    private void SlashEffect()
+    public void SlashEffect()
     {
         _effectsAudioSource.PlayOneShot(_slashFoley);
     }
-    private void BlockedDamageEffect()
+    public void BlockedDamageEffect()
     {
         _effectsAudioSource.PlayOneShot(_blockedDamage);
     }
-    private void BuritiDamagedEffect()
+    public void BuritiDamagedEffect()
     {
         _effectsAudioSource.PlayOneShot(_buritiDamaged);
     }
-    private void HealingEffect()
+    public void HealingEffect()
     {
         _effectsAudioSource.PlayOneShot(_healingFoley);
     }
-    private void DraineddEffect()
+    public void DraineddEffect()
     {
         _effectsAudioSource.PlayOneShot(_drainedFoley);
     }
-    private void TransformationEffect()
+    public void TransformationEffect()
     {
         _effectsAudioSource.PlayOneShot(_transformationFoley);
+    }
+    public void StatusUpdate()
+    {
+        _effectsAudioSource.PlayOneShot(_statusUpdateUI);
+    }
+    public void EnemyDamaged()
+    {
+        _effectsAudioSource.PlayOneShot(_enemyDamaged);
     }
 }
