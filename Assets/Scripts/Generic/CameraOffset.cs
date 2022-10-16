@@ -16,7 +16,7 @@ public class CameraOffset : MonoBehaviour
     {
         if(_directionToMove.Value.magnitude > 0)
         {
-            _cameraOffset.m_Offset = new Vector2(Mathf.Lerp(_cameraOffset.m_Offset.x,_directionToMove.Value.x * _scaleModifier,Time.deltaTime*4f),
+            _cameraOffset.m_Offset = new Vector2(Mathf.Lerp(_cameraOffset.m_Offset.x, _directionToMove.Value.x * _scaleModifier, Time.deltaTime * _speed),
                 Mathf.Lerp(_cameraOffset.m_Offset.y, _directionToMove.Value.y * _scaleModifier, Time.deltaTime * _speed));
         }
         else

@@ -34,7 +34,7 @@ public class LockedRoom : MonoBehaviour
         bool unlocked = true;
         foreach (PalmTreeGroves p in _treesToClean)
         {
-            if (!p.PalmIsCleaned)
+            if (p == null || !p.PalmIsCleaned)
             {
                 unlocked = false;
                 break;

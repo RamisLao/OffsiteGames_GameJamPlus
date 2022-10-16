@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -69,11 +70,13 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator MovePlayerTowardsEndDestination(Vector3 newPos)
     {
         Vector2 newPos2 = new Vector2(newPos.x, newPos.y);
-        while (Vector2.Distance(_rbody.position, newPos2) > 0.25f)
+        while (Vector2.Distance(_rbody.position, newPos2) > 0f)
         {
-            Vector2 direction = (newPos2 - _rbody.position).normalized;
-            _playerInput = direction;
-            _inputDirection.Value = _playerInput;
+            //Vector2 direction = (newPos2 - _rbody.position).normalized;
+            //_playerInput = direction;
+            //_inputDirection.Value = _playerInput;
+            _rbody.position = new Vector2(Mathf.Lerp(_rbody.position.x, newPos2.x, Time.deltaTime * 4f),
+               Mathf.Lerp(_rbody.position.y, newPos2.y, Time.deltaTime * 4f));
             yield return null;
         }
     }
