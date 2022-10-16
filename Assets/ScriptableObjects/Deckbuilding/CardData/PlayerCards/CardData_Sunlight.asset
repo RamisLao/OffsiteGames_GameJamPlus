@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardData_Sunlight
   m_EditorClassIdentifier: 
   Name: Sunlight
-  Image: {fileID: 0}
+  Image: {fileID: -2006166691, guid: 1ee060f9b5999e14c8d979d94961c420, type: 3}
   Color: {r: 0, g: 1, b: 0.95960426, a: 1}
   Rarity: 1
   ManaCost: 2

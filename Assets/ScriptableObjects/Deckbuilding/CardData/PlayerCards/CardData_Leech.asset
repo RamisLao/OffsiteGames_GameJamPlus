@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardData_Leech
   m_EditorClassIdentifier: 
   Name: Leech
-  Image: {fileID: 0}
+  Image: {fileID: -1781164274, guid: 08a1ae9b236155e42beb46f43be52871, type: 3}
   Color: {r: 0, g: 1, b: 0.95960426, a: 1}
   Rarity: 3
   ManaCost: 4

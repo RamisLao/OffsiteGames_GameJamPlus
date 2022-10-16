@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardData_Slash
   m_EditorClassIdentifier: 
   Name: Slash
-  Image: {fileID: 0}
+  Image: {fileID: 1714498657, guid: 1ee060f9b5999e14c8d979d94961c420, type: 3}
   Color: {r: 0, g: 1, b: 0.95960426, a: 1}
   Rarity: 0
   ManaCost: 1
