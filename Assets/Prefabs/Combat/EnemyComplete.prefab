@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8347857193192033894}
   - component: {fileID: 153858621151203232}
   - component: {fileID: 7397961133106942562}
+  - component: {fileID: 830397413}
+  - component: {fileID: 830397414}
   m_Layer: 0
   m_Name: EnemyComplete
   m_TagString: Untagged
@@ -76,9 +78,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.7921569, g: 0.34117648, b: 0.3467341, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -1261406911, guid: 29033b492a0ef684a95f829d5ce4a743, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -116,15 +118,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086be83ec86aa2849abbbd694ad3e0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _delayBeforeDestroy: 2
   _currentEnemiesInBattle: {fileID: 11400000, guid: 4e4e65be840128d4aa0317769370b9df, type: 2}
   _currentEnemyOnHover: {fileID: 11400000, guid: 12af3337d3bde934cb9726fb6e115297, type: 2}
   _stunImage: {fileID: 3333394369282351536}
   _canvas: {fileID: 8231366434835020628}
   _eventOnAddEnemyToCombat: {fileID: 11400000, guid: 97e0c2f7a2a85cb4d9d02f34abe9fae6, type: 2}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 830397414}
+        m_TargetAssemblyTypeName: AnimatorController, Assembly-CSharp
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Die
+          m_BoolArgument: 0
+        m_CallState: 2
   _eventApplyCardEffect: {fileID: 11400000, guid: 0658fe44e9cd6b04c9b0947426892619, type: 2}
   _eventApplyAbsorbEffect: {fileID: 11400000, guid: fdc5dd3546d28ee4b916a3ab20b44250, type: 2}
   _enemyDeck: {fileID: 11400000, guid: bad254376fd53fa4ea747438c8b68713, type: 2}
   _variablePlayer: {fileID: 11400000, guid: 740d9c7c024de92419f972471ea65be6, type: 2}
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 830397414}
+        m_TargetAssemblyTypeName: AnimatorController, Assembly-CSharp
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Attack
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7397961133106942562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +185,38 @@ MonoBehaviour:
   _sapplingText: {fileID: 7186531019970775761}
   _exposedText: {fileID: 104700160413390293}
   _protectedText: {fileID: 52991351022540864}
+--- !u!95 &830397413
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347857193192033890}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 031a5e2a373495b498bc64f589533bb8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &830397414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347857193192033890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c139aa8b57f79374b9a3c3575b1caf48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4894804084028733475
 PrefabInstance:
   m_ObjectHideFlags: 0

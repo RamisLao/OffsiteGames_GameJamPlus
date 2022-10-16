@@ -57,6 +57,7 @@ MonoBehaviour:
   _eventDiscardHand: {fileID: 11400000, guid: 2594ee040a46e86448b9f6806aabe8ec, type: 2}
   _eventPlayerTurnPreparation: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
   _eventPlayerTurnCleanup: {fileID: 11400000, guid: fa27ead3d03d00045817d0c0b8f60f3e, type: 2}
+  _eventTriggerPlayerMovement: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
   _eventEnemyTurnPreparation: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
   _eventEnemyTurnRun: {fileID: 11400000, guid: 9aad5b883f6ef8d4d9a7ed5dd488cb09, type: 2}
   _eventDeactivateCombatCanvas: {fileID: 11400000, guid: 62fcc18cc76b1524e93d2757d86841c0, type: 2}
