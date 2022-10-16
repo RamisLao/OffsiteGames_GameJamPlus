@@ -36,16 +36,22 @@ public class Hand : MonoBehaviour
     [SerializeField] private ApplyCardEffectEventChannelSO _eventApplyCardEffect;
     [SerializeField] private ApplyAbsorbEffectEventChannelSO _eventApplyAbsorbEffect;
 
+    [SerializeField] private ListVector3EventChannelSO _eventUpdateRendererPositions;
+    [SerializeField] private VoidEventChannelSO _eventActivateLineRenderer;
+    [SerializeField] private VoidEventChannelSO _eventDeactivateLineRenderer;
+
     private Vector2 _selectedCardFormerPosition;
     private List<Card> _currentCards;
     private Pile _drawPile;
     private Pile _discardPile;
     private bool _waitingToDiscard = false;
     private int _amountOfCardsToDiscard = 0;
+    private bool _shouldDragCard = false;
 
     private void Awake()
     {
         _currentCards = new();
+        _selectedCard.Value = null;
         _eventCardPointerDown.OnEventRaised += MaybeSelectCard;
         _eventCardPointerUp.OnEventRaised += MaybeReleaseCard;
         _eventDrawCards.OnEventRaised += InitializeHand;
@@ -62,7 +68,11 @@ public class Hand : MonoBehaviour
         if (!_selectedCard.IsEmpty)
         {
             Vector2 mousePos = Input.mousePosition;
-            _selectedCard.Value.transform.position = mousePos;
+
+            if (_shouldDragCard)
+                _selectedCard.Value.transform.position = mousePos;
+            else
+                UpdateLineRenderer(mousePos);
         }
     }
 
@@ -152,8 +162,38 @@ public class Hand : MonoBehaviour
 
         _selectedCardFormerPosition = card.transform.position;
         _selectedCard.Value = card;
+
+        if (_selectedCard.Value.Data.TargetsAll ||
+            _selectedCard.Value.Data.AppliesToSelf)
+        {
+            _shouldDragCard = true;
+        }
+        else
+        {
+            _shouldDragCard = false;
+            ActivateLineRenderer();
+        }
+
         _currentCards.Remove(card);
         _eventCardSelected.RaiseEvent(card);
+    }
+
+    private void ActivateLineRenderer()
+    {
+        _eventActivateLineRenderer.RaiseEvent();
+    }
+
+    private void UpdateLineRenderer(Vector2 mousePos)
+    {
+        List<Vector3> positions = new();
+        positions.Add(Camera.main.ScreenToWorldPoint(_selectedCard.Value.transform.position));
+        positions.Add(Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 1f)));
+        _eventUpdateRendererPositions.RaiseEvent(positions);
+    }
+
+    private void DeactivateLineRenderer()
+    {
+        _eventDeactivateLineRenderer.RaiseEvent();
     }
 
     private void MaybeReleaseCard(Card card)
@@ -186,6 +226,7 @@ public class Hand : MonoBehaviour
                 ReturnCardToHand(card);
             }
 
+            DeactivateLineRenderer();
         }
     }
 

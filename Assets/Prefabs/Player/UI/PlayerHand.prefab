@@ -111,6 +111,9 @@ MonoBehaviour:
   _eventCardEffectActivatedForEnemies: {fileID: 11400000, guid: f1fa7a3d2dfbccc4fa96dd048dacc3be, type: 2}
   _eventApplyCardEffect: {fileID: 11400000, guid: 0658fe44e9cd6b04c9b0947426892619, type: 2}
   _eventApplyAbsorbEffect: {fileID: 11400000, guid: fdc5dd3546d28ee4b916a3ab20b44250, type: 2}
+  _eventUpdateRendererPositions: {fileID: 11400000, guid: 99fbeadb0c9ed9040aad0b0025de26b4, type: 2}
+  _eventActivateLineRenderer: {fileID: 11400000, guid: b53789b18eb7cbd49b2d62e364686eb7, type: 2}
+  _eventDeactivateLineRenderer: {fileID: 11400000, guid: 480cf7a0a8e5cac4fa0d4ad900b9a190, type: 2}
 --- !u!114 &1376285691905362719
 MonoBehaviour:
   m_ObjectHideFlags: 0
