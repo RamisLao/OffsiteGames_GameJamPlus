@@ -20,8 +20,10 @@ public class EnemyManager : MonoBehaviour
 
     [Title("Broadcasting on")]
     [SerializeField] private VoidEventChannelSO _eventEndEnemyTurn;
+    [SerializeField] private VoidEventChannelSO _eventAllEnemiesDead;
     [SerializeField] private ApplyCardEffectEventChannelSO _eventApplyCardEffect;
 
+    private bool _combatIsActive = false;
     private List<UnityAction> _actionsToBePerformed;
 
     private void Awake()
@@ -36,8 +38,21 @@ public class EnemyManager : MonoBehaviour
         _eventEnemyIsDead.OnEventRaised += EnemyHasDied;
     }
 
+    private void Update()
+    {
+        if (_combatIsActive)
+        {
+            if (_currentEnemiesInCombat.ListIsEmpty)
+            {
+                _combatIsActive = false;
+                _eventAllEnemiesDead.RaiseEvent();
+            }
+        }
+    }
+
     private void SetupCombat()
     {
+        _combatIsActive = true;
         foreach (EnemyAI ai in _currentEnemiesInCombat.Items)
         {
             if (ai.TryGetComponent(out Health health))
@@ -119,6 +134,7 @@ public class EnemyManager : MonoBehaviour
     private void EnemyHasDied(Agent agent)
     {
         EnemyAI ai = (EnemyAI)agent;
+        ai.GetComponent<Enemy>().ActivateOnDeadEffects();
         ai.Kill();
     }
 }

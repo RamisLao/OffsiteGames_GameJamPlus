@@ -35,13 +35,6 @@ public abstract class EnemyAI : Agent
         RemoveMyselfFromBattle();
     }
 
-    [Button("AddEnemy")]
-    private void AddEnemy()
-    {
-        _currentEnemiesInBattle.Add(this);
-        _canvas.SetActive(true);
-    }
-
     private void OnCombatActivated(EnemyAI enemy)
     {
         if (enemy == this)
