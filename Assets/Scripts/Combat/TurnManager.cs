@@ -61,7 +61,6 @@ public class TurnManager : MonoBehaviour
         _eventInitPlayerHealth.RaiseEvent();
         _eventSetupEnemyManager.RaiseEvent();
         _eventTriggerPlayerMovementOn.RaiseEvent();
-        Debug.Log("Here?");
 
         StartCombat();
     }

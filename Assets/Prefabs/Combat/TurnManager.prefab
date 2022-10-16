@@ -55,7 +55,7 @@ MonoBehaviour:
   _eventDrawCards: {fileID: 11400000, guid: 2be9b5097bbd9754fadc83225d7507cf, type: 2}
   _eventGainMana: {fileID: 11400000, guid: de0e3e5d296cb5a4b8ef12b6ece5e288, type: 2}
   _eventDiscardHand: {fileID: 11400000, guid: 2594ee040a46e86448b9f6806aabe8ec, type: 2}
-  _eventPlayerTurnPreparation: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
+  _eventPlayerTurnPreparation: {fileID: 11400000, guid: b03e4daddffb0ba4bae8c13c0b19f7f2, type: 2}
   _eventPlayerTurnCleanup: {fileID: 11400000, guid: fa27ead3d03d00045817d0c0b8f60f3e, type: 2}
   _eventTriggerPlayerMovementOn: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
   _eventTriggerPlayerMovementOff: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}

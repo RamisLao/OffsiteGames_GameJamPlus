@@ -12,13 +12,25 @@ public class LockedRoom : MonoBehaviour
     [Title("Listening on")]
     [SerializeField] private VoidEventChannelSO _eventOnCombatEnded;
 
+    private bool _locked = true;
+
     private void Awake()
     {
-        _eventOnCombatEnded.OnEventRaised += MaybeUnlock;
+        //_eventOnCombatEnded.OnEventRaised += MaybeUnlock;
+    }
+
+    private void Update()
+    {
+        if (_locked)
+        {
+            MaybeUnlock();
+        }
     }
 
     private void MaybeUnlock()
     {
+        if (_treesToClean == null || _treesToClean.Count == 0) return;
+
         bool unlocked = true;
         foreach (PalmTreeGroves p in _treesToClean)
         {
@@ -29,6 +41,10 @@ public class LockedRoom : MonoBehaviour
             }
         }
 
-        if (unlocked) _doorToUnlock.SetActive(false);
+        if (unlocked)
+        {
+            _doorToUnlock.SetActive(false);
+            _locked = false;
+        }
     }
 }

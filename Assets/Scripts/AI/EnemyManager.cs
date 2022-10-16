@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _eventSetupEnemyManager;
 
     [SerializeField] private VoidEventChannelSO _eventPrepareEnemyTurn;
+    [SerializeField] private VoidEventChannelSO _eventPlayerTurnPreparation;
     [SerializeField] private VoidEventChannelSO _eventStartEnemyTurn;
     [SerializeField] private AgentEventChannelSO _eventEnemyIsDead;
 
@@ -33,6 +34,7 @@ public class EnemyManager : MonoBehaviour
         _actionsToBePerformed = new();
         _eventSetupEnemyManager.OnEventRaised += SetupEnemyManager;
         _eventPrepareEnemyTurn.OnEventRaised += PrepareEnemyTurn;
+        _eventPlayerTurnPreparation.OnEventRaised += SelectEnemyActions;
         _eventStartEnemyTurn.OnEventRaised += RunEnemyTurn;
         _eventCardSelected.OnEventRaised += CardHasBeenSelected;
         _eventCardDeselected.OnEventRaised += CardHasBeenDeselected;
@@ -72,6 +74,14 @@ public class EnemyManager : MonoBehaviour
             {
                 health.ApplySapplingDamage();
             }
+        }
+    }
+
+    private void SelectEnemyActions()
+    {
+        foreach (EnemyAI ai in _currentEnemiesInCombat.Items)
+        {
+            ai.SelectActionsToPerform();
         }
     }
 

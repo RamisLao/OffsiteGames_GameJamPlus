@@ -15,21 +15,27 @@ public class EnemyAIBasic : EnemyAI
     [SerializeField] private RuntimeSetCardData _enemyDeck;
     [SerializeField] private VariablePlayerCombat _variablePlayer;
 
+    protected CardData _actionToPerform;
     public UnityEvent OnAttack;
+
+    public override void SelectActionsToPerform()
+    {
+        _actionToPerform = _enemyDeck.GetRandomItem();
+        Debug.Log(_actionToPerform);
+    }
 
     public override void PerformActions()
     {
-        CardData cardToPlay = _enemyDeck.GetRandomItem();
-        if (cardToPlay.AppliesToSelf)
-            _eventApplyCardEffect.RaiseEvent(cardToPlay, this);
-        else if (cardToPlay.AppliesAbsorb)
+        if (_actionToPerform.AppliesToSelf)
+            _eventApplyCardEffect.RaiseEvent(_actionToPerform, this);
+        else if (_actionToPerform.AppliesAbsorb)
         {
-            _eventApplyAbsorbEffect.RaiseEvent(cardToPlay, this, _variablePlayer.Value);
+            _eventApplyAbsorbEffect.RaiseEvent(_actionToPerform, this, _variablePlayer.Value);
             OnAttack.Invoke();
         }
         else
         {
-            _eventApplyCardEffect.RaiseEvent(cardToPlay, _variablePlayer.Value);
+            _eventApplyCardEffect.RaiseEvent(_actionToPerform, _variablePlayer.Value);
             OnAttack.Invoke();
         }
     }

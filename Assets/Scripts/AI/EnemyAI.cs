@@ -55,6 +55,8 @@ public abstract class EnemyAI : Agent
         if (_currentEnemiesInBattle.Contains(this)) _currentEnemiesInBattle.Remove(this);
     }
 
+    public abstract void SelectActionsToPerform();
+
     public void MaybePerformActions()
     {
         if (IsStunned)
@@ -66,6 +68,8 @@ public abstract class EnemyAI : Agent
 
         PerformActions();
     }
+
+    public abstract void PerformActions();
 
     public override void ApplyStun()
     {
@@ -80,7 +84,6 @@ public abstract class EnemyAI : Agent
         else _stunImage.SetActive(false);
     }
 
-    public abstract void PerformActions();
 
     private void OnMouseOver()
     {
