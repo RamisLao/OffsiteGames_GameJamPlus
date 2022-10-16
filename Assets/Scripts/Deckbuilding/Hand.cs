@@ -186,8 +186,12 @@ public class Hand : MonoBehaviour
     private void UpdateLineRenderer(Vector2 mousePos)
     {
         List<Vector3> positions = new();
-        positions.Add(Camera.main.ScreenToWorldPoint(_selectedCard.Value.transform.position));
-        positions.Add(Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 1f)));
+        Vector3 selectedCardPosition = Camera.main.ScreenToWorldPoint(_selectedCard.Value.transform.position);
+        selectedCardPosition.z = 1;
+        positions.Add(selectedCardPosition);
+        Vector3 newMousePos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 1f));
+        newMousePos.z = 1;
+        positions.Add(newMousePos);
         _eventUpdateRendererPositions.RaiseEvent(positions);
     }
 

@@ -33,6 +33,7 @@ public class DragLineRenderer : MonoBehaviour
 
     private void UpdateLineRenderer(List<Vector3> positions)
     {
+        _lineRenderer.positionCount = positions.Count;
         _lineRenderer.SetPositions(positions.ToArray());
     }
 }
