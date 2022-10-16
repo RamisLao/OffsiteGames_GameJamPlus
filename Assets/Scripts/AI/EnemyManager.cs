@@ -73,7 +73,6 @@ public class EnemyManager : MonoBehaviour
                 health.ApplySapplingDamage();
             }
         }
-        Debug.Log("Enemies prepared!");
     }
 
     private void RunEnemyTurn()
@@ -82,7 +81,6 @@ public class EnemyManager : MonoBehaviour
         {
             ai.MaybePerformActions();
         }
-        Debug.Log("All Actions performed!");
 
         EndEnemyTurn();
     }

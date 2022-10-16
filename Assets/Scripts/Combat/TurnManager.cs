@@ -137,6 +137,7 @@ public class TurnManager : MonoBehaviour
     private void EndCombat()
     {
         _eventDiscardHand.RaiseEvent();
+        _eventDeactivateCombatCanvas.RaiseEvent();
         _eventOnCombatDeactivated.RaiseEvent();
     }
 }
