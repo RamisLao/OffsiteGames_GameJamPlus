@@ -18,14 +18,20 @@ public class PlayerMovement : MonoBehaviour
     private DoMove _doMove;
     private DoDead _doDead;
 
+    [Title("Sounds")]
+    [SerializeField] private List<AudioClip> _footSteps;
+    private AudioSource _audioSource;
+
     [Title("Listening on")]
     public VoidEventChannelSO _eventOnCombatActivated;
     public VoidEventChannelSO _eventOnCombatDeactivated;
+    public VariableVector2 _inputDirection;
 
     private void Start()
     {
         _rbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         _eventOnCombatActivated.OnEventRaised += EnableMovement;
         _eventOnCombatDeactivated.OnEventRaised += EnableMovement;
 
@@ -46,14 +52,17 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue value)
     {
         _playerInput = value.Get<Vector2>();
+        _inputDirection.Value = value.Get<Vector2>();
 
         if(_playerInput.magnitude > 0 && _canMove)
         {
             _doMove.Execute(_animator);
+            PlayFootSteps();
         }
         else
         {
             _doMove.Cancel(_animator);
+            _audioSource.Stop();
         }
     }
 
@@ -77,5 +86,14 @@ public class PlayerMovement : MonoBehaviour
         Vector2 newPos = currentPos + targetPos * Time.fixedDeltaTime;
 
         _rbody.MovePosition(newPos);
+    }
+
+    private void PlayFootSteps()
+    {
+        if (_audioSource.isPlaying || _footSteps.Count <= 0)
+            return;
+
+        int random = Random.Range(0, _footSteps.Count);
+        _audioSource.PlayOneShot(_footSteps[random]);
     }
 }
