@@ -19,7 +19,7 @@ MonoBehaviour:
   ManaCost: 1
   Description: Gain 6 block
   TargetsAll: 0
-  AppliesToSelf: 0
+  AppliesToSelf: 1
   GetsDestroyed: 0
   AppliesDamage: 0
   DamageAmount: 4
