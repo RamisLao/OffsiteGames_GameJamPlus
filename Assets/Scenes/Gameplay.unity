@@ -5102,6 +5102,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TopDownPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3752646654740599186, guid: e3d550767017fec43ba9e880dc36e0e9, type: 3}
+      propertyPath: _footSteps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752646654740599186, guid: e3d550767017fec43ba9e880dc36e0e9, type: 3}
+      propertyPath: _footSteps.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c6aa656cf83c0b54e88f9b9d9ef26591, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3d550767017fec43ba9e880dc36e0e9, type: 3}
 --- !u!1001 &1371841180
