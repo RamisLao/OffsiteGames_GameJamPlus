@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbf43765b6f0e34f937012fcd34759f, type: 3}
+  m_Name: RS_ChunkyEnemyDeck
+  m_EditorClassIdentifier: 
+  _copyFrom: {fileID: 0}
+  _description: 
+  _canContainDuplicates: 0
+  _items:
+  - {fileID: 11400000, guid: df096258d12edf546b8bd1a5c54d9c43, type: 2}
+  - {fileID: 11400000, guid: 6f677e482f4f6c547a1c661a02f249cd, type: 2}
+  - {fileID: 11400000, guid: 2e2275ab9d1e44140a6a372d4d83f477, type: 2}
+  - {fileID: 11400000, guid: e798f4acdb262a14b870b423986ee5f7, type: 2}
+  - {fileID: 11400000, guid: 7d991f67a18fe66408df3e0360df5c5d, type: 2}
+  - {fileID: 11400000, guid: 48ff7184f6de96246968fad9aff27875, type: 2}
+  OnChanged:
+    m_PersistentCalls:
+      m_Calls: []

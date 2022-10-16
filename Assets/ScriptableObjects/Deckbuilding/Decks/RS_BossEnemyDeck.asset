@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbf43765b6f0e34f937012fcd34759f, type: 3}
+  m_Name: RS_BossEnemyDeck
+  m_EditorClassIdentifier: 
+  _copyFrom: {fileID: 0}
+  _description: 
+  _canContainDuplicates: 0
+  _items:
+  - {fileID: 11400000, guid: 92d717407a8d64e419f82c3bd8dc45e8, type: 2}
+  - {fileID: 11400000, guid: c41d57765b68d3a4790cb6fe75a272f5, type: 2}
+  - {fileID: 11400000, guid: 70634271c4eba7842a33958ed610e8df, type: 2}
+  - {fileID: 11400000, guid: c0635978952e15348809b8b0dd697c4b, type: 2}
+  - {fileID: 11400000, guid: 6a92158be086fd44abd8001740a82c41, type: 2}
+  - {fileID: 11400000, guid: 48ff7184f6de96246968fad9aff27875, type: 2}
+  - {fileID: 11400000, guid: bf74b6f255364ae42b790a51b089bce7, type: 2}
+  - {fileID: 11400000, guid: c13a317d6e77ca446b709363810167fd, type: 2}
+  - {fileID: 11400000, guid: bf74b6f255364ae42b790a51b089bce7, type: 2}
+  OnChanged:
+    m_PersistentCalls:
+      m_Calls: []

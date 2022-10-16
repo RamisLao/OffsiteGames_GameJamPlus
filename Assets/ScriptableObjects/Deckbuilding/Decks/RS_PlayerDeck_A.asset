@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbf43765b6f0e34f937012fcd34759f, type: 3}
+  m_Name: RS_PlayerDeck_A
+  m_EditorClassIdentifier: 
+  _copyFrom: {fileID: 0}
+  _description: 
+  _canContainDuplicates: 0
+  _items:
+  - {fileID: 11400000, guid: bf5b4a3e727aa554c94502aab5691bed, type: 2}
+  - {fileID: 11400000, guid: bf5b4a3e727aa554c94502aab5691bed, type: 2}
+  - {fileID: 11400000, guid: bf5b4a3e727aa554c94502aab5691bed, type: 2}
+  - {fileID: 11400000, guid: eb15bd5f87b26dc4aaf77d4b78319a6c, type: 2}
+  - {fileID: 11400000, guid: 90f0b8d766922a240a9e1e5c8b12bfc5, type: 2}
+  - {fileID: 11400000, guid: 90f0b8d766922a240a9e1e5c8b12bfc5, type: 2}
+  - {fileID: 11400000, guid: 90f0b8d766922a240a9e1e5c8b12bfc5, type: 2}
+  - {fileID: 11400000, guid: aaad39eb873c2824bb4335df3ba6d3aa, type: 2}
+  - {fileID: 11400000, guid: 92e19ec924de2ad439897356ec8607fe, type: 2}
+  OnChanged:
+    m_PersistentCalls:
+      m_Calls: []
