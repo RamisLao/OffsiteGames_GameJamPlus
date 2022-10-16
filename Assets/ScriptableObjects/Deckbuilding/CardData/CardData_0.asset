@@ -19,6 +19,7 @@ MonoBehaviour:
   ManaCost: 1
   Description: Damage 3. Targets All.
   TargetsAll: 1
+  AppliesToSelf: 0
   GetsDestroyed: 0
   AppliesDamage: 1
   DamageAmount: 3
@@ -35,3 +36,7 @@ MonoBehaviour:
   ProtectedAmount: 1
   AppliesAbsorb: 0
   AbsorbAmount: 2
+  DrawCards: 0
+  NumOfCardsToDraw: 1
+  DiscardCards: 0
+  NumOfCardsToDiscard: 1

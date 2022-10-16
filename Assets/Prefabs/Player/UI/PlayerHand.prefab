@@ -109,6 +109,7 @@ MonoBehaviour:
   _eventCardDeselected: {fileID: 11400000, guid: 5e5138c9616f46e468b288e9cc7a5848, type: 2}
   _eventCardEffectActivatedForEnemies: {fileID: 11400000, guid: f1fa7a3d2dfbccc4fa96dd048dacc3be, type: 2}
   _eventApplyCardEffect: {fileID: 11400000, guid: 0658fe44e9cd6b04c9b0947426892619, type: 2}
+  _eventApplyAbsorbEffect: {fileID: 11400000, guid: fdc5dd3546d28ee4b916a3ab20b44250, type: 2}
 --- !u!114 &1376285691905362719
 MonoBehaviour:
   m_ObjectHideFlags: 0

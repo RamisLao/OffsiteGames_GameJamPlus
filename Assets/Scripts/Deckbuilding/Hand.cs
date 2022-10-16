@@ -33,11 +33,14 @@ public class Hand : MonoBehaviour
     [SerializeField] private CardEventChannelSO _eventCardDeselected;
     [SerializeField] private CardEventChannelSO _eventCardEffectActivatedForEnemies;
     [SerializeField] private ApplyCardEffectEventChannelSO _eventApplyCardEffect;
+    [SerializeField] private ApplyAbsorbEffectEventChannelSO _eventApplyAbsorbEffect;
 
     private Vector2 _selectedCardFormerPosition;
     private List<Card> _currentCards;
     private Pile _drawPile;
     private Pile _discardPile;
+    private bool _waitingToDiscard = false;
+    private int _amountOfCardsToDiscard = 0;
 
     private void Awake()
     {
@@ -131,6 +134,16 @@ public class Hand : MonoBehaviour
 
     private void MaybeSelectCard(Card card)
     {
+        if (_waitingToDiscard)
+        {
+            AddCardToDiscardPile(card.Data);
+            Destroy(card.gameObject);
+            _amountOfCardsToDiscard--;
+
+            if (_amountOfCardsToDiscard == 0) _waitingToDiscard = false;
+            return;
+        }
+
         if (_currentMana.Value < card.Data.ManaCost) return;
 
         _selectedCardFormerPosition = card.transform.position;
@@ -146,9 +159,17 @@ public class Hand : MonoBehaviour
             if (!_releaseLimits.IsMouseInsideLimits())
             {
                 if (_selectedCard.Value.Data.AppliesToSelf ||
-                    _selectedCard.Value.Data.TargetsAll ||
+                    _selectedCard.Value.Data.TargetsAll || 
+                    _selectedCard.Value.Data.DrawCards ||
+                    _selectedCard.Value.Data.DiscardCards ||
                     !_currentEnemyOnHover.IsEmpty)
                 {
+                    _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
+                    AddCardToDiscardPile(card.Data);
+                    Destroy(_selectedCard.Value.gameObject);
+                    _selectedCard.Value = null;
+                    //AddCardToHand();
+
                     ActivateCardEffect(card);
                 }
                 else
@@ -166,15 +187,20 @@ public class Hand : MonoBehaviour
 
     private void ActivateCardEffect(Card card)
     {
-        _eventSubtractMana.RaiseEvent(card.Data.ManaCost);
-        AddCardToDiscardPile(card.Data);
-        Destroy(_selectedCard.Value.gameObject);
-        _selectedCard.Value = null;
-        AddCardToHand();
-
-        if (card.Data.AppliesToSelf)
+        if (card.Data.DrawCards)
+        {
+            for (int i = 0; i < card.Data.NumOfCardsToDraw; i++) AddCardToHand();
+        }
+        else if (card.Data.DiscardCards)
+        {
+            _waitingToDiscard = true;
+            _amountOfCardsToDiscard = card.Data.NumOfCardsToDiscard;
+        }
+        else if (card.Data.AppliesToSelf)
             _eventApplyCardEffect.RaiseEvent(card.Data, _player.Value);
-        else 
+        else if (card.Data.AppliesAbsorb)
+            _eventApplyAbsorbEffect.RaiseEvent(card.Data, _player.Value, _currentEnemyOnHover.Value);
+        else
             _eventCardEffectActivatedForEnemies.RaiseEvent(card);
     }
 

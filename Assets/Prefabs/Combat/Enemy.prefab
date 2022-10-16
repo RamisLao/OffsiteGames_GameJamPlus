@@ -54,6 +54,7 @@ MonoBehaviour:
   _enemyDeck: {fileID: 11400000, guid: bad254376fd53fa4ea747438c8b68713, type: 2}
   _variablePlayer: {fileID: 11400000, guid: 740d9c7c024de92419f972471ea65be6, type: 2}
   _eventApplyCardEffect: {fileID: 11400000, guid: 0658fe44e9cd6b04c9b0947426892619, type: 2}
+  _eventApplyAbsorbEffect: {fileID: 11400000, guid: fdc5dd3546d28ee4b916a3ab20b44250, type: 2}
 --- !u!212 &1963460005
 SpriteRenderer:
   m_ObjectHideFlags: 0

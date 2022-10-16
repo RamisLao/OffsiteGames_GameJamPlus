@@ -7,10 +7,24 @@ public class CardEffectResolver : MonoBehaviour
 {
     [Title("Listening on")]
     [SerializeField] private ApplyCardEffectEventChannelSO _eventApplyCardEffect;
+    [SerializeField] private ApplyAbsorbEffectEventChannelSO _eventAbsorbEffect;
 
     private void Awake()
     {
         _eventApplyCardEffect.OnEventRaised += ApplyEffect;
+        _eventAbsorbEffect.OnEventRaised += ApplyAbsorb;
+    }
+
+    private void ApplyAbsorb(CardData cardData, Agent agentFrom, Agent agentTo)
+    {
+        if (agentFrom.TryGetComponent(out Health healthFrom))
+        {
+            healthFrom.AddHealth(cardData.AbsorbAmount);
+        }
+        if (agentTo.TryGetComponent(out Health healthTo))
+        {
+            healthTo.SubtractHealth(cardData.AbsorbAmount);
+        }
     }
 
     private void ApplyEffect(CardData cardData, Agent agent)

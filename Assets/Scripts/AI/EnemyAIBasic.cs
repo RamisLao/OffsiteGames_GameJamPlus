@@ -10,12 +10,15 @@ public class EnemyAIBasic : EnemyAI
 
     [Title("Broadcasting on")]
     [SerializeField] private ApplyCardEffectEventChannelSO _eventApplyCardEffect;
+    [SerializeField] private ApplyAbsorbEffectEventChannelSO _eventApplyAbsorbEffect;
 
     public override void PerformActions()
     {
         CardData cardToPlay = _enemyDeck.GetRandomItem();
         if (cardToPlay.AppliesToSelf)
             _eventApplyCardEffect.RaiseEvent(cardToPlay, this);
+        else if (cardToPlay.AppliesAbsorb)
+            _eventApplyAbsorbEffect.RaiseEvent(cardToPlay, this, _variablePlayer.Value);
         else
             _eventApplyCardEffect.RaiseEvent(cardToPlay, _variablePlayer.Value);
         Debug.Log("Action performed!");
