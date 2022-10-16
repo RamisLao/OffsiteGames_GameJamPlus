@@ -6,30 +6,29 @@ using UnityEngine;
 public class LockedRoom : MonoBehaviour
 {
     [Title("Room Settings")]
-    [SerializeField] private int _enemiesToDefeated;
-    [SerializeField] private VariableInt _enemiesDefeated;
+    [SerializeField] private List<PalmTreeGroves> _treesToClean;
     [SerializeField] private GameObject _doorToUnlock;
-    private bool _isUnlocked;
 
-    private void Start()
+    [Title("Listening on")]
+    [SerializeField] private VoidEventChannelSO _eventOnCombatEnded;
+
+    private void Awake()
     {
-        _enemiesDefeated.Value = 0;
+        _eventOnCombatEnded.OnEventRaised += MaybeUnlock;
     }
 
-    private void Update()
+    private void MaybeUnlock()
     {
-        if (_isUnlocked)
-            return;
-
-        UnlockRoom();
-    }
-
-    private void UnlockRoom()
-    {
-        if(_enemiesDefeated.Value >= _enemiesToDefeated)
+        bool unlocked = true;
+        foreach (PalmTreeGroves p in _treesToClean)
         {
-            _doorToUnlock.SetActive(false);
-            _isUnlocked = true;
+            if (!p.PalmIsCleaned)
+            {
+                unlocked = false;
+                break;
+            }
         }
+
+        if (unlocked) _doorToUnlock.SetActive(false);
     }
 }

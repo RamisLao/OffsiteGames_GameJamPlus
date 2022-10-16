@@ -243,10 +243,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHand
       objectReference: {fileID: 0}
-    - target: {fileID: 3001870973928385935, guid: 9e379dfb8d01bc14f8a9a6b250fd3cd3, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8439517093236051193, guid: 9e379dfb8d01bc14f8a9a6b250fd3cd3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

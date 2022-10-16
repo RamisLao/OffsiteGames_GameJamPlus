@@ -15,7 +15,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private SettingsCombat _settingsCombat;
 
     [Title("Listening on")]
-    [SerializeField] private VoidEventChannelSO _eventOnCombatActivated;
+    [SerializeField] private CombatTriggerEventChannelSO _eventOnCombatActivated;
     [SerializeField] private VoidEventChannelSO _eventPlayerButtonTurnEndPressed;
     [SerializeField] private VoidEventChannelSO _eventEnemiesHavePerformedActions;
     [SerializeField] private VoidEventChannelSO _eventAllEnemiesDead;
@@ -42,7 +42,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _eventOnCombatDeactivated;
 
     private ETurn _currentTurn;
-    private EnemyTrigger _currentEnemyTrigger;
+    private CombatTrigger _currentEnemyTrigger;
 
     private void Awake()
     {
@@ -52,8 +52,9 @@ public class TurnManager : MonoBehaviour
         _eventAllEnemiesDead.OnEventRaised += EndCombat;
     }
 
-    private void ActivateCombat()
+    private void ActivateCombat(CombatTrigger ct)
     {
+        _currentEnemyTrigger = ct;
         _eventActivateCombatCanvas.RaiseEvent();
         _eventInitPlayerHealth.RaiseEvent();
         _eventSetupEnemyManager.RaiseEvent();
@@ -139,5 +140,7 @@ public class TurnManager : MonoBehaviour
         _eventDiscardHand.RaiseEvent();
         _eventDeactivateCombatCanvas.RaiseEvent();
         _eventOnCombatDeactivated.RaiseEvent();
+        _currentEnemyTrigger.CleanAssociatedPalmTreeGrove();
+        _currentEnemyTrigger = null;
     }
 }

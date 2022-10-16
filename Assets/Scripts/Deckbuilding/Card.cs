@@ -37,10 +37,11 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void SetupCard()
     {
-        _image.color = _data.Color;
-        _manaCostText.text = $"{_data.ManaCost}";
-        _nameText.text = _data.Name;
-        _descriptionText.text = _data.Description;
+        _image.sprite = _data.Image;
+        //_image.color = _data.Color;
+        //_manaCostText.text = $"{_data.ManaCost}";
+        //_nameText.text = _data.Name;
+        //_descriptionText.text = _data.Description;
     }
 
     public void OnPointerDown(PointerEventData eventData)
