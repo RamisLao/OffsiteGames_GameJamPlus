@@ -8,6 +8,7 @@ public class CardButton : MonoBehaviour
     private CardData _data;
     public CardData Data
     {
+        get { return _data; }
         set { _data = value; }
     }
 

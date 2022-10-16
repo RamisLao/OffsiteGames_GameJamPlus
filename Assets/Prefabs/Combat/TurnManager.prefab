@@ -58,7 +58,7 @@ MonoBehaviour:
   _eventPlayerTurnPreparation: {fileID: 11400000, guid: b03e4daddffb0ba4bae8c13c0b19f7f2, type: 2}
   _eventPlayerTurnCleanup: {fileID: 11400000, guid: fa27ead3d03d00045817d0c0b8f60f3e, type: 2}
   _eventTriggerPlayerMovementOn: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
-  _eventTriggerPlayerMovementOff: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
+  _eventOpenCardSelectionPanel: {fileID: 11400000, guid: 023323e6b0a8bbf4090c17044b5e20d3, type: 2}
   _eventEnemyTurnPreparation: {fileID: 11400000, guid: b87464ea141697d41a2b7a59639f16d3, type: 2}
   _eventEnemyTurnRun: {fileID: 11400000, guid: 9aad5b883f6ef8d4d9a7ed5dd488cb09, type: 2}
   _eventDeactivateCombatCanvas: {fileID: 11400000, guid: 62fcc18cc76b1524e93d2757d86841c0, type: 2}
