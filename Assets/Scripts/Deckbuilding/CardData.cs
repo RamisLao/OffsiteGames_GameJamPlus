@@ -59,4 +59,12 @@ public class CardData : ScriptableObject
     public bool AppliesAbsorb = false;
     [ShowIf("@this.AppliesAbsorb")]
     public int AbsorbAmount = 2;
+
+    public bool DrawCards = false;
+    [ShowIf("@this.DrawCards")]
+    public int NumOfCardsToDraw = 1;
+
+    public bool DiscardCards = false;
+    [ShowIf("@this.DiscardCards")]
+    public int NumOfCardsToDiscard = 1;
 }
