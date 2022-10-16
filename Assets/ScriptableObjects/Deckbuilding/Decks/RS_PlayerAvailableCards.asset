@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbf43765b6f0e34f937012fcd34759f, type: 3}
+  m_Name: RS_PlayerAvailableCards
+  m_EditorClassIdentifier: 
+  _copyFrom: {fileID: 0}
+  _description: 
+  _canContainDuplicates: 0
+  _items:
+  - {fileID: 11400000, guid: 8d0f93c24cfba1f4a86de4ab0ce223ca, type: 2}
+  - {fileID: 11400000, guid: 4f120209ffb18854d92b14ba804c75d4, type: 2}
+  - {fileID: 11400000, guid: 5ae9a3153253f4648b1cca1cbce9e422, type: 2}
+  - {fileID: 11400000, guid: eb15bd5f87b26dc4aaf77d4b78319a6c, type: 2}
+  - {fileID: 11400000, guid: baeed509bc66df54fa40a1fe1ba3b54d, type: 2}
+  - {fileID: 11400000, guid: 92e19ec924de2ad439897356ec8607fe, type: 2}
+  - {fileID: 11400000, guid: 9f0471590dfdabe45982af7d6d937dc8, type: 2}
+  - {fileID: 11400000, guid: 522ce223f623f6244be9fd396823df87, type: 2}
+  - {fileID: 11400000, guid: 94071a7df6ae46547ab9b3d946ae80d0, type: 2}
+  - {fileID: 11400000, guid: c8e0bdbca6c432348acfd28d3ee83103, type: 2}
+  - {fileID: 11400000, guid: 84823e121d91db94a9bea01790663939, type: 2}
+  - {fileID: 11400000, guid: aaad39eb873c2824bb4335df3ba6d3aa, type: 2}
+  - {fileID: 11400000, guid: 7839a2ce1bd9f10459195d359a7397d4, type: 2}
+  - {fileID: 11400000, guid: 90f0b8d766922a240a9e1e5c8b12bfc5, type: 2}
+  - {fileID: 11400000, guid: bf5b4a3e727aa554c94502aab5691bed, type: 2}
+  - {fileID: 11400000, guid: 51f174d2a7fdc0d4ca6ecbfb5445d810, type: 2}
+  - {fileID: 11400000, guid: f601551d601b4b34bac785aee5f0a13c, type: 2}
+  - {fileID: 11400000, guid: 2f4ce1b618c1eaa42acc4f1ba97a84dc, type: 2}
+  - {fileID: 11400000, guid: 1499e068a2c76b64991b1d687db32c13, type: 2}
+  - {fileID: 11400000, guid: 2140ff90dfe2b364abebfcd7919aae79, type: 2}
+  - {fileID: 11400000, guid: 8b4948245bc7cc4498038a72514dc3af, type: 2}
+  - {fileID: 11400000, guid: 09af213d4ca3f4e46bc5c6e243f90090, type: 2}
+  OnChanged:
+    m_PersistentCalls:
+      m_Calls: []

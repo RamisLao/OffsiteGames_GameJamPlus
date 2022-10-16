@@ -94,18 +94,21 @@ public class Health : MonoBehaviour
     {
         CurrentHealth = Mathf.Min(CurrentHealth + toAdd, _maxHealth.Value);
         UpdateHealthBar();
+        OnHealed.Invoke();
     }
 
     public void AddBlockPoints(int toAdd)
     {
         _currentBlockPoints += toAdd;
         UpdateBlockText();
+        OnAddBlock.Invoke();
     }
 
     public void AddSapplings(int toAdd)
     {
         _currentAmountOfSaplings += toAdd;
         UpdateSapplingText();
+        OnAddSappling.Invoke();
     }
 
     public void ApplySapplingDamage()
@@ -114,12 +117,14 @@ public class Health : MonoBehaviour
         SubtractHealth(_currentAmountOfSaplings);
         _currentAmountOfSaplings--;
         UpdateSapplingText();
+        OnSapplingDamage.Invoke();
     }
 
     public void AddExposedPoints(int toAdd)
     {
         _currentExposedPoints += toAdd;
         UpdateExposedText();
+        OnAddExposed.Invoke();
     }
 
     public void MaybeSubtractExposedPoint()
@@ -132,6 +137,7 @@ public class Health : MonoBehaviour
     {
         _currentProtectedPoints += toAdd;
         UpdateProtectedText();
+        OnAddProtected.Invoke();
     }
 
     public void MaybeSubtractProtectedPoints()
