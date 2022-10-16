@@ -2,9 +2,13 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class EnemyAI : Agent
 {
+    [Title("Parameters")]
+    [SerializeField] private float _delayBeforeDestroy = 2;
+
     [Title("Variables")]
     [SerializeField] private RuntimeSetEnemyAI _currentEnemiesInBattle;
     [SerializeField] private VariableEnemyAI _currentEnemyOnHover;
@@ -22,6 +26,8 @@ public abstract class EnemyAI : Agent
     {
         set { _onHoverIsActive = value; }
     }
+
+    public UnityEvent OnDeath;
 
     protected virtual void Awake()   
     {
@@ -90,6 +96,13 @@ public abstract class EnemyAI : Agent
 
     public void Kill()
     {
+        OnDeath.Invoke();
+        StartCoroutine(DestroyAfterDelayCoroutine());
+    }
+
+    private IEnumerator DestroyAfterDelayCoroutine()
+    {
+        yield return new WaitForSeconds(_delayBeforeDestroy);
         Destroy(gameObject);
     }
 }

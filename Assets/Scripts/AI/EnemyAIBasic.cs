@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyAIBasic : EnemyAI
 {
@@ -14,6 +15,7 @@ public class EnemyAIBasic : EnemyAI
     [SerializeField] private RuntimeSetCardData _enemyDeck;
     [SerializeField] private VariablePlayerCombat _variablePlayer;
 
+    public UnityEvent OnAttack;
 
     public override void PerformActions()
     {
@@ -21,9 +23,14 @@ public class EnemyAIBasic : EnemyAI
         if (cardToPlay.AppliesToSelf)
             _eventApplyCardEffect.RaiseEvent(cardToPlay, this);
         else if (cardToPlay.AppliesAbsorb)
+        {
             _eventApplyAbsorbEffect.RaiseEvent(cardToPlay, this, _variablePlayer.Value);
+            OnAttack.Invoke();
+        }
         else
+        {
             _eventApplyCardEffect.RaiseEvent(cardToPlay, _variablePlayer.Value);
-        Debug.Log("Action performed!");
+            OnAttack.Invoke();
+        }
     }
 }
