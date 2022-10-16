@@ -6247,7 +6247,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
-  _footSteps: []
+  _footSteps:
+  - {fileID: 8300000, guid: 51cb4d489b447064c82753014e3d61c2, type: 3}
+  - {fileID: 8300000, guid: feab025ccdf5ae74499954cee82e19ee, type: 3}
+  - {fileID: 8300000, guid: 328e0098326a2564a97a7ad923e78f1d, type: 3}
+  - {fileID: 8300000, guid: 2dd33a4313599704aad1f660540cd1bf, type: 3}
+  - {fileID: 8300000, guid: 7a2dd93dc9ca31b4285092b809b392c0, type: 3}
+  _delaySteps: 0.5
   _eventOnCombatActivated: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
   _eventOnCombatDeactivated: {fileID: 11400000, guid: 85296d20fc538fb44953fa4fa1816520, type: 2}
   _inputDirection: {fileID: 11400000, guid: d53b41f78cc7cd942bb7d8ab50dd9306, type: 2}

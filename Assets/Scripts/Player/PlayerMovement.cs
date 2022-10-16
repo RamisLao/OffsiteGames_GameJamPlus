@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     [Title("Sounds")]
     [SerializeField] private List<AudioClip> _footSteps;
     private AudioSource _audioSource;
+    [SerializeField] private float _delaySteps;
+    private float time;
 
     [Title("Listening on")]
     public VoidEventChannelSO _eventOnCombatActivated;
@@ -37,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
 
         _doMove = new DoMove();
         _doDead = new DoDead();
+
+        time = _delaySteps;
     }
 
     private void FixedUpdate()
@@ -57,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         if(_playerInput.magnitude > 0 && _canMove)
         {
             _doMove.Execute(_animator);
-            PlayFootSteps();
+            //PlayFootSteps();
         }
         else
         {
@@ -86,6 +90,19 @@ public class PlayerMovement : MonoBehaviour
         Vector2 newPos = currentPos + targetPos * Time.fixedDeltaTime;
 
         _rbody.MovePosition(newPos);
+
+        if (_playerInput.magnitude > 0)
+        {
+            if (time < 0)
+            {
+                PlayFootSteps();
+                time = _delaySteps;
+            }
+            else
+            {
+                time -= Time.deltaTime;
+            }
+        }
     }
 
     private void PlayFootSteps()
