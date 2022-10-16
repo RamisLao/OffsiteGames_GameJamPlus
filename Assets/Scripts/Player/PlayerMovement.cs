@@ -45,8 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_canMove)
-            Movement();
+        Movement();
     }
 
     /// <summary>
@@ -55,19 +54,10 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="value"> Get the value of the player input. </param>
     private void OnMove(InputValue value)
     {
+        if (!_canMove) return;
+
         _playerInput = value.Get<Vector2>();
         _inputDirection.Value = value.Get<Vector2>();
-
-        if(_playerInput.magnitude > 0 && _canMove)
-        {
-            _doMove.Execute(_animator);
-            //PlayFootSteps();
-        }
-        else
-        {
-            _doMove.Cancel(_animator);
-            _audioSource.Stop();
-        }
     }
 
     /// <summary>
@@ -76,6 +66,8 @@ public class PlayerMovement : MonoBehaviour
     private void EnableMovement()
     {
         _canMove = !_canMove;
+        _playerInput = Vector2.zero;
+        _inputDirection.Value = _playerInput;
     }
 
     /// <summary>
@@ -93,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (_playerInput.magnitude > 0)
         {
+            _doMove.Execute(_animator);
             if (time < 0)
             {
                 PlayFootSteps();
@@ -102,6 +95,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 time -= Time.deltaTime;
             }
+        }
+        else
+        {
+            _doMove.Cancel(_animator);
+            _audioSource.Stop();
         }
     }
 
