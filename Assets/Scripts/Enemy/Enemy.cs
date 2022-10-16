@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private VariableFloat _cameraDistance;
 
     [Title("Listening on")]
-    public VoidEventChannelSO _eventOnCombat;
+    [SerializeField] private VoidEventChannelSO _eventOnCombat;
+    [SerializeField] private VariableInt _room;
 
     private void Update()
     {
@@ -44,6 +45,10 @@ public class Enemy : MonoBehaviour
     {
         _palmTree.CleanPalm();
         _eventOnCombat.RaiseEvent();
+
+        if (_room != null)
+            _room.Value += 1;
+
         Destroy(gameObject);
     }
 }
