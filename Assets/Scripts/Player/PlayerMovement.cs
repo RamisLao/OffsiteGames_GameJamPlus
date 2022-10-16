@@ -21,10 +21,12 @@ public class PlayerMovement : MonoBehaviour
     [Title("Sounds")]
     [SerializeField] private List<AudioClip> _footSteps;
     private AudioSource _audioSource;
+    [SerializeField] private float _delaySteps;
+    private float time;
 
     [Title("Listening on")]
-    public VoidEventChannelSO _eventOnCombatActivated;
-    public VoidEventChannelSO _eventOnCombatDeactivated;
+    [SerializeField] private VoidEventChannelSO _eventTriggerPlayerMovementOn;
+    [SerializeField] private Vector3EventChannelSO _eventTriggerPlayerMovementOff;
     public VariableVector2 _inputDirection;
 
     private void Start()
@@ -32,17 +34,18 @@ public class PlayerMovement : MonoBehaviour
         _rbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
-        _eventOnCombatActivated.OnEventRaised += EnableMovement;
-        _eventOnCombatDeactivated.OnEventRaised += EnableMovement;
+        _eventTriggerPlayerMovementOn.OnEventRaised += EnableMovement;
+        _eventTriggerPlayerMovementOff.OnEventRaised += TakeControlOfPlayer;
 
         _doMove = new DoMove();
         _doDead = new DoDead();
+
+        time = _delaySteps;
     }
 
     private void FixedUpdate()
     {
-        if(_canMove)
-            Movement();
+        Movement();
     }
 
     /// <summary>
@@ -51,18 +54,27 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="value"> Get the value of the player input. </param>
     private void OnMove(InputValue value)
     {
+        if (!_canMove) return;
+
         _playerInput = value.Get<Vector2>();
         _inputDirection.Value = value.Get<Vector2>();
+    }
 
-        if(_playerInput.magnitude > 0 && _canMove)
+    private void TakeControlOfPlayer(Vector3 newPos)
+    {
+        EnableMovement();
+        StartCoroutine(MovePlayerTowardsEndDestination(newPos));
+    }
+
+    private IEnumerator MovePlayerTowardsEndDestination(Vector3 newPos)
+    {
+        Vector2 newPos2 = new Vector2(newPos.x, newPos.y);
+        while (Vector2.Distance(_rbody.position, newPos2) > 0.25f)
         {
-            _doMove.Execute(_animator);
-            PlayFootSteps();
-        }
-        else
-        {
-            _doMove.Cancel(_animator);
-            _audioSource.Stop();
+            Vector2 direction = (newPos2 - _rbody.position).normalized;
+            _playerInput = direction;
+            _inputDirection.Value = _playerInput;
+            yield return null;
         }
     }
 
@@ -72,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
     private void EnableMovement()
     {
         _canMove = !_canMove;
+        _playerInput = Vector2.zero;
+        _inputDirection.Value = _playerInput;
     }
 
     /// <summary>
@@ -86,6 +100,25 @@ public class PlayerMovement : MonoBehaviour
         Vector2 newPos = currentPos + targetPos * Time.fixedDeltaTime;
 
         _rbody.MovePosition(newPos);
+
+        if (_playerInput.magnitude > 0)
+        {
+            _doMove.Execute(_animator);
+            if (time < 0)
+            {
+                PlayFootSteps();
+                time = _delaySteps;
+            }
+            else
+            {
+                time -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            _doMove.Cancel(_animator);
+            _audioSource.Stop();
+        }
     }
 
     private void PlayFootSteps()

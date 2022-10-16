@@ -1,0 +1,669 @@
+fileFormatVersion: 2
+guid: 39ca4e60b38e62c46813bc1d031283f6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RestoredNature_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1710
+        width: 451
+        height: 324
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c230a547c3c014e97dad93a12ab43a
+      internalID: 203742967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_1
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 1837
+        width: 471
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135adc1771f06e0478cfe28332b997a8
+      internalID: -758800766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_3
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 1643
+        width: 331
+        height: 329
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37e9a2b953c663429ece20a58b27dc1
+      internalID: 217630818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_5
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 1753
+        width: 259
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b527e1db321794bb75b569b9e8101b
+      internalID: 93661721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_6
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 1824
+        width: 107
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d526e0e752bc14faa2a00959900658
+      internalID: -633866469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_7
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1539
+        width: 488
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea676600bfa4e747ae1837e03a15e67
+      internalID: -1052260997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_8
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 1550
+        width: 471
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91df2e59d2336d243ae3c8b77c876acf
+      internalID: 120260136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_11
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 1547
+        width: 267
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5b188e01a390841b52fe45f1d6ad42
+      internalID: -1590638485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_13
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 1655
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da92078051dd31e4688396b18ef4ddd3
+      internalID: 518649034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_15
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1074
+        width: 435
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c99587c82389a4787a3b03115741b0
+      internalID: -1666085147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_16
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1058
+        width: 497
+        height: 474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6f8be93c129ec439853912200062d5
+      internalID: -1331465142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_17
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1042
+        width: 427
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614001b17fbe1a74e9733f1c22e9471b
+      internalID: 503805421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_18
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 1086
+        width: 471
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e39a920d04858f4fb914b60b3657956
+      internalID: -237841015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_19
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 542
+        width: 433
+        height: 427
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7ccb648affcf945b1c330e71306e13
+      internalID: 1692308473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_22
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 525
+        width: 494
+        height: 478
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e352c3eeaa39e44dab8afdd95603d7a
+      internalID: 445336842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_23
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 534
+        width: 439
+        height: 466
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9bb6fb04564314189d74d9a562b95b
+      internalID: 890223979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_24
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 588
+        width: 380
+        height: 373
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e4eccf49c9b0941a1e21402d353a49
+      internalID: -1911058871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_31
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 92
+        width: 179
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c6922de142752489245bbd678c0496
+      internalID: -1373921307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_33
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 251
+        width: 274
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b618c0d305410341aa71f4d685c914a
+      internalID: 1878813304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_34
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 260
+        width: 279
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aede0c893e85ed9429051b9da41434ab
+      internalID: 1294487897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_35
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 121
+        width: 340
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a7e1a2d5f151e469ee6e2e43ea1544
+      internalID: -466498351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_36
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 106
+        width: 393
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042002517e726984eb93f18a84972087
+      internalID: -1337668279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_39
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 2
+        width: 296
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab482aaa84d27a9458bcc7688730d9fe
+      internalID: 1019374323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestoredNature_40
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 31
+        width: 235
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8c6e0fecb275042a7b8ca779b40e8f
+      internalID: -567774330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      RestoredNature_23: 890223979
+      RestoredNature_0: 203742967
+      RestoredNature_8: 120260136
+      RestoredNature_22: 445336842
+      RestoredNature_24: -1911058871
+      RestoredNature_25: 682049436
+      RestoredNature_4: -326367456
+      RestoredNature_18: -237841015
+      RestoredNature_26: 1081592375
+      RestoredNature_14: 1271766480
+      RestoredNature_10: -1666432584
+      RestoredNature_1: -758800766
+      RestoredNature_15: -1666085147
+      RestoredNature_2: -2129974211
+      RestoredNature_11: -1590638485
+      RestoredNature_34: 1294487897
+      RestoredNature_35: -466498351
+      RestoredNature_17: 503805421
+      RestoredNature_29: -1482710562
+      RestoredNature_19: 1692308473
+      RestoredNature_30: 1766124468
+      RestoredNature_6: -633866469
+      RestoredNature_32: -2133614454
+      RestoredNature_12: -1195661393
+      RestoredNature_39: 1019374323
+      RestoredNature_28: 93294543
+      RestoredNature_38: 1972001212
+      RestoredNature_36: -1337668279
+      RestoredNature_20: 780494050
+      RestoredNature_3: 217630818
+      RestoredNature_40: -567774330
+      RestoredNature_27: -1244160762
+      RestoredNature_9: 1600431634
+      RestoredNature_7: -1052260997
+      RestoredNature_33: 1878813304
+      RestoredNature_21: -865083656
+      RestoredNature_31: -1373921307
+      RestoredNature_5: 93661721
+      RestoredNature_37: 1903797345
+      RestoredNature_13: 518649034
+      RestoredNature_41: -1809613879
+      RestoredNature_16: -1331465142
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

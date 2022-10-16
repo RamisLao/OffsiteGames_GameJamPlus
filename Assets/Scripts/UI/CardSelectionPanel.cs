@@ -14,7 +14,7 @@ public class CardSelectionPanel : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _eventOpenCardSelectionPanel;
 
     [Title("Broadcasting on")]
-    [SerializeField] private VoidEventChannelSO _eventTriggerPlayerMovementOff;
+    [SerializeField] private VoidEventChannelSO _eventTriggerPlayerMovementOn;
 
     private CardButton[] _cardButtons;
 
@@ -40,6 +40,6 @@ public class CardSelectionPanel : MonoBehaviour
     {
         _currentPlayerDeck.Add(button.Data);
         _panel.SetActive(false);
-        _eventTriggerPlayerMovementOff.RaiseEvent();
+        _eventTriggerPlayerMovementOn.RaiseEvent();
     }
 }

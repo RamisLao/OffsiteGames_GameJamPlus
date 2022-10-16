@@ -464,6 +464,10 @@ PrefabInstance:
       value: "Master Buriti fulfilled their destiny\u2026\r"
       objectReference: {fileID: 0}
     - target: {fileID: 1829604592390279994, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 48824361826ab5b42a073c7e98c2812b, type: 2}
+    - target: {fileID: 1829604592390279994, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_fontColor.b
       value: 0.20906019
       objectReference: {fileID: 0}
@@ -475,6 +479,10 @@ PrefabInstance:
       propertyPath: m_fontColor.r
       value: 0.2674254
       objectReference: {fileID: 0}
+    - target: {fileID: 1829604592390279994, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7767948746205884968, guid: 48824361826ab5b42a073c7e98c2812b, type: 2}
     - target: {fileID: 1829604592390279994, guid: be98672617e78bd4399a6a05a10f152a, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4281696836

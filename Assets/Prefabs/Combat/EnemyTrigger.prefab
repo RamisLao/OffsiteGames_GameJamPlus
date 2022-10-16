@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &156402553947679204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6490373641586824354}
+  m_Layer: 2
+  m_Name: PlayerPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6490373641586824354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156402553947679204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1364238152485608842}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1364238152485608841
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +60,8 @@ Transform:
   m_LocalPosition: {x: -14, y: 19, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6490373641586824354}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,5 +108,7 @@ MonoBehaviour:
   _cameraDistance: {fileID: 11400000, guid: d2fec1f14e399d845b45a2b85783286f, type: 2}
   _enemiesToAddToCombat: []
   _associatedPalmTreeGroves: []
+  _playerPosition: {fileID: 6490373641586824354}
   _eventOnCombatActivated: {fileID: 11400000, guid: ee2507bbd657ef14fb1a9f4bb6ecb192, type: 2}
   _eventAddEnemyToCombat: {fileID: 11400000, guid: 97e0c2f7a2a85cb4d9d02f34abe9fae6, type: 2}
+  _eventTriggerPlayerMovementOff: {fileID: 11400000, guid: b4edaf439b146b6458ed14c48df91464, type: 2}
