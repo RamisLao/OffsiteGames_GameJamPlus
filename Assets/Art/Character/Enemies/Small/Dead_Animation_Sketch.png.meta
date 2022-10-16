@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41b74f21134aa074dbc807745e759d87
-      internalID: 862394105
+      spriteID: 1cebe1f50c426364b968832077cfcca9
+      internalID: 28461821
       vertices: []
       indices: 
       edges: []
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8606c7b75d87d014385d0b3ffe5fb7c4
-      internalID: 1010407773
+      spriteID: 3699f09e04c53234c93d24ca1c0a1332
+      internalID: -538598630
       vertices: []
       indices: 
       edges: []
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5e45c4572e70d646a948686afcb1f0d
-      internalID: -403814310
+      spriteID: 6629af7e2206e7e4ea020c2b32d95f12
+      internalID: -625417559
       vertices: []
       indices: 
       edges: []
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c98cd97cee19ec342a3c70b7e4484c9c
-      internalID: 1228316950
+      spriteID: 29e154a85caf43a48ab63f8f856f763a
+      internalID: 819384983
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dead_Animation_Sketch_3: 1228316950
-      Dead_Animation_Sketch_1: 1010407773
-      Dead_Animation_Sketch_0: 862394105
-      Dead_Animation_Sketch_2: -403814310
+      Dead_Animation_Sketch_3: 819384983
+      Dead_Animation_Sketch_1: -538598630
+      Dead_Animation_Sketch_0: 28461821
+      Dead_Animation_Sketch_2: -625417559
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
