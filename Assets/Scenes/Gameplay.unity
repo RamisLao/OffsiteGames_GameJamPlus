@@ -268,11 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086be83ec86aa2849abbbd694ad3e0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &9351150 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5622121140070746867, guid: 503523b3d7c04844dad46e94e3778bca, type: 3}
-  m_PrefabInstance: {fileID: 339646187}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &16078985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4065,7 +4060,7 @@ PrefabInstance:
     - target: {fileID: 3941669481398157131, guid: d052570af92a8d74b8eeaf7a44b09f6d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 9351150}
+      objectReference: {fileID: 1363706493}
     - target: {fileID: 3941669481398157131, guid: d052570af92a8d74b8eeaf7a44b09f6d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
