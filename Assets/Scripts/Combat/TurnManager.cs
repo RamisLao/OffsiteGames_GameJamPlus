@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum ETurn
 {
@@ -45,6 +46,9 @@ public class TurnManager : MonoBehaviour
     private ETurn _currentTurn;
     private CombatTrigger _currentEnemyTrigger;
 
+    public UnityEvent OnCombatStarted;
+    public UnityEvent OnCombatEnded;
+
     private void Awake()
     {
         _eventOnCombatActivated.OnEventRaised += ActivateCombat;
@@ -65,6 +69,7 @@ public class TurnManager : MonoBehaviour
 
     private void StartCombat()
     {
+        OnCombatStarted.Invoke();
         _currentTurn = ETurn.Enemy;
         NextTurn();
     }
@@ -138,6 +143,7 @@ public class TurnManager : MonoBehaviour
 
     private void EndCombat()
     {
+        OnCombatEnded.Invoke();
         _eventDiscardHand.RaiseEvent();
         _eventDeactivateCombatCanvas.RaiseEvent();
         _eventOnCombatDeactivated.RaiseEvent();

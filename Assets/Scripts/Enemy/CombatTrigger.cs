@@ -17,9 +17,6 @@ public class CombatTrigger : MonoBehaviour
 
     [Title("Broadcasting on")]
     [SerializeField] private CombatTriggerEventChannelSO _eventOnCombatActivated;
-    [SerializeField] private VoidEventChannelSO _eventPlayCombatMusic;
-    [SerializeField] private VoidEventChannelSO _eventPlayOverworldMusic;
-    [SerializeField] private VoidEventChannelSO _eventPlayVictoryStinger;
     [SerializeField] private EnemyAIEventChannelSO _eventAddEnemyToCombat;
     [SerializeField] private Vector3EventChannelSO _eventTriggerPlayerMovementOff;
     private bool _isDead = true;
@@ -59,7 +56,6 @@ public class CombatTrigger : MonoBehaviour
     private IEnumerator CallOnCombatActivated()
     {
         yield return new WaitForSeconds(0.5f);
-        _eventPlayCombatMusic.RaiseEvent();
         _eventOnCombatActivated.RaiseEvent(this);
         _eventTriggerPlayerMovementOff.RaiseEvent(_playerPosition.position);
     }
@@ -70,7 +66,5 @@ public class CombatTrigger : MonoBehaviour
             p.CleanPalm();
 
         _isDead = false;
-        _eventPlayVictoryStinger.RaiseEvent();
-        _eventPlayOverworldMusic.RaiseEvent();
     }
 }
