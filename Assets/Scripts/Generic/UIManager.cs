@@ -9,6 +9,15 @@ public class UIManager : MonoBehaviour
     public GameObject _pausePanel;
     public GameObject _losePanel;
     public GameObject _victoryPanel;
+    public AgentEventChannelSO _eventGameOver;
+    public VoidEventChannelSO _eventGameWin;
+
+    private void Start()
+    {
+        _eventGameWin.OnEventRaised += VictoryPanel;
+        _eventGameOver.OnEventRaised += LosePanel;
+    }
+
     private void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -35,7 +44,7 @@ public class UIManager : MonoBehaviour
         _pausePanel.SetActive(_onPause);
     }
 
-    public void LosePanel()
+    public void LosePanel(Agent agent)
     {
         _losePanel.SetActive(true);
     }
