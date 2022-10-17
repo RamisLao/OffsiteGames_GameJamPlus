@@ -14,6 +14,7 @@ public class PlayerCombatCanvas : MonoBehaviour
     [SerializeField] private GameObject _buttonEndTurn;
     [SerializeField] private GameObject _playerStats;
     [SerializeField] private Image _handImage;
+    [SerializeField] private GameObject _exploreCanvas;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class PlayerCombatCanvas : MonoBehaviour
         _buttonEndTurn.SetActive(true);
         _playerStats.SetActive(true);
         _handImage.enabled = true;
+        _exploreCanvas.SetActive(false);
     }
 
     private void DeactivateCombatCanvas()
@@ -33,5 +35,6 @@ public class PlayerCombatCanvas : MonoBehaviour
         _buttonEndTurn.SetActive(false);
         _playerStats.SetActive(false);
         _handImage.enabled = false;
+        _exploreCanvas.SetActive(true);
     }
 }

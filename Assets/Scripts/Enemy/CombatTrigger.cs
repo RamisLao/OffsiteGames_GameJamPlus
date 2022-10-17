@@ -19,13 +19,19 @@ public class CombatTrigger : MonoBehaviour
     [SerializeField] private CombatTriggerEventChannelSO _eventOnCombatActivated;
     [SerializeField] private EnemyAIEventChannelSO _eventAddEnemyToCombat;
     [SerializeField] private Vector3EventChannelSO _eventTriggerPlayerMovementOff;
-    private bool _isDead;
+    private bool _isDead = true;
+    public bool IsDead => _isDead;
 
     private Collider2D _collider;
 
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
+    }
+
+    private void Start()
+    {
+        _isDead = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,5 +64,7 @@ public class CombatTrigger : MonoBehaviour
     {
         foreach (PalmTreeGroves p in _associatedPalmTreeGroves)
             p.CleanPalm();
+
+        _isDead = false;
     }
 }

@@ -35,7 +35,6 @@ public class EnemyAIBasic : EnemyAI
         HideAllUI();
         _actionToPerform = _enemyDeck.GetRandomItem();
         UpdateUI();
-        Debug.Log(_actionToPerform);
     }
 
     public override void PerformActions()

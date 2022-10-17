@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3312640044128691255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6479471432831666317}
+  - component: {fileID: 6146929224368371405}
+  m_Layer: 0
+  m_Name: VictoryCondition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6479471432831666317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312640044128691255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.11165, y: 59.250744, z: -0.9527588}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6146929224368371405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312640044128691255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971d8108e1846fb418d0999e3f631543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _combatTriggersInGame: {fileID: 11400000, guid: 67dd3947f69cb5343b1d81cb86e676f5, type: 2}
+  _eventGameIsWon: {fileID: 11400000, guid: 9c1b08ee2a5d3bd4597d05ad313be0a1, type: 2}
+  _totalNumberOfCombatTriggers: {fileID: 11400000, guid: 97361ac39198906429c6b6007c598d9c, type: 2}
+  _cleanedCombatTriggers: {fileID: 11400000, guid: 2fbd6cf364b3255479b9292958068ac0, type: 2}

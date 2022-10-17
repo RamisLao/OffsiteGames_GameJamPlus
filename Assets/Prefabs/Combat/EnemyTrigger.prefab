@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1364238152485608842}
   - component: {fileID: 1364238152485608844}
   - component: {fileID: 1364238152485608843}
+  - component: {fileID: 7524091524851006306}
   m_Layer: 2
   m_Name: EnemyTrigger
   m_TagString: Untagged
@@ -112,3 +113,19 @@ MonoBehaviour:
   _eventOnCombatActivated: {fileID: 11400000, guid: ee2507bbd657ef14fb1a9f4bb6ecb192, type: 2}
   _eventAddEnemyToCombat: {fileID: 11400000, guid: 97e0c2f7a2a85cb4d9d02f34abe9fae6, type: 2}
   _eventTriggerPlayerMovementOff: {fileID: 11400000, guid: b4edaf439b146b6458ed14c48df91464, type: 2}
+--- !u!114 &7524091524851006306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364238152485608841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3945bb53459c6b14791eec08e8f25335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raiseEvent: 2
+  _set: {fileID: 11400000, guid: 67dd3947f69cb5343b1d81cb86e676f5, type: 2}
+  _component: {fileID: 1364238152485608843}
+  _removeOnDisable: 1
