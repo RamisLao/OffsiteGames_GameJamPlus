@@ -386,6 +386,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1275575124248662301}
     m_Modifications:
+    - target: {fileID: 695567280235483098, guid: d219354449eab814cb2fd09fd4d9ee81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: CutScene
+      objectReference: {fileID: 0}
     - target: {fileID: 2283364988426150254, guid: d219354449eab814cb2fd09fd4d9ee81, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

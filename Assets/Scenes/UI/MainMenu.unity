@@ -500,7 +500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7181601133835858391, guid: 2365c3aa2f542d54da0b515911ef4cd9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Gameplay
+      value: CutScene
       objectReference: {fileID: 0}
     - target: {fileID: 7181601133835858391, guid: 2365c3aa2f542d54da0b515911ef4cd9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
