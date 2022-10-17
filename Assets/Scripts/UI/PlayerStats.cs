@@ -33,6 +33,16 @@ public class PlayerStats : MonoBehaviour
         _playerCurrentMana.OnChanged.AddListener(UpdateMana);
     }
 
+    private void Start()
+    {
+        UpdateHealthBar(_playerCurrentHealth.Value);
+        UpdateMana(_playerCurrentMana.Value);
+        UpdateBlockText(_playerCurrentBlock.Value);
+        UpdateSapplingText(_playerCurrentSappling.Value);
+        UpdateExposedText(_playerCurrentExposed.Value);
+        UpdateProtectedText(_playerCurrentProtected.Value);
+    }
+
     private void UpdateHealthBar(int value)
     {
         _healthText.text = $"{value}/{_playerMaxHealth.Value}";
