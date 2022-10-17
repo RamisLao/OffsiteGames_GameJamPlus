@@ -90,12 +90,14 @@ public abstract class EnemyAI : Agent
 
     private void OnMouseOver()
     {
+        if (!_currentEnemiesInBattle.Contains(this)) return;
         if (_onHoverIsActive) _renderer.color = Color.red;
         _currentEnemyOnHover.Value = this;
     }
 
     private void OnMouseExit()
     {
+        if (!_currentEnemiesInBattle.Contains(this)) return;
         if (_onHoverIsActive) _renderer.color = Color.white;
         _currentEnemyOnHover.Value = null;
     }
