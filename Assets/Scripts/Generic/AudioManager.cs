@@ -85,12 +85,12 @@ public class AudioManager : MonoBehaviour
     public void PlayGameOverMusic()
     {
         _effectsAudioSource.clip = _gameOver;
-        _masterAudioSource.Play();
+        _effectsAudioSource.Play();
     }
     public void PlayGameVictoryMusic()
     {
         _effectsAudioSource.clip = _gameVictory;
-        _masterAudioSource.Play();
+        _effectsAudioSource.Play();
     }
     public void PlayBattleVictoryMusic()
     {

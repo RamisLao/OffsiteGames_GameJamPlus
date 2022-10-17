@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -11,6 +12,9 @@ public class UIManager : MonoBehaviour
     public GameObject _victoryPanel;
     public AgentEventChannelSO _eventGameOver;
     public VoidEventChannelSO _eventGameWin;
+
+    public UnityEvent OnWon;
+    public UnityEvent OnLost;
 
     private void Start()
     {
@@ -47,10 +51,12 @@ public class UIManager : MonoBehaviour
     public void LosePanel(Agent agent)
     {
         _losePanel.SetActive(true);
+        OnLost.Invoke();
     }
 
     public void VictoryPanel()
     {
         _victoryPanel.SetActive(true);
+        OnWon.Invoke();
     }
 }
