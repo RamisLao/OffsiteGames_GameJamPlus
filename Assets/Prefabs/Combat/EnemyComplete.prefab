@@ -833,6 +833,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8347857193192033889}
     m_Modifications:
+    - target: {fileID: 578411309461684696, guid: fe9a24a7b544c2542afc92ecd49a5c29, type: 3}
+      propertyPath: m_Name
+      value: Frame
+      objectReference: {fileID: 0}
     - target: {fileID: 619714499700780552, guid: fe9a24a7b544c2542afc92ecd49a5c29, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
