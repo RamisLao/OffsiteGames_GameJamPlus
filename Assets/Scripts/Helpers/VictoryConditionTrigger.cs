@@ -46,6 +46,9 @@ public class VictoryConditionTrigger : MonoBehaviour
                 _eventStopExplorationMusic.RaiseEvent();
                 _eventGameIsWon.RaiseEvent();
             }
+
+            Debug.Log(_totalNumberOfCombatTriggers.Value);
+            Debug.Log(_cleanedCombatTriggers.Value);
         }
     }
 }

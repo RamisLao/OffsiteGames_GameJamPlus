@@ -79,8 +79,8 @@ public class Hand : MonoBehaviour
         _drawPile = new();
         _discardPile = new();
 
-        _playerStartingDeck.Shuffle();
-        foreach (CardData c in _playerStartingDeck.Items)
+        _playerInGameDeck.Shuffle();
+        foreach (CardData c in _playerInGameDeck.Items)
         {
             AddCardToDrawPile(c);
         }
