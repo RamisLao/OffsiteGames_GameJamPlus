@@ -9,9 +9,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _masterAudioSource;
     [SerializeField] private AudioSource _effectsAudioSource;
 
-    [Title("Overworld Clips")]
+    [Title("Music Clips")]
     public AudioClip _overworldClip;
     public AudioClip _battleClip;
+    public AudioClip _mainMenuClip;
 
     [Title("Battle Clips")]
     public AudioClip _blockedDamage;
@@ -30,43 +31,68 @@ public class AudioManager : MonoBehaviour
     public AudioClip _gameVictory;
 
     [Title("UI Clips")]
-    public AudioClip _enterUI;
+    public AudioClip _clickUI;
     public AudioClip _hoverUI;
     public AudioClip _statusUpdateUI;
 
     [Title("Listening on")]
-    public VoidEventChannelSO _eventOnCombatActivated;
-    public VoidEventChannelSO _eventOnCombatDeactivated;
+    public VoidEventChannelSO _eventOnCombatPlay;
+    public VoidEventChannelSO _eventOnCombatStop;
+    public VoidEventChannelSO _eventOnOverworldPlay;
+    public VoidEventChannelSO _eventOnOverworldStop;
+    public VoidEventChannelSO _eventOnMainMenuPlay;
+    public VoidEventChannelSO _eventOnMainMenuStop;
+    public VoidEventChannelSO _eventOnUIClick;
+    public VoidEventChannelSO _eventOnUIHover;
+    public VoidEventChannelSO _eventOnVictoryStinger;
+    public VoidEventChannelSO _eventOnLoseStinger;
+    public VoidEventChannelSO _eventOnUltimateVictoryStinger;
 
-    private void Start()
+    private void Awake()
     {
-        if (_eventOnCombatActivated != null) _eventOnCombatActivated.OnEventRaised += BattleMusic;
-        if (_eventOnCombatDeactivated != null) _eventOnCombatDeactivated.OnEventRaised += OverworldMusic;
+        _eventOnCombatPlay.OnEventRaised += BattleMusicPlay;
+        _eventOnCombatStop.OnEventRaised += StopMusic;
+        _eventOnOverworldPlay.OnEventRaised += OverworldMusicPlay;
+        _eventOnOverworldStop.OnEventRaised += StopMusic;
+        _eventOnUIClick.OnEventRaised += UIClick;
+        _eventOnUIHover.OnEventRaised += UIHover;
+        _eventOnMainMenuPlay.OnEventRaised += PlayMainMenu;
+        _eventOnMainMenuStop.OnEventRaised += StopMusic;
+        _eventOnVictoryStinger.OnEventRaised += PlayBattleVictoryMusic;
+        _eventOnUltimateVictoryStinger.OnEventRaised += PlayGameOverMusic;
+        _eventOnLoseStinger.OnEventRaised += PlayGameOverMusic;
     }
 
-    public void OverworldMusic()
+    public void OverworldMusicPlay()
     {
         _masterAudioSource.clip = _overworldClip;
         _masterAudioSource.Play();
     }
-    public void BattleMusic()
+    public void BattleMusicPlay()
     {
         _masterAudioSource.clip = _battleClip;
         _masterAudioSource.Play();
     }
-    public void GameOverMusic()
+    public void PlayMainMenu()
     {
-        _masterAudioSource.clip = _gameOver;
-        _masterAudioSource.loop = false;
+        _masterAudioSource.clip = _mainMenuClip;
         _masterAudioSource.Play();
     }
-    public void GameVictoryMusic()
+    public void StopMusic()
     {
-        _masterAudioSource.clip = _gameVictory;
-        _masterAudioSource.loop = false;
+        _masterAudioSource.Stop();
+    }
+    public void PlayGameOverMusic()
+    {
+        _effectsAudioSource.clip = _gameOver;
         _masterAudioSource.Play();
     }
-    public void BattleVictoryMusic()
+    public void PlayGameVictoryMusic()
+    {
+        _effectsAudioSource.clip = _gameVictory;
+        _masterAudioSource.Play();
+    }
+    public void PlayBattleVictoryMusic()
     {
         _effectsAudioSource.clip = _battleVictory;
         _effectsAudioSource.Play();
@@ -110,5 +136,13 @@ public class AudioManager : MonoBehaviour
     public void EnemyDamaged()
     {
         _effectsAudioSource.PlayOneShot(_enemyDamaged);
+    }
+    public void UIClick()
+    {
+        _effectsAudioSource.PlayOneShot(_clickUI);
+    }
+    public void UIHover()
+    {
+        _effectsAudioSource.PlayOneShot(_hoverUI);
     }
 }

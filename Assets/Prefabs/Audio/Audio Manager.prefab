@@ -50,6 +50,7 @@ MonoBehaviour:
   _effectsAudioSource: {fileID: 6549312044065223259}
   _overworldClip: {fileID: 8300000, guid: 539e4322353051d479132e4ed547eff8, type: 3}
   _battleClip: {fileID: 8300000, guid: 4846df885adb6c949ac705b15bcad70d, type: 3}
+  _mainMenuClip: {fileID: 8300000, guid: b9c4608f0f4c09b488f75f934e6acfce, type: 3}
   _blockedDamage: {fileID: 8300000, guid: 24f74d98ad136a3479ebd1b271dfd91a, type: 3}
   _buritiDamaged: {fileID: 8300000, guid: c6aa656cf83c0b54e88f9b9d9ef26591, type: 3}
   _discardCard: {fileID: 8300000, guid: 9d6bfbc2e90aa7845b39c8e57ac49c63, type: 3}
@@ -62,11 +63,20 @@ MonoBehaviour:
   _gameOver: {fileID: 8300000, guid: a9b28ed9c99965e47856b65ae501c19b, type: 3}
   _battleVictory: {fileID: 8300000, guid: 6d3985278cffaee4abb0d9a53755e910, type: 3}
   _gameVictory: {fileID: 8300000, guid: 7d41be0d80dfbb840b76add4ff0a15f8, type: 3}
-  _enterUI: {fileID: 8300000, guid: af8d572feaee5cd4e9b2c73b8248c2f5, type: 3}
+  _clickUI: {fileID: 8300000, guid: af8d572feaee5cd4e9b2c73b8248c2f5, type: 3}
   _hoverUI: {fileID: 8300000, guid: 464a958c43952554ea9a164425ffc062, type: 3}
   _statusUpdateUI: {fileID: 8300000, guid: 557c0082a7a6a7c4da59412d8f87eeac, type: 3}
-  _eventOnCombatActivated: {fileID: 0}
-  _eventOnCombatDeactivated: {fileID: 0}
+  _eventOnCombatPlay: {fileID: 11400000, guid: 3ebfc6aca40198e42b0a44583b034040, type: 2}
+  _eventOnCombatStop: {fileID: 11400000, guid: bd106e4fbab6fd8478b642cbd59bf800, type: 2}
+  _eventOnOverworldPlay: {fileID: 11400000, guid: 3b3fa46d6067bec4a80b1e8dfc8655ec, type: 2}
+  _eventOnOverworldStop: {fileID: 11400000, guid: 3ca93f44fe860334fa62a6a76e7235b5, type: 2}
+  _eventOnMainMenuPlay: {fileID: 11400000, guid: 02036d5d947f3614c915808ddb0b4c56, type: 2}
+  _eventOnMainMenuStop: {fileID: 11400000, guid: 7985276699d8f0b4f8f50e058ff70283, type: 2}
+  _eventOnUIClick: {fileID: 11400000, guid: 14c60bd32df796149bd8772aa2f85f76, type: 2}
+  _eventOnUIHover: {fileID: 11400000, guid: a4ac3116c8caa414eaf4e23879b4ff88, type: 2}
+  _eventOnVictoryStinger: {fileID: 11400000, guid: 6ff6c03a62e2ab94a82a721e4328a9a7, type: 2}
+  _eventOnLoseStinger: {fileID: 11400000, guid: ebd65f7032056034d83f5f0610c65477, type: 2}
+  _eventOnUltimateVictoryStinger: {fileID: 11400000, guid: a7b82160742bbb64386ddb67dd2cf753, type: 2}
 --- !u!82 &7853234230611925576
 AudioSource:
   m_ObjectHideFlags: 0
@@ -79,7 +89,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

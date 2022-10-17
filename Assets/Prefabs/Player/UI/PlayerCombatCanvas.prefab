@@ -371,6 +371,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1721191436031709957}
     m_Modifications:
+    - target: {fileID: 4771666027802489579, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771666027802489579, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5467790479861561769, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -458,6 +466,10 @@ PrefabInstance:
     - target: {fileID: 5467790479861561774, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
       propertyPath: m_Name
       value: PlayerStats
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467790479861561774, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f562b2c00170204982fbe8488172ad9, type: 3}
