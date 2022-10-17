@@ -111,6 +111,9 @@ MonoBehaviour:
   _associatedPalmTreeGroves: []
   _playerPosition: {fileID: 6490373641586824354}
   _eventOnCombatActivated: {fileID: 11400000, guid: ee2507bbd657ef14fb1a9f4bb6ecb192, type: 2}
+  _eventPlayCombatMusic: {fileID: 11400000, guid: 3ebfc6aca40198e42b0a44583b034040, type: 2}
+  _eventPlayOverworldMusic: {fileID: 11400000, guid: 3b3fa46d6067bec4a80b1e8dfc8655ec, type: 2}
+  _eventPlayVictoryStinger: {fileID: 11400000, guid: 6ff6c03a62e2ab94a82a721e4328a9a7, type: 2}
   _eventAddEnemyToCombat: {fileID: 11400000, guid: 97e0c2f7a2a85cb4d9d02f34abe9fae6, type: 2}
   _eventTriggerPlayerMovementOff: {fileID: 11400000, guid: b4edaf439b146b6458ed14c48df91464, type: 2}
 --- !u!114 &7524091524851006306

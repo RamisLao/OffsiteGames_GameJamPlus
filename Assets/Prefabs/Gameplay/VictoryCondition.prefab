@@ -46,5 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _combatTriggersInGame: {fileID: 11400000, guid: 67dd3947f69cb5343b1d81cb86e676f5, type: 2}
   _eventGameIsWon: {fileID: 11400000, guid: 9c1b08ee2a5d3bd4597d05ad313be0a1, type: 2}
+  _eventPlayUltimateVictoryStinger: {fileID: 11400000, guid: a7b82160742bbb64386ddb67dd2cf753, type: 2}
+  _eventStopCombatMusic: {fileID: 11400000, guid: bd106e4fbab6fd8478b642cbd59bf800, type: 2}
+  _eventStopExplorationMusic: {fileID: 11400000, guid: 3ca93f44fe860334fa62a6a76e7235b5, type: 2}
   _totalNumberOfCombatTriggers: {fileID: 11400000, guid: 97361ac39198906429c6b6007c598d9c, type: 2}
   _cleanedCombatTriggers: {fileID: 11400000, guid: 2fbd6cf364b3255479b9292958068ac0, type: 2}
