@@ -59,8 +59,6 @@ public class Hand : MonoBehaviour
 
         _playerInGameDeck.Clear();
         foreach (CardData cd in _playerStartingDeck.Items) _playerInGameDeck.Add(cd);
-
-        InitializePiles();
     }
 
     private void Update()
@@ -90,6 +88,7 @@ public class Hand : MonoBehaviour
 
     private void InitializeHand()
     {
+        InitializePiles();
         for (int i = 0; i < _settingsDeckBuilding.StartingHandSize; i++)
         {
             AddCardToHand();

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 83928388717326577}
   - component: {fileID: 2315835183118051065}
   - component: {fileID: 2668727410192858494}
+  - component: {fileID: 7849926652793288859}
   m_Layer: 5
   m_Name: PlayerCombatCanvas
   m_TagString: Untagged
@@ -141,6 +142,78 @@ MonoBehaviour:
   _panel: {fileID: 4141806690607247630}
   _eventOpenCardSelectionPanel: {fileID: 11400000, guid: 023323e6b0a8bbf4090c17044b5e20d3, type: 2}
   _eventTriggerPlayerMovementOn: {fileID: 11400000, guid: 58c23224b10c7844cbf93e526d2c3178, type: 2}
+--- !u!114 &7849926652793288859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650755659367945151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4520593c6dd28419c76fb93047c600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onPause: 0
+  _pausePanel: {fileID: 0}
+  _losePanel: {fileID: 0}
+  _victoryPanel: {fileID: 0}
+  _eventGameOver: {fileID: 11400000, guid: 93d7bdcabe02438488af76d5481f1ca7, type: 2}
+  _eventGameWin: {fileID: 11400000, guid: 9c1b08ee2a5d3bd4597d05ad313be0a1, type: 2}
+  OnWon:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayGameVictoryMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLost:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayGameOverMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1853027943150885851
 PrefabInstance:
   m_ObjectHideFlags: 0

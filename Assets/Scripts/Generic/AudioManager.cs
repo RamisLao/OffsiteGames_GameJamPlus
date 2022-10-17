@@ -80,17 +80,17 @@ public class AudioManager : MonoBehaviour
     }
     public void StopMusic()
     {
-        _masterAudioSource.Stop();
+        if (_masterAudioSource != null) _masterAudioSource.Stop();
     }
     public void PlayGameOverMusic()
     {
         _effectsAudioSource.clip = _gameOver;
-        _masterAudioSource.Play();
+        _effectsAudioSource.Play();
     }
     public void PlayGameVictoryMusic()
     {
         _effectsAudioSource.clip = _gameVictory;
-        _masterAudioSource.Play();
+        _effectsAudioSource.Play();
     }
     public void PlayBattleVictoryMusic()
     {
