@@ -16,7 +16,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Image _sapplingImage;
     [SerializeField] private Image _protectedImage;
     [SerializeField] private Image _exposedImage;
-    [SerializeField] private Slider _healthBar;
     [SerializeField] private TMPro.TextMeshProUGUI _healthText;
     [SerializeField] private TMPro.TextMeshProUGUI _blockText;
     [SerializeField] private TMPro.TextMeshProUGUI _sapplingText;
@@ -36,7 +35,6 @@ public class PlayerStats : MonoBehaviour
 
     private void UpdateHealthBar(int value)
     {
-        _healthBar.value = value;
         _healthText.text = $"{value}/{_playerMaxHealth.Value}";
     }
 

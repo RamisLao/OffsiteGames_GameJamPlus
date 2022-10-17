@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
     private void EnableMovement()
     {
         _canMove = !_canMove;
+        if (_canMove) StopAllCoroutines();
         _playerInput = Vector2.zero;
         _inputDirection.Value = _playerInput;
     }
