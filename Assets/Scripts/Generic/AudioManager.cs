@@ -80,7 +80,7 @@ public class AudioManager : MonoBehaviour
     }
     public void StopMusic()
     {
-        _masterAudioSource.Stop();
+        if (_masterAudioSource != null) _masterAudioSource.Stop();
     }
     public void PlayGameOverMusic()
     {

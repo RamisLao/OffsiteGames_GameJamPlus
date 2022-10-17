@@ -13427,7 +13427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardPrefab: {fileID: 8371517353830852294, guid: cdbd4689fe73e164693e2dc248e66c36, type: 3}
-  _playerDeck: {fileID: 11400000, guid: 309a61606b5e06a44b617e0fcb7cf81b, type: 2}
+  _playerDeck: {fileID: 11400000, guid: 5a8354324aa81e84f9737ca548730326, type: 2}
   _content: {fileID: 274371082437040011}
   _scrollView: {fileID: 274371083048057807}
 --- !u!1 &274371082088681501
