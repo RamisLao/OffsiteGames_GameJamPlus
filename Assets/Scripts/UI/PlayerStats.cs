@@ -16,7 +16,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Image _sapplingImage;
     [SerializeField] private Image _protectedImage;
     [SerializeField] private Image _exposedImage;
-    [SerializeField] private Slider _healthBar;
     [SerializeField] private TMPro.TextMeshProUGUI _healthText;
     [SerializeField] private TMPro.TextMeshProUGUI _blockText;
     [SerializeField] private TMPro.TextMeshProUGUI _sapplingText;
@@ -34,9 +33,18 @@ public class PlayerStats : MonoBehaviour
         _playerCurrentMana.OnChanged.AddListener(UpdateMana);
     }
 
+    private void Start()
+    {
+        UpdateHealthBar(_playerCurrentHealth.Value);
+        UpdateMana(_playerCurrentMana.Value);
+        UpdateBlockText(_playerCurrentBlock.Value);
+        UpdateSapplingText(_playerCurrentSappling.Value);
+        UpdateExposedText(_playerCurrentExposed.Value);
+        UpdateProtectedText(_playerCurrentProtected.Value);
+    }
+
     private void UpdateHealthBar(int value)
     {
-        _healthBar.value = value;
         _healthText.text = $"{value}/{_playerMaxHealth.Value}";
     }
 
